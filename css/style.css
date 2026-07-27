@@ -1,11 +1,170 @@
+/* ===========================
+   BALAJI CONSTRUCTION
+   Premium Theme
+=========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:'Poppins',sans-serif;
     background:#ffffff;
     color:#222;
+}
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.logo img{
+    height:70px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#D5B368;
+}
+
+.quote-btn{
+    background:#D5B368;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.quote-btn:hover{
+    background:#b9983d;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:url("../images/hero.jpg") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    padding-left:8%;
+    max-width:700px;
+}
+
+.hero-content h3{
+    color:#D5B368;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.hero-content h1{
+    font-size:70px;
+    line-height:1.1;
+}
+
+.hero-content h1 span{
+    color:#D5B368;
+}
+
+.hero-content p{
+    margin:25px 0;
+    font-size:18px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.gold-btn,
+.white-btn{
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:40px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.gold-btn{
+    background:#D5B368;
+    color:#fff;
+}
+
+.gold-btn:hover{
+    transform:translateY(-4px);
+}
+
+.white-btn{
+    background:#fff;
+    color:#222;
+}
+
+.white-btn:hover{
+    background:#D5B368;
+    color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    gap:15px;
+}
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
 }
