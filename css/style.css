@@ -71,7 +71,7 @@ nav ul li a:hover{
 
 .hero{
     height:100vh;
-    background:url("../images/hero.jpg") center center/cover no-repeat;
+    background:url("../images/bchero.jpg") center center/cover no-repeat;
     display:flex;
     align-items:center;
     position:relative;
