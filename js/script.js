@@ -15,3 +15,6 @@ const observer = new IntersectionObserver((entries)=>{
 });
 
 reveals.forEach(el=>observer.observe(el));
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
