@@ -4,11 +4,17 @@ const reveals = document.querySelectorAll(
 
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-        if(entry.isIntersecting){
+      /*  if(entry.isIntersecting){
             entry.target.classList.add('show');
         }else{
             entry.target.classList.remove('show');
-        }
+        }*/
+       if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+
+      // Stop observing after the first reveal
+      observer.unobserve(entry.target);
+    }
     });
 },{
     threshold:0.3
