@@ -69,7 +69,7 @@ nav ul li a:hover{
 
 /* HERO */
 
-.hero{
+/*.hero{
     height:100vh;
     background:url("../images/bcbanner.png") center center/cover no-repeat;
     display:flex;
@@ -90,6 +90,42 @@ nav ul li a:hover{
     color:#fff;
     padding-left:8%;
     max-width:700px;
+}
+*/
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
 }
 
 .hero-content h3{
