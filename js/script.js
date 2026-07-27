@@ -1,15 +1,17 @@
-const fadeElements = document.querySelectorAll('.fade-section');
+const reveals = document.querySelectorAll(
+  '.reveal-left, .reveal-right, .reveal-up'
+);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
             entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show'); // வெளியே போகும்போது remove
+        }else{
+            entry.target.classList.remove('show');
         }
     });
-}, {
-    threshold: 0.3
+},{
+    threshold:0.3
 });
 
-fadeElements.forEach(el => observer.observe(el));
+reveals.forEach(el=>observer.observe(el));
