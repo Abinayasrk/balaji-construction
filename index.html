@@ -11,7 +11,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -105,11 +105,11 @@
 <section class="about" id="about">
     <div class="about-container">
 
-        <div class="about-image">
+        <div class="about-image" data-aos="fade-right">
             <img src="images/about.jfif" alt="Balaji Construction">
         </div>
 
-        <div class="about-content">
+        <div class="about-content" data-aos="fade-left">
 
             <span class="section-tag">ABOUT US</span>
 
@@ -123,10 +123,10 @@
             </p>
 
             <div class="about-features">
-                <div>✔ Premium Quality Materials</div>
-                <div>✔ Experienced Professionals</div>
-                <div>✔ On-Time Project Delivery</div>
-                <div>✔ Customer Satisfaction</div>
+                <div><i class="fa-solid fa-circle-check"></i> Premium Quality Materials</div>
+                <div><i class="fa-solid fa-circle-check"></i> Experienced Professionals</div>
+                <div><i class="fa-solid fa-circle-check"></i> On-Time Project Delivery</div>
+                <div><i class="fa-solid fa-circle-check"></i> Customer Satisfaction</div>
             </div>
 
             <a href="#contact" class="about-btn">Learn More</a>
@@ -135,7 +135,13 @@
 
     </div>
 </section>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="js/script.js"></script>
-
+<script>
+AOS.init({
+    duration: 1000,
+    once: true
+});
+</script>
 </body>
 </html>
