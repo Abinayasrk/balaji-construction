@@ -677,7 +677,7 @@ blockquote{
     .nav-links{
         display: none;
     }
-   .quote-btn .logo{
+   .quote-btn{
       display: none;
    }
 }
