@@ -564,13 +564,31 @@ blockquote{
 }
 
 }
-.fade-section{
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s ease;
+.reveal-left,
+.reveal-right,
+.reveal-up{
+    opacity:0;
+    transition:all .9s ease;
 }
 
-.fade-section.show{
-    opacity: 1;
-    transform: translateY(0);
+.reveal-left{
+    transform:translateX(-80px);
 }
+
+.reveal-right{
+    transform:translateX(80px);
+}
+
+.reveal-up{
+    transform:translateY(50px);
+}
+
+.show{
+    opacity:1;
+    transform:translate(0,0);
+}
+
+.delay1{transition-delay:.2s;}
+.delay2{transition-delay:.4s;}
+.delay3{transition-delay:.6s;}
+.delay4{transition-delay:.8s;}
