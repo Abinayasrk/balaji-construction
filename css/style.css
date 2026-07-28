@@ -278,11 +278,13 @@ nav ul{
    font-weight:700;
 }
 
-.about-content p{
-    font-size:20px;
-    color:#555;
-    line-height:1.8;
-    margin-bottom:30px;
+.about-content p {
+	font-size: 20px;
+	color: #555;
+	line-height: 1.8;
+	margin-bottom: 30px;
+	text-align: justify;
+	margin-top: 10px;
 }
 
 .about-features{
