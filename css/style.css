@@ -889,6 +889,32 @@ blockquote{
 
 }
 
+/* Scroll Reveal Animation */
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+}
+
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* Card Hover Premium Effect */
+
+.service-card{
+    transition:transform .4s ease, box-shadow .4s ease;
+}
+
+
+.service-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
 // why choose
 .why-choose{
     padding:100px 8%;
