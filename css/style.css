@@ -633,7 +633,7 @@ blockquote{
 
     .about-content {
         width: 100%;
-        text-align: left; /* center-க்கு பதிலா left */
+        text-align: justify; /* center-க்கு பதிலா left */
     }
 
     .about-content h2 {
