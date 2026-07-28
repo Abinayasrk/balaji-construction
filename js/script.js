@@ -32,22 +32,6 @@ reveals.forEach((el)=>{
 });
 
 //navbar mobile script
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
-
-if(hamburger){
-
-hamburger.addEventListener("click",()=>{
-
-    navLinks.classList.toggle("active");
-
-    if(navLinks.classList.contains("active")){
-        hamburger.innerHTML='<i class="fa fa-times"></i>';
-    }
-    else{
-        hamburger.innerHTML='<i class="fa fa-bars"></i>';
-    }
-
-});
-
+function toggleMenu(){
+    document.getElementById("nav-links").classList.toggle("active");
 }
