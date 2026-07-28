@@ -411,7 +411,11 @@ nav ul{
     font-weight:600;
     color:#333;
 }
-
+.detail-box img{
+    width:24px;
+    height:24px;
+    margin-right:12px;
+}
 blockquote{
     margin-top:20px;
     padding-left:20px;
