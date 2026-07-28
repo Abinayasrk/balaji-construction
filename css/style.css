@@ -1418,3 +1418,56 @@ justify-content:center;
     }
 }
 //map
+//compaby about
+.story-image{
+    position:relative;
+}
+
+.story-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.experience-box{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    background:#d4af37;
+    color:#fff;
+    padding:20px 25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.experience-box h2{
+    font-size:42px;
+    font-weight:700;
+    margin:0;
+}
+
+.experience-box p{
+    margin:0;
+    font-size:15px;
+}
+
+.section-subtitle{
+    color:#d4af37;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.story-content h2{
+    margin:15px 0 20px;
+    font-size:42px;
+    font-weight:700;
+    color:#222;
+}
+
+.story-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+//about end
