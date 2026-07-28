@@ -32,6 +32,4 @@ reveals.forEach((el)=>{
 });
 
 //navbar mobile script
-function toggleMenu(){
-    document.getElementById("nav-links").classList.toggle("active");
-}
+
