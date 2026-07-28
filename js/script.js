@@ -30,3 +30,19 @@ function toggleMenu() {
 reveals.forEach((el)=>{
     observer.observe(el);
 });
+
+//navbar mobile script
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+const navItems = document.querySelectorAll("#nav-links a");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Menu item click ஆனவுடன் menu close ஆகும்
+navItems.forEach(item => {
+    item.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
