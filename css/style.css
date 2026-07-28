@@ -1151,12 +1151,13 @@ blockquote{
     background:#f8f9fa;
 }
 
-.contact-wrapper{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
+.contact-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
-
 .info-box{
     display:flex;
     gap:20px;
