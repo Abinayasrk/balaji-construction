@@ -32,17 +32,18 @@ reveals.forEach((el)=>{
 });
 
 //navbar mobile script
-const menuToggle = document.getElementById("menu-toggle");
+const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
-const navItems = document.querySelectorAll("#nav-links a");
 
-menuToggle.addEventListener("click", () => {
+hamburger.addEventListener("click",()=>{
+
     navLinks.classList.toggle("active");
-});
 
-// Menu item click ஆனவுடன் menu close ஆகும்
-navItems.forEach(item => {
-    item.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
+    if(navLinks.classList.contains("active")){
+        hamburger.innerHTML='<i class="fa fa-times"></i>';
+    }
+    else{
+        hamburger.innerHTML='<i class="fa fa-bars"></i>';
+    }
+
 });
