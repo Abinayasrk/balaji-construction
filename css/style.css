@@ -1475,14 +1475,7 @@ justify-content:center;
 
 //mobile nav
 
-.menu-toggle{
-    display:none;
-    font-size:30px;
-    color:#fff;
-    background:none;
-    border:none;
-    cursor:pointer;
-}
+
 
 @media (max-width:768px){
 
