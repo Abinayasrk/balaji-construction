@@ -1082,10 +1082,12 @@ blockquote{
     background:#fff;
 }
 
-.testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+.testimonial-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+	gap: 30px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .testimonial-card{
