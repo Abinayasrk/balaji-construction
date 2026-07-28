@@ -1471,50 +1471,28 @@ justify-content:center;
 
 //mobile nav
 
-
 .hamburger{
     display:none;
-    font-size:28px;
+    font-size:30px;
     cursor:pointer;
 }
 
-
 @media(max-width:768px){
 
-.header{
-    padding:15px 20px;
-}
+    .hamburger{
+        display:block;
+    }
 
-.hamburger{
-    display:block;
-}
+    .nav-links{
+        display:none;
+    }
 
+    .nav-links.active{
+        display:block;
+    }
 
-.nav-links{
-    position:absolute;
-    top:80px;
-    left:0;
-    width:100%;
-    background:#fff;
-    display:none;
-}
-
-
-.nav-links ul{
-    flex-direction:column;
-    text-align:center;
-    padding:20px 0;
-}
-
-
-.nav-links.active{
-    display:block;
-}
-
-
-.quote-btn{
-    display:none;
-}
-
+    .nav-links ul{
+        flex-direction:column;
+    }
 }
 //mobilenav end
