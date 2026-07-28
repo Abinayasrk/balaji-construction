@@ -553,16 +553,18 @@ blockquote{
 }
 
 .founder-content h2{
-    font-size:36px;
+    font-size:26px;
 }
 
 .founder-content h4{
-    font-size:22px;
+    font-size:18px;
 }
 
-.founder-content p{
-    font-size:16px;
-   text-align:justify;
+.founder-content p {
+	font-size: 16px;
+	text-align: justify;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .founder-features{
@@ -573,8 +575,10 @@ blockquote{
     text-align:left;
 }
 
-.founder-quote{
-    text-align:left;
+.founder-quote {
+	text-align: justify;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 }
