@@ -19,55 +19,7 @@
 
 <!-- ================= HEADER ================= -->
 
-<header class="header">
-<!-- mobile view-->
-<!--<nav class="navbar">
-  <div class="logo">
-    <img src="logo.png" alt="Logo">
-  </div>
-
-  <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-  </ul>
-
-  <div class="hamburger" onclick="toggleMenu()">
-    ☰
-  </div>
-</nav>-->
-    <!-- end -->
-    <div class="logo">
-
-        <img src="images/bclogo.jpeg" alt="Balaji Construction">
-
-    </div>
-
-    <!--<div class="hamburger" onclick="toggleMenu()">
-    ☰
-  </div>-->
-    <nav class="nav-links">
-
-        <ul>
-
-            <li><a href="#">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-    <a href="#contact" class="quote-btn">
-        Get Quote
-    </a>
-
-</header>
-
+<div id="header"></div>
 <!-- ================= HERO ================= -->
 
 <section class="hero">
@@ -436,82 +388,7 @@
 </section>
     <!-- end-->
 	<!-- footer --></br></br></br>
-	<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- Company -->
-        <div class="footer-box">
-            <img src="images/bclogo.jpeg" class="footer-logo">
-
-            <p>
-                Building quality homes and commercial spaces with
-                trust, innovation and excellence.
-            </p>
-
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-
-        </div>
-
-
-        <!-- Links -->
-
-        <div class="footer-box">
-
-            <h3>Quick Links</h3>
-
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-
-        <!-- Services -->
-
-        <div class="footer-box">
-
-            <h3>Our Services</h3>
-
-            <a href="#">Residential Construction</a>
-            <a href="#">Commercial Construction</a>
-            <a href="#">Structural Engineering</a>
-            <a href="#">Renovation Works</a>
-
-        </div>
-
-
-
-        <!-- Contact -->
-
-        <div class="footer-box">
-
-            <h3>Contact Info</h3>
-
-            <p><i class="fas fa-phone"></i> +91 98437 55955</p>
-
-            <p><i class="fas fa-envelope"></i> balajiconstructioncbe@gmail.com</p>
-
-            <p><i class="fas fa-location-dot"></i> Coimbatore, Tamil Nadu</p>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-
-        © 2026 Balaji Construction | All Rights Reserved.
-
-    </div>
-
-</footer>
+	<div id="footer"></div>
 	<!-- footer end -->
 
 	<!-- map --></br></br>
@@ -547,6 +424,18 @@ AOS.init({
     once: true,
     mirror:false
 });
+</script>
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
 </script>
 </body>
 </html>
