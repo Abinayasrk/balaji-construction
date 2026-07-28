@@ -442,7 +442,7 @@ blockquote{
 /* Founder */
 
 .founder-section{
-    padding:100px 0;
+   // padding:100px 0;
     background:linear-gradient(to bottom,#ffffff,#faf8f2);
 }
 
