@@ -1231,11 +1231,37 @@ blockquote{
 }
 //end contact
 //footer
-.footer{
+/*.footer{
 
-    background:#111;
+    background: linear-gradient(135deg,#111111,#1d1d1d,#2a2a2a);
     color:#fff;
     padding:70px 8% 20px;
+
+}*/
+.footer{
+
+background:#171717;
+position:relative;
+
+}
+
+.footer::before{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+
+background:linear-gradient(
+90deg,
+transparent,
+#d4af37,
+#ffd86b,
+#d4af37,
+transparent
+);
 
 }
 
