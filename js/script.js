@@ -20,7 +20,3 @@ const observer = new IntersectionObserver((entries)=>{
     threshold:0.3
 });
 
-reveals.forEach(el=>observer.observe(el));
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
