@@ -1261,24 +1261,25 @@ transparent
 
 }
 
-.footer-container{
-
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1.5fr;
-    gap:50px;
-
+.footer-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1.5fr;
+	gap: 50px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 .footer-logo{
 
-    width:220px;
-    margin-bottom:20px;
+    width:350px;
+   /* margin-bottom:20px;*/
+   margin-left:-25px;
 
 }
 
 .footer-box p{
 
-    color:#bbb;
+    color:#111;
     line-height:1.8;
     margin-bottom:15px;
 
@@ -1295,7 +1296,7 @@ transparent
 .footer-box a{
 
     display:block;
-    color:#bbb;
+    color:#111;
     text-decoration:none;
     margin-bottom:14px;
     transition:.3s;
