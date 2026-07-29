@@ -62,24 +62,30 @@
 
             </div>
 
-            <form class="contact-form">
+           <form class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/abi96.ece@gmail.com"
+      method="POST">
 
-                <input type="text" placeholder="Your Name" required>
+    <input type="hidden" name="_subject" value="New Enquiry from Website">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
-                <input type="email" placeholder="Email Address" required>
+    <input type="text" name="name" placeholder="Your Name" required>
 
-                <input type="tel" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email Address" required>
 
-                <textarea rows="6" placeholder="Tell us about your project"></textarea>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
 
-                <button type="submit">Send Enquiry</button>
+    <textarea name="message" rows="6" placeholder="Tell us about your project" required></textarea>
 
-                <a href="https://wa.me/919843755955" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
+    <button type="submit">Send Enquiry</button>
 
-            </form>
+    <a href="https://wa.me/919843755955" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
 
+</form>
         </div>
 
     </div>
@@ -131,6 +137,31 @@ fetch("footer.html")
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
+</script>
+<!-- contact form script -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    Swal.fire({
+        icon: "success",
+        title: "Thank You!",
+        text: "Your enquiry has been submitted successfully.",
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true
+    });
+
+    setTimeout(() => {
+        form.submit();
+    }, 5000);
+
+});
 </script>
 </body>
 </html>
