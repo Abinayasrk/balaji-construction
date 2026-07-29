@@ -70,6 +70,7 @@
     <input type="hidden" name="_subject" value="New Enquiry from Website">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
+	<input type="hidden" name="_next" value="https://abinayasrk.github.io/balaji-construction/contact.html?success=true">
 
     <input type="text" name="name" placeholder="Your Name" required>
 
@@ -142,7 +143,7 @@ fetch("footer.html")
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-const form = document.getElementById("contactForm");
+/*const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function(e){
 
@@ -153,15 +154,37 @@ form.addEventListener("submit", function(e){
         title: "Thank You!",
         text: "Your enquiry has been submitted successfully.",
         showConfirmButton: false,
-        timer: 5000,
+        timer: 2000,
         timerProgressBar: true
     });
 
     setTimeout(() => {
         form.submit();
-    }, 5000);
+    }, 2000);
 
-});
+});*/
+
+
+window.onload = function () {
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("success") === "true") {
+
+        Swal.fire({
+            icon: "success",
+            title: "Thank You!",
+            text: "Your enquiry has been submitted successfully.",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true
+        });
+
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+};
+
 </script>
 </body>
 </html>
