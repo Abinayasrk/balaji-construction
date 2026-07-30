@@ -1802,6 +1802,7 @@ transform:translateY(0);
 }
 .story-content h2{
     font-size:32px;
+	text-align:center;
 }
 
 .story-content p{
