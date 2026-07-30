@@ -1168,24 +1168,30 @@ blockquote{
 }
 */
 .testimonial-card{
-    transition:all .4s ease;
-    cursor:pointer;
+    position:relative;
+    background:#fff;
+    padding:60px 30px 30px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.4s ease;
 }
 
 .testimonial-card:hover{
     transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
 .quote{
+   position:absolute;
+    top:-28px;
+    left:30px;
     width:60px;
     height:60px;
-    background:rgba(200,155,60,0.12);
-    border:2px solid #c89b3c;
+    background:#c89b3c;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-bottom:20px;
+    box-shadow:0 8px 20px rgba(200,155,60,.35);
     transition:.4s ease;
 }
 
@@ -1237,13 +1243,12 @@ blockquote{
     font-size:16px;
 }
 .quote i{
-    color:#c89b3c;
+    color:#fff;
     font-size:24px;
-    transition:.4s ease;
 }
 .testimonial-card:hover .quote{
     background:#c89b3c;
-    transform:rotate(-10deg) scale(1.08);
+     transform:rotate(-10deg) scale(1.08);
 }
 
 .testimonial-card:hover .quote i{
