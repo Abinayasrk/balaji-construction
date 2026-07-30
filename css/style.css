@@ -109,7 +109,7 @@ nav ul li a:hover{
     content:"";
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,0.45);
+  /*  background:rgba(0,0,0,0.45);*/
 }
 /*
 .hero{
@@ -1039,7 +1039,7 @@ blockquote{
     right:0;
     bottom:0;
     padding:25px;
-    background:linear-gradient(transparent,rgba(0,0,0,.9));
+   /* background:linear-gradient(transparent,rgba(0,0,0,.9));*/
     color:#fff;
 }
 
