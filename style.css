@@ -1665,38 +1665,3 @@ justify-content:center;
 }
 
 }
-/* ===== CONTACT PAGE FINAL MOBILE FIX ===== */
-
-@media (max-width:768px){
-
-.contact{
-    margin-top:90px;
-}
-
-.contact-info h3{
-    font-size:18px;
-}
-
-.contact-info p,
-.contact-info a{
-    color:#222;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
-}
-.contact-info a:hover{
-    color:#D4AF37;
-}
-.contact-form input,
-.contact-form textarea{
-    font-size:15px;
-}
-
-.contact-form button,
-.whatsapp-btn{
-    padding:15px;
-    font-size:16px;
-    border-radius:8px;
-}
-
-}
