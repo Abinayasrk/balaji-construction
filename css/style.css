@@ -9,13 +9,7 @@
     box-sizing:border-box;
     scroll-behavior:smooth;
 }
-.menu-btn {
-    display:none;
-    background:none;
-    border:none;
-    font-size:28px;
-    cursor:pointer;
-}
+
 body{
     font-family:'Poppins',sans-serif;
     background:#ffffff;
@@ -1496,10 +1490,16 @@ justify-content:center;
         flex-direction:column;
     }
 }
-//mobilenav end
-/* header responsive */
+/* mobilenav end
+ header responsive */
 
-
+.menu-btn {
+    display:none;
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+}
 
 @media (max-width:768px){
 
