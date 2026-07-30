@@ -4,11 +4,11 @@
         <img src="images/bclogo.jpeg" alt="Balaji Construction">
     </div>
 
-   <!-- <button class="hamburger" onclick="toggleMenu()">
-    ☰
-</button>-->
-    <nav class="nav-links" id="nav-links">
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
 
+    <nav class="nav-links" id="nav-links">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -16,18 +16,16 @@
             <li><a href="project.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-
     </nav>
 
     <a href="contact.html" class="quote-btn">
         Get Quote
     </a>
-    
 
 </header>
+
 <script>
-    function toggleMenu(){
-        alert();
+function toggleMenu(){
     document.getElementById("nav-links").classList.toggle("active");
 }
 </script>
