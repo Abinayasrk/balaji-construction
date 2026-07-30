@@ -1202,10 +1202,10 @@ blockquote{
 }
 
 .client img{
-    /*width:60px;
+    width:60px;
     height:60px;
     border-radius:50%;
-    object-fit:cover;*/
+    object-fit:cover;
 	transition:.4s ease;
 }
 .testimonial-card:hover .client img{
