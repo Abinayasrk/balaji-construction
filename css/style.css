@@ -1493,13 +1493,13 @@ justify-content:center;
 //mobilenav end
 /* header responsive */
 
-.menu-btn{
+/*.menu-btn{
     display:none;
     background:none;
     border:none;
     font-size:28px;
     cursor:pointer;
-}
+}*/
 
 @media (max-width:768px){
 
@@ -1513,7 +1513,7 @@ justify-content:center;
 }
 
 .menu-btn{
-    display:block;
+    display:block !important;
 }
 
 .quote-btn{
