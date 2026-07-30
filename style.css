@@ -1594,22 +1594,22 @@ justify-content:center;
 
 @media (max-width:768px){
 
-.footer{
+/*.footer{
     padding:50px 20px 20px;
-}
+*/
 
 .footer-container{
     display:grid;
     grid-template-columns:1fr;
     gap:35px;
-    margin:0;
+    /*margin:0;*/
     text-align:center;
 }
 
 .footer-logo{
     width:220px;
-    margin:0 auto 20px;
-    display:block;
+    /*margin:0 auto 20px;
+    display:block;*/
 }
 
 .footer-box h3{
