@@ -1622,13 +1622,15 @@ justify-content:center;
     grid-template-columns:1fr;
     gap:35px;
     /*margin:0;*/
-    text-align:center;
+    text-align:justify;
 }
 
 .footer-logo{
-    width:220px;
+    width:300px;
     /*margin:0 auto 20px;
     display:block;*/
+	height:81px;
+	margin-bottom:20px;
 }
 
 .footer-box h3{
