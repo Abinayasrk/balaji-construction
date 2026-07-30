@@ -2009,3 +2009,77 @@ transform:translateY(0);
 }
 
 }
+/* services page */
+/* ===== Mobile Responsive ===== */
+
+@media (max-width:768px){
+
+    .service-banner{
+        height:250px;
+    }
+
+    .overlay h1{
+        font-size:32px;
+        text-align:center;
+    }
+
+    .overlay p{
+        font-size:15px;
+        text-align:center;
+        padding:0 15px;
+    }
+
+    .service-section,
+    .service-section.reverse{
+        flex-direction:column;
+        gap:30px;
+        width:90%;
+        margin:60px auto;
+    }
+
+    .service-image,
+    .service-content{
+        width:100%;
+    }
+
+    .service-image img{
+        width:100%;
+        border-radius:15px;
+    }
+
+    .service-content{
+        text-align:center;
+    }
+
+    .service-content span{
+        font-size:42px;
+    }
+
+    .service-content h2{
+        font-size:28px;
+    }
+
+    .service-content p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .service-content ul{
+        text-align:left;
+        display:inline-block;
+        margin:20px auto;
+    }
+
+    .service-content li{
+        font-size:15px;
+        margin:10px 0;
+    }
+
+    .btn{
+        display:block;
+        width:200px;
+        margin:20px auto 0;
+        text-align:center;
+    }
+
+}
