@@ -801,7 +801,8 @@ blockquote{
     padding:35px 25px;
     text-align:center;
     border-radius:15px;
-    transition:.4s;
+    transition:0.4s ease;
+    cursor:pointer;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
 
 }
@@ -812,6 +813,7 @@ blockquote{
     font-size:45px;
     color:#d89b22;
     margin-bottom:20px;
+	transition:0.4s;
 
 }
 
@@ -841,17 +843,24 @@ blockquote{
     color:#d89b22;
     text-decoration:none;
     font-weight:600;
-
+  transition:0.3s;
 }
 
-
+.service-card:hover a{
+    letter-spacing:1px;
+    color:#c89b3c;
+}
 
 .service-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
 
 }
-
+.service-card:hover i{
+    transform:scale(1.2) rotate(8deg);
+    color:#c89b3c;
+}
 
 
 /* Mobile */
@@ -884,9 +893,22 @@ blockquote{
 
 
 }
+/* service mobile responsive */
+@media (max-width:768px){
 
+.service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
 
-// why choose
+.service-card:hover img,
+.service-card:hover i{
+    transform:scale(1.08);
+}
+
+}
+
+/* why choose */
 .why-choose{
     padding:100px 8%;
     background:#fff;
