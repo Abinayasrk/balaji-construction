@@ -1152,8 +1152,8 @@ blockquote{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin-left: -15px;
+	margin-right: -15px;
 }
 .info-box{
     display:flex;
@@ -1400,7 +1400,8 @@ justify-content:center;
 
 @media(max-width:768px){
     .map-section{
-        padding:70px 20px;
+        /*padding:70px 20px;*/
+		margin-top:-80px;
     }
 
     .map-container iframe{
