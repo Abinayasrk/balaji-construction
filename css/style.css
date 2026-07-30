@@ -1606,7 +1606,15 @@ justify-content:center;
 .whatsapp-btn{
     width:100%;
 }
-
+.section-title span {
+	color: #D4AF37;
+	font-size: 38px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+.cdiv{
+	height: 50px;
+}
 }
 
 /* ===== FOOTER MOBILE FIX ===== */
