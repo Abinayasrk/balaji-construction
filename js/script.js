@@ -31,5 +31,32 @@ reveals.forEach((el)=>{
     observer.observe(el);
 });
 
-//navbar mobile script
+const counters = document.querySelectorAll(".counter");
 
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            const counter = entry.target;
+            const target = +counter.dataset.target;
+
+            let count = 0;
+
+            const update = () => {
+                const increment = Math.ceil(target / 100);
+
+                if(count < target){
+                    count += increment;
+                    counter.innerText = count;
+                    setTimeout(update,20);
+                }else{
+                    counter.innerText = target + "+";
+                }
+            };
+
+            update();
+            observer.unobserve(counter);
+        }
+    });
+},{threshold:0.5});
+
+counters.forEach(counter => observer.observe(counter));
