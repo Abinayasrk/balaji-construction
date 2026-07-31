@@ -33,9 +33,9 @@ reveals.forEach((el)=>{
 
 const counters = document.querySelectorAll(".counter");
 
-const observer = new IntersectionObserver(entries => {
+const statsObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
             const counter = entry.target;
             const target = +counter.dataset.target;
 
@@ -44,19 +44,19 @@ const observer = new IntersectionObserver(entries => {
             const update = () => {
                 const increment = Math.ceil(target / 100);
 
-                if(count < target){
+                if (count < target) {
                     count += increment;
                     counter.innerText = count;
-                    setTimeout(update,20);
-                }else{
+                    setTimeout(update, 20);
+                } else {
                     counter.innerText = target + "+";
                 }
             };
 
             update();
-            observer.unobserve(counter);
+            statsObserver.unobserve(counter);
         }
     });
-},{threshold:0.5});
+}, { threshold: 0.5 });
 
-counters.forEach(counter => observer.observe(counter));
+counters.forEach(counter => statsObserver.observe(counter));
