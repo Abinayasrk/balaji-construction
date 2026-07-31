@@ -13,6 +13,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -178,90 +179,93 @@
 <!-- Service end -->
 
     <!-- project gallery -->
-<section class="projects" id="projects">
-
+	<section class="projects-section">
     <div class="container">
-
         <div class="section-title">
-            <!--
-              <span>OUR PROJECTS</span>
-            <h2>Featured Construction Projects</h2>
-            -->
-        </br></br>
-            <h2 style="color:#c89b3c;">OUR PROJECTS</h2>
-             <p>
-                Explore some of our completed residential, commercial and renovation projects.
-            </p>
+            <h2>Our Projects</h2>
+            <p>Explore some of our completed residential, commercial and renovation projects.</p>
         </div>
 
-        <div class="project-grid">
+        <div class="swiper projectSwiper">
+            <div class="swiper-wrapper">
 
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="100">
-                <img src="images/project1.jpeg" alt="Luxury Villa">
-                <div class="overlay">
-                    <h3>Luxury Villa</h3>
-                    <p>Residential Construction</p>
-					<a href="project.html">View Project →</a>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project1.jpg" alt="Luxury Villa">
+                        <div class="project-content">
+                            <h3>Luxury Villa</h3>
+                            <p>Residential Construction</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project2.jpeg" alt="Commercial Complex">
+                        <div class="project-content">
+                            <h3>Commercial Complex</h3>
+                            <p>Office & Business Space</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project3.jpeg" alt="Modern Interior">
+                        <div class="project-content">
+                            <h3>Modern Interior</h3>
+                            <p>Premium Interior Design</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project4.jpeg" alt="Apartment">
+                        <div class="project-content">
+                            <h3>Apartment Project</h3>
+                            <p>Modern Living Spaces</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project5.jpeg" alt="Renovation">
+                        <div class="project-content">
+                            <h3>Home Renovation</h3>
+                            <p>Complete Home Makeover</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="images/project6.jpeg" alt="Industrial">
+                        <div class="project-content">
+                            <h3>Industrial Building</h3>
+                            <p>Industrial Construction</p>
+                            <a href="projects.html">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="200">
-                <img src="images/project2.jpeg" alt="Commercial Building">
-                <div class="overlay">
-                    <h3>Commercial Complex</h3>
-                    <p>Office & Business Space</p>
-					<a href="project.html">View Project →</a>
-                </div>
-            </div>
+            <div class="swiper-pagination"></div>
 
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="300">
-                <img src="images/project3.jpeg" alt="Interior Design">
-                <div class="overlay">
-                    <h3>Modern Interior</h3>
-                    <p>Interior Fit-Out</p>
-					<a href="project.html">View Project →</a>
-                </div>
-            </div>
-
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="400">
-                <img src="images/project4.jpeg" alt="Renovation">
-                <div class="overlay">
-                    <h3>Home Renovation</h3>
-                    <p>Complete Remodeling</p>
-					<a href="project.html">View Project →</a>
-                </div>
-            </div>
-
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="500">
-                <img src="images/project5.jpeg" alt="Apartment">
-                <div class="overlay">
-                    <h3>Apartment Project</h3>
-                    <p>Residential Development</p>
-					<a href="project.html">View Project →</a>
-                </div>
-            </div>
-
-            <div class="project-card" data-aos="zoom-in"
-     data-aos-delay="600">
-                <img src="images/project6.jpeg" alt="Industrial Building">
-                <div class="overlay">
-                    <h3>Industrial Building</h3>
-                    <p>Factory Construction</p>
-					<a href="project.html">View Project →</a>
-                </div>
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
 
         </div>
-
     </div>
-
 </section>
-    <!-- end -->
+   <!-- end -->
 	<!-- Project Statistics -->
 <section class="stats-section">
     <div class="container">
@@ -399,7 +403,7 @@
 	<div id="footer"></div>
 	<!-- footer end -->
 
-	
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="js/script.js"></script>
 <script>
