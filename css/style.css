@@ -3038,7 +3038,7 @@ TRUSTED BRANDS
     width:170px;
     max-width:80%;
     object-fit:contain;
-    filter:grayscale(100%);
+    /*filter:grayscale(100%);*/
     transition:.35s;
 }
 
