@@ -62,40 +62,43 @@ const statsObserver = new IntersectionObserver(entries => {
 counters.forEach(counter => statsObserver.observe(counter));
 
 // project carosal
+// Project Carousel
+if (document.querySelector(".projectSwiper") && typeof Swiper !== "undefined") {
 
-const swiper = new Swiper(".projectSwiper", {
-    loop: true,
+    const swiper = new Swiper(".projectSwiper", {
+        loop: true,
 
-    spaceBetween: 25,
+        spaceBetween: 25,
 
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints: {
-        0: {
-            slidesPerView: 1,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
         },
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    },
-});
 
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+}
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 
