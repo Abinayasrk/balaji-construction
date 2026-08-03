@@ -118,3 +118,34 @@ document
 });
 
 });
+// FAQ Accordion
+
+const faqs = document.querySelectorAll(".faq-item");
+
+faqs.forEach(faq => {
+
+    faq.querySelector(".faq-question").addEventListener("click", () => {
+
+        const isActive = faq.classList.contains("active");
+
+        faqs.forEach(item => {
+
+            item.classList.remove("active");
+
+            item.querySelector(".faq-icon")
+                .classList.replace("fa-minus","fa-plus");
+
+        });
+
+        if(!isActive){
+
+            faq.classList.add("active");
+
+            faq.querySelector(".faq-icon")
+                .classList.replace("fa-plus","fa-minus");
+
+        }
+
+    });
+
+});
