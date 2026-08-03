@@ -2472,7 +2472,7 @@ transform:translateY(0);
     position: relative;
     height: 70vh;
     min-height: 500px;
-    background: url("./images/service-banner.jpeg") center center/cover no-repeat;
+    background: url("../images/service-banner.jpeg") center center/cover no-repeat;
     display: flex;
     align-items: center;
 }
@@ -2637,7 +2637,7 @@ transform:translateY(0);
 .section-tag{
     display:inline-block;
     color:#d4af37;
-    font-size:14px;
+    font-size:42px;
     font-weight:600;
     letter-spacing:3px;
     text-transform:uppercase;
@@ -2690,6 +2690,95 @@ font-size:28px;
 .service-intro p{
 font-size:15px;
 line-height:1.8;
+}
+
+}
+
+/*==========================
+OUR SERVICES
+===========================*/
+
+.services-grid{
+    padding:100px 20px;
+    background:#f8f8f8;
+}
+
+.section-title{
+    text-align:center;
+    max-width:750px;
+    margin:auto;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#d4af37;
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin:15px 0;
+    color:#222;
+}
+
+.section-title p{
+    color:#666;
+    line-height:1.8;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.service-box{
+    background:#fff;
+    padding:40px;
+    border-radius:18px;
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.service-box i{
+    font-size:45px;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.service-box h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.service-box p{
+    color:#666;
+    line-height:1.8;
+}
+
+@media(max-width:768px){
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
+.service-box{
+padding:30px;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+.service-box h3{
+font-size:24px;
 }
 
 }
