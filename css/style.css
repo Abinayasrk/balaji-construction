@@ -2472,7 +2472,7 @@ transform:translateY(0);
     position: relative;
     height: 70vh;
     min-height: 500px;
-    background: url("images/service-banner.jpg") center center/cover no-repeat;
+    background: url("images/service-banner.jpeg") center center/cover no-repeat;
     display: flex;
     align-items: center;
 }
