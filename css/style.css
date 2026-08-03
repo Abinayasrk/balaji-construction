@@ -3001,3 +3001,60 @@ QUALITY STANDARDS
         grid-template-columns:1fr;
     }
 }
+/*==========================
+MATERIALS
+==========================*/
+
+.materials{
+    padding:100px 20px;
+    background:#fff;
+}
+
+.materials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:60px;
+}
+
+.material-card{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    transition:.3s;
+}
+
+.material-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.material-card img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:20px;
+}
+
+.material-card h4{
+    color:#222;
+    font-size:20px;
+}
+
+@media(max-width:768px){
+
+.materials-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:480px){
+
+.materials-grid{
+grid-template-columns:1fr;
+}
+
+}
