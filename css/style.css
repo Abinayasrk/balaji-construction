@@ -2472,7 +2472,7 @@ transform:translateY(0);
     position: relative;
     height: 70vh;
     min-height: 500px;
-    background: url("images/service-banner.jpeg") center center/cover no-repeat;
+    background: url("./images/service-banner.jpeg") center center/cover no-repeat;
     display: flex;
     align-items: center;
 }
@@ -2617,5 +2617,79 @@ transform:translateY(0);
     .breadcrumb{
         font-size: 14px;
     }
+
+}
+/* ===========================
+   Service Introduction
+=========================== */
+
+.service-intro{
+    padding:90px 20px;
+    background:#fff;
+    text-align:center;
+}
+
+.service-intro .container{
+    max-width:900px;
+    margin:auto;
+}
+
+.section-tag{
+    display:inline-block;
+    color:#d4af37;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.service-intro h2{
+    font-size:42px;
+    color:#1b1b1b;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.service-intro p{
+    font-size:18px;
+    color:#666;
+    line-height:1.9;
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+.service-intro{
+padding:70px 20px;
+}
+
+.service-intro h2{
+font-size:34px;
+}
+
+.service-intro p{
+font-size:16px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:480px){
+
+.service-intro{
+padding:60px 20px;
+}
+
+.service-intro h2{
+font-size:28px;
+}
+
+.service-intro p{
+font-size:15px;
+line-height:1.8;
+}
 
 }
