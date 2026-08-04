@@ -70,26 +70,37 @@
 
 </section>
 <!-- ===========================
-     PROJECT FILTER
+     PROJECT FILTER SECTION
 =========================== -->
 
 <section class="projects-filter-section">
 
     <div class="projects-filter-container">
 
-        <button class="projects-filter-btn active">All</button>
+        <button class="projects-filter-btn active" data-filter="*">
+            All
+        </button>
 
-        <button class="projects-filter-btn">Residential</button>
+        <button class="projects-filter-btn" data-filter=".residential">
+            Residential
+        </button>
 
-        <button class="projects-filter-btn">Commercial</button>
+        <button class="projects-filter-btn" data-filter=".commercial">
+            Commercial
+        </button>
 
-        <button class="projects-filter-btn">Interior</button>
+        <button class="projects-filter-btn" data-filter=".interior">
+            Interior
+        </button>
 
-        <button class="projects-filter-btn">Renovation</button>
+        <button class="projects-filter-btn" data-filter=".renovation">
+            Renovation
+        </button>
 
     </div>
 
 </section>
+
 <!-- ===========================
      FEATURED PROJECTS
 =========================== -->
@@ -98,32 +109,18 @@
 
     <div class="featured-projects-container">
 
-        <div class="featured-projects-heading">
-
-            <span>FEATURED PROJECTS</span>
-
-            <h2>Our Signature Works</h2>
-
-            <p>
-                Discover some of our finest residential and commercial construction projects.
-            </p>
-
-        </div>
-
         <div class="featured-projects-grid">
 
-            <!-- Card 1 -->
-            <div class="featured-project-card">
+            <!-- Project 1 -->
+            <div class="featured-project-card residential">
 
                 <div class="featured-project-image">
-                    <img src="images/project1.jpeg" alt="">
-                    <span class="project-status completed">Completed</span>
+                    <img src="images/project1.jpeg" alt="Luxury Villa">
+                    <span class="project-status">Completed</span>
                 </div>
 
                 <div class="featured-project-content">
-
                     <h3>Luxury Villa</h3>
-
                     <p>Premium Residential Construction</p>
 
                     <div class="project-info">
@@ -131,64 +128,76 @@
                         <span>📐 3500 Sq.ft</span>
                     </div>
 
-                    <a href="#" class="project-btn">
-                        View Details
-                    </a>
-
+                    <a href="#" class="project-btn">View Details</a>
                 </div>
 
             </div>
-  <div class="featured-project-card">
+
+            <!-- Project 2 -->
+            <div class="featured-project-card commercial">
 
                 <div class="featured-project-image">
-                    <img src="images/project2.jpeg" alt="">
-                    <span class="project-status completed">Completed</span>
+                    <img src="images/project2.jpeg" alt="Commercial Building">
+                    <span class="project-status">Completed</span>
                 </div>
 
                 <div class="featured-project-content">
-
-                    <h3>Luxury Villa</h3>
-
-                    <p>Premium Residential Construction</p>
+                    <h3>Commercial Building</h3>
+                    <p>Office Construction</p>
 
                     <div class="project-info">
-                        <span>📍 Chennai</span>
-                        <span>📐 3500 Sq.ft</span>
+                        <span>📍 Coimbatore</span>
+                        <span>📐 5000 Sq.ft</span>
                     </div>
 
-                    <a href="#" class="project-btn">
-                        View Details
-                    </a>
-
+                    <a href="#" class="project-btn">View Details</a>
                 </div>
 
             </div>
-			  <div class="featured-project-card">
+
+            <!-- Project 3 -->
+            <div class="featured-project-card interior">
 
                 <div class="featured-project-image">
-                    <img src="images/project4.jpeg" alt="">
-                    <span class="project-status completed">Completed</span>
+                    <img src="images/project3.jpeg" alt="Interior">
+                    <span class="project-status">Completed</span>
                 </div>
 
                 <div class="featured-project-content">
-
-                    <h3>Luxury Villa</h3>
-
-                    <p>Premium Residential Construction</p>
+                    <h3>Luxury Interior</h3>
+                    <p>Modern Interior Design</p>
 
                     <div class="project-info">
-                        <span>📍 Chennai</span>
-                        <span>📐 3500 Sq.ft</span>
+                        <span>📍 Salem</span>
+                        <span>📐 2200 Sq.ft</span>
                     </div>
 
-                    <a href="#" class="project-btn">
-                        View Details
-                    </a>
-
+                    <a href="#" class="project-btn">View Details</a>
                 </div>
 
             </div>
-            <!-- Copy this card for remaining projects -->
+
+            <!-- Project 4 -->
+            <div class="featured-project-card renovation">
+
+                <div class="featured-project-image">
+                    <img src="images/project4.jpeg" alt="Renovation">
+                    <span class="project-status">Completed</span>
+                </div>
+
+                <div class="featured-project-content">
+                    <h3>Home Renovation</h3>
+                    <p>Complete Home Makeover</p>
+
+                    <div class="project-info">
+                        <span>📍 Erode</span>
+                        <span>📐 1800 Sq.ft</span>
+                    </div>
+
+                    <a href="#" class="project-btn">View Details</a>
+                </div>
+
+            </div>
 
         </div>
 
@@ -245,71 +254,10 @@
 
 </section>
 
-<!-- ================= Gallery ================= -->
-
-<section class="project-gallery">
-
-    <div class="section-title">
-        <h2>Our Projects</h2>
-        <p>Explore some of our completed construction works.</p>
-    </div>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-card">
-            <img src="images/project1.jpeg">
-            <div class="overlay">
-                <h3>Luxury Villa</h3>
-                <p>Residential Project</p>
-            </div>
-        </div>
-
-        <div class="gallery-card">
-            <img src="images/project2.jpeg">
-            <div class="overlay">
-                <h3>Commercial Building</h3>
-                <p>Commercial Project</p>
-            </div>
-        </div>
-
-        <div class="gallery-card">
-            <img src="images/project3.jpeg">
-            <div class="overlay">
-                <h3>Independent House</h3>
-                <p>Residential</p>
-            </div>
-        </div>
-
-        <div class="gallery-card">
-            <img src="images/project4.jpeg">
-            <div class="overlay">
-                <h3>Office Building</h3>
-                <p>Commercial</p>
-            </div>
-        </div>
-
-        <div class="gallery-card">
-            <img src="images/project5.jpeg">
-            <div class="overlay">
-                <h3>Apartment</h3>
-                <p>Residential</p>
-            </div>
-        </div>
-
-        <div class="gallery-card">
-            <img src="images/project6.jpeg">
-            <div class="overlay">
-                <h3>Structural Work</h3>
-                <p>Engineering</p>
-            </div>
-        </div>
-
-    </div>
-
-</section>
 </br></br></br><div id="footer"></div>
     
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script src="js/script.js"></script>
 <script>
 AOS.init({
