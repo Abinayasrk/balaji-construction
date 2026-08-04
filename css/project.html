@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balaji Construction | We Build Your Dreams</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<div id="header"></div>
+</br></br></br></br></br></br>
+<section class="projects-hero-section">
+
+    <div class="projects-hero-overlay">
+
+        <div class="projects-hero-container">
+
+            <h1 class="projects-hero-title">Our Projects</h1>
+
+            <p class="projects-hero-text">
+                Explore our portfolio of residential, commercial and renovation projects built with quality, innovation and trust.
+            </p>
+
+            <div class="projects-hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Projects</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ===========================
+     PROJECTS INTRO
+=========================== -->
+
+<section class="projects-intro-section">
+
+    <div class="projects-intro-container">
+
+        <span class="projects-intro-subtitle">
+            OUR PORTFOLIO
+        </span>
+
+        <h2 class="projects-intro-title">
+            Crafted with Excellence,<br>
+            Built to Inspire
+        </h2>
+
+        <p class="projects-intro-description">
+            Every project reflects our commitment to quality, innovation, and customer satisfaction.
+            From luxurious homes to commercial spaces, we deliver structures that stand the test of time.
+        </p>
+
+    </div>
+
+</section>
+<!-- ===========================
+     PROJECT FILTER
+=========================== -->
+
+<section class="projects-filter-section">
+
+    <div class="projects-filter-container">
+
+        <button class="projects-filter-btn active">All</button>
+
+        <button class="projects-filter-btn">Residential</button>
+
+        <button class="projects-filter-btn">Commercial</button>
+
+        <button class="projects-filter-btn">Interior</button>
+
+        <button class="projects-filter-btn">Renovation</button>
+
+    </div>
+
+</section>
+ <!-- ================= Featured Project ================= -->
+
+<section class="featured-project">
+
+    <div class="project-video">
+        <video autoplay muted loop controls playsinline>
+            <source src="images/project.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="project-details">
+
+        <span class="tag">Featured Project</span>
+
+        <h2>Luxury Residential Villa</h2>
+
+        <p>
+            This premium residential project was completed with modern
+            architecture, superior quality materials and expert engineering.
+            Every detail was carefully planned to ensure durability,
+            elegance and customer satisfaction.
+        </p>
+
+        <div class="project-info">
+
+            <div>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Coimbatore</span>
+            </div>
+
+            <div>
+                <i class="fas fa-building"></i>
+                <span>Residential</span>
+            </div>
+
+            <div>
+                <i class="fas fa-calendar"></i>
+                <span>Completed 2025</span>
+            </div>
+
+        </div>
+
+        <a href="contact.html" class="project-btn">
+            Get Similar Project
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= Gallery ================= -->
+
+<section class="project-gallery">
+
+    <div class="section-title">
+        <h2>Our Projects</h2>
+        <p>Explore some of our completed construction works.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card">
+            <img src="images/project1.jpeg">
+            <div class="overlay">
+                <h3>Luxury Villa</h3>
+                <p>Residential Project</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="images/project2.jpeg">
+            <div class="overlay">
+                <h3>Commercial Building</h3>
+                <p>Commercial Project</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="images/project3.jpeg">
+            <div class="overlay">
+                <h3>Independent House</h3>
+                <p>Residential</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="images/project4.jpeg">
+            <div class="overlay">
+                <h3>Office Building</h3>
+                <p>Commercial</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="images/project5.jpeg">
+            <div class="overlay">
+                <h3>Apartment</h3>
+                <p>Residential</p>
+            </div>
+        </div>
+
+        <div class="gallery-card">
+            <img src="images/project6.jpeg">
+            <div class="overlay">
+                <h3>Structural Work</h3>
+                <p>Engineering</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+</br></br></br><div id="footer"></div>
+    
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="js/script.js"></script>
+<script>
+AOS.init({
+    duration: 1000,
+    offset:120,
+    once: true,
+    mirror:false
+});
+</script>
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+</script>
+</body>
+</html>
