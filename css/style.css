@@ -3577,6 +3577,18 @@ letter-spacing:2px;
     display:block;
     transition:.5s;
 }
+.featured-project-content{
+    padding:25px;
+}
+
+.featured-project-content h3{
+    margin-bottom:10px;
+}
+
+.featured-project-content p{
+    color:#666;
+    margin-bottom:18px;
+}
 
 .featured-project-card:hover img{
     transform:scale(1.08);
