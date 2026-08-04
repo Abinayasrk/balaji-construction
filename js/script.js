@@ -148,4 +148,16 @@ faqs.forEach(faq => {
 
     });
 
+});const filterButtons = document.querySelectorAll(".projects-filter-btn");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+    });
+
 });
