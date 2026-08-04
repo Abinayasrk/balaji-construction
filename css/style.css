@@ -3551,7 +3551,25 @@ letter-spacing:2px;
     transform:translateY(-10px);
     box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
+.featured-project-image{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px 18px 0 0;
+}
 
+.project-status{
+    position:absolute;
+    top:15px;
+    right:15px;
+    z-index:100;
+    background:#d4af37;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    line-height:1;
+}
 .featured-project-image img{
     width:100%;
     height:280px;
