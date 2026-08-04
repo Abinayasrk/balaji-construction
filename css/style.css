@@ -3324,7 +3324,7 @@ padding:0 18px 18px;
 .projects-hero-section{
     height:70vh;
     min-height:500px;
-    background:url("images/project-banner.jpg") center/cover no-repeat;
+    background:url("images/project-banner.jpeg") center/cover no-repeat;
     display:flex;
     align-items:center;
 }
