@@ -148,15 +148,38 @@ faqs.forEach(faq => {
 
     });
 
-});const filterButtons = document.querySelectorAll(".projects-filter-btn");
+});
+// ===========================
+// PROJECT FILTER (Isotope)
+// ===========================
 
-filterButtons.forEach(button => {
+window.addEventListener("load", () => {
 
-    button.addEventListener("click", () => {
+    const grid = document.querySelector(".featured-projects-grid");
 
-        filterButtons.forEach(btn => btn.classList.remove("active"));
+    const iso = new Isotope(grid,{
+        itemSelector:".featured-project-card",
+        layoutMode:"fitRows",
+        transitionDuration:"0.5s"
+    });
 
-        button.classList.add("active");
+    const buttons = document.querySelectorAll(".projects-filter-btn");
+
+    buttons.forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            buttons.forEach(btn=>btn.classList.remove("active"));
+
+            button.classList.add("active");
+
+            const filterValue = button.getAttribute("data-filter");
+
+            iso.arrange({
+                filter:filterValue
+            });
+
+        });
 
     });
 
