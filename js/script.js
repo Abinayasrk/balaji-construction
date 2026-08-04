@@ -185,7 +185,7 @@ window.addEventListener("load", () => {
 
 });*/
 const filterButtons = document.querySelectorAll(".projects-filter-btn");
-const cards = document.querySelectorAll(".featured-project-card");
+const projectCards = document.querySelectorAll(".featured-project-card");
 
 filterButtons.forEach(button => {
 
@@ -196,11 +196,11 @@ filterButtons.forEach(button => {
 
         const filter = button.getAttribute("data-filter");
 
-        cards.forEach(card => {
+        projectCards.forEach(card => {
 
-            if(filter === "*" || card.classList.contains(filter.replace(".", ""))){
+            if (filter === "*" || card.classList.contains(filter.replace(".", ""))) {
                 card.style.display = "block";
-            }else{
+            } else {
                 card.style.display = "none";
             }
 
@@ -256,75 +256,23 @@ const gallerySwiper = new Swiper(".gallerySwiper", {
 /* ===========================
    PROJECT POPUP
 =========================== */
+const galleryCards = document.querySelectorAll(".gallery-card");
 
-const modal = document.querySelector(".gallery-modal");
+galleryCards.forEach(card => {
 
-const modalImg = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalLocation = document.getElementById("modalLocation");
-const modalArea = document.getElementById("modalArea");
-const modalStatus = document.getElementById("modalStatus");
-const modalCategory = document.getElementById("modalCategory");
-const modalDescription = document.getElementById("modalDescription");
-const modalMaterials = document.getElementById("modalMaterials");
-
-const projectcards = document.querySelectorAll(".gallery-card");
-
-projectcards.forEach(card=>{
-
-    card.addEventListener("click",()=>{
+    card.addEventListener("click", () => {
 
         modal.classList.add("active");
 
         modalImg.src = card.querySelector("img").src;
-
         modalTitle.innerText = card.dataset.title;
-
         modalLocation.innerText = card.dataset.location;
-
         modalArea.innerText = card.dataset.area;
-
         modalStatus.innerText = card.dataset.status;
-
         modalCategory.innerText = card.dataset.category;
-
         modalDescription.innerText = card.dataset.description;
-
         modalMaterials.innerText = card.dataset.materials;
 
     });
-
-});
-
-
-/* ===========================
-   CLOSE POPUP
-=========================== */
-
-document.querySelector(".gallery-close").onclick = ()=>{
-
-    modal.classList.remove("active");
-
-};
-
-
-window.onclick = function(e){
-
-    if(e.target == modal){
-
-        modal.classList.remove("active");
-
-    }
-
-};
-
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key==="Escape"){
-
-        modal.classList.remove("active");
-
-    }
 
 });
