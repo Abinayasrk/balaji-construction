@@ -268,9 +268,9 @@ const modalCategory = document.getElementById("modalCategory");
 const modalDescription = document.getElementById("modalDescription");
 const modalMaterials = document.getElementById("modalMaterials");
 
-const cards = document.querySelectorAll(".gallery-card");
+const projectcards = document.querySelectorAll(".gallery-card");
 
-cards.forEach(card=>{
+projectcards.forEach(card=>{
 
     card.addEventListener("click",()=>{
 
