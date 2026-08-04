@@ -215,7 +215,7 @@ filterButtons.forEach(button => {
 
 const gallerySwiper = new Swiper(".gallerySwiper", {
 
-    loop:true,
+    loop:false,
 
     spaceBetween:30,
 
@@ -258,7 +258,7 @@ const gallerySwiper = new Swiper(".gallerySwiper", {
 =========================== */
 
 const modal = document.querySelector(".gallery-modal");
-
+console.log(modal);
 const modalImg = document.getElementById("modalImage");
 const modalTitle = document.getElementById("modalTitle");
 const modalLocation = document.getElementById("modalLocation");
