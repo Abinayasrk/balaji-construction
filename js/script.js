@@ -152,7 +152,7 @@ faqs.forEach(faq => {
 // ===========================
 // PROJECT FILTER (Isotope)
 // ===========================
-
+/*
 window.addEventListener("load", () => {
 
     const grid = document.querySelector(".featured-projects-grid");
@@ -178,6 +178,31 @@ window.addEventListener("load", () => {
             iso.arrange({
                 filter:filterValue
             });
+
+        });
+
+    });
+
+});*/
+const filterButtons = document.querySelectorAll(".projects-filter-btn");
+const cards = document.querySelectorAll(".featured-project-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        cards.forEach(card => {
+
+            if(filter === "*" || card.classList.contains(filter.replace(".", ""))){
+                card.style.display = "block";
+            }else{
+                card.style.display = "none";
+            }
 
         });
 
