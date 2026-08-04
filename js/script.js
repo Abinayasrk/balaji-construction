@@ -257,7 +257,7 @@ const gallerySwiper = new Swiper(".gallerySwiper", {
    PROJECT POPUP
 =========================== */
 const galleryCards = document.querySelectorAll(".gallery-card");
-
+const modal=document.querySelectorAll(".gallery-modal");
 galleryCards.forEach(card => {
 
     card.addEventListener("click", () => {
