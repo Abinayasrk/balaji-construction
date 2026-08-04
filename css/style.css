@@ -3982,21 +3982,30 @@ padding:20px;
 .gallery-modal-content {
     position: relative;
     background: #fff;
-    max-width: 900px;
     width: 90%;
-    border-radius: 12px;
-    overflow: hidden;
+    max-width: 1100px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 15px;
 }
 
 .gallery-close {
-    position: absolute;
+     position: absolute;
     top: 15px;
     right: 20px;
-    font-size: 36px;
-    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.7);
     color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 9999;
+    transition: .3s;
 }
 
 @keyframes popup{
