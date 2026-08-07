@@ -3,161 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Theme Demo</title>
+<title>Theme Demo</title>
 
-<style>
-  :root{
+<link rel="stylesheet" href="style.css">
 
-    --primary:#035AA6;
-    --secondary:#CCD1DA;
-    --background:#FFFFFF;
-    --card:#FFFFFF;
-    --text:#222222;
-    --heading:#111111;
-    --white:#FFFFFF;
-
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
-
-body{
-background:var(--background);
-color:var(--text);
-}
-
-header{
-background:var(--secondary);
-padding:20px;
-color:var(--white);
-}
-
-.container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
-
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-}
-
-.hero{
-
-height:500px;
-
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-color:white;
-
-}
-
-.hero h2{
-
-font-size:55px;
-margin-bottom:20px;
-
-}
-
-.hero p{
-
-font-size:22px;
-margin-bottom:30px;
-
-}
-
-.btn{
-
-background:var(--primary);
-padding:14px 35px;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-weight:600;
-
-}
-
-.services{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-padding:80px;
-
-background:#f5f5f5;
-
-}
-
-.card{
-
-background:var(--card);
-
-padding:40px;
-
-border-radius:15px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-text-align:center;
-
-border-top:5px solid var(--primary);
-
-}
-
-.card h3{
-
-color:var(--heading);
-margin-bottom:15px;
-
-}
-
-.about{
-
-padding:80px;
-text-align:center;
-
-}
-
-.about h2{
-
-color:var(--primary);
-margin-bottom:20px;
-
-}
-
-footer{
-
-background:var(--secondary);
-
-color:white;
-
-text-align:center;
-
-padding:25px;
-
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -166,17 +16,19 @@ padding:25px;
 
 <div class="container">
 
-<h1>Balaji Construction</h1>
+<div class="logo">
+<h2>LOGO</h2>
+</div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Services</a>
-<a href="#">Projects</a>
-<a href="#">Contact</a>
+<a href="">Home</a>
+<a href="">About</a>
+<a href="">Services</a>
+<a href="">Projects</a>
+<a href="">Contact</a>
 </nav>
 
-<a class="btn">Get Quote</a>
+<a href="" class="btn">Get Quote</a>
 
 </div>
 
@@ -184,46 +36,81 @@ padding:25px;
 
 <section class="hero">
 
-<h2>Your Vision, Our Foundation</h2>
+<div class="overlay"></div>
 
-<p>20+ Years of Trust in Residential & Commercial Construction.</p>
+<div class="hero-content">
 
-<a class="btn">Explore Projects</a>
+<h1>Premium Website Demo</h1>
+
+<p>Luxury • Modern • Corporate • Responsive</p>
+
+<a href="" class="btn">View Projects</a>
+
+</div>
 
 </section>
 
 <section class="services">
 
+<h2>Our Services</h2>
+
+<div class="grid">
+
 <div class="card">
 <h3>Residential</h3>
-<p>Premium House Construction</p>
+<p>Premium villa & home construction.</p>
 </div>
 
 <div class="card">
 <h3>Commercial</h3>
-<p>Commercial Buildings</p>
+<p>Office & commercial buildings.</p>
 </div>
 
 <div class="card">
 <h3>Structural</h3>
-<p>Engineering Solutions</p>
+<p>Planning & Engineering.</p>
+</div>
+
 </div>
 
 </section>
 
 <section class="about">
 
-<h2>About Us</h2>
+<div class="left">
+
+<h2>About Company</h2>
 
 <p>
-Balaji Construction delivers quality construction with engineering excellence.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
 </p>
+
+<a href="" class="btn">Read More</a>
+
+</div>
+
+<div class="right">
+
+<div class="image"></div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>Let's Build Your Dream Project</h2>
+
+<a href="" class="btn">Contact Us</a>
 
 </section>
 
 <footer>
 
-© 2026 Balaji Construction
+<h3>COMPANY NAME</h3>
+
+<p>©2026 All Rights Reserved.</p>
 
 </footer>
 
