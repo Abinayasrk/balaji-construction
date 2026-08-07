@@ -6,13 +6,11 @@ font-family:Arial,sans-serif;
 }
 
 :root{
-
---primary:#035AA6;
+--primary:#021945;
 --secondary:#CCD1DA;
---bg:#F7FBFF;
+--background:#F7FBFF;
 --text:#1F2937;
---white:#fff;
-
+--white:#FFFFFF;
 }
 
 body{
