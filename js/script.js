@@ -301,12 +301,13 @@ gallerycards.forEach(card=>{
    CLOSE POPUP
 =========================== */
 
-document.querySelector(".gallery-close").onclick = ()=>{
+const galleryClose = document.querySelector(".gallery-close");
 
-    modal.classList.remove("active");
-
-};
-
+if (galleryClose && modal) {
+    galleryClose.onclick = () => {
+        modal.classList.remove("active");
+    };
+}
 
 window.onclick = function(e){
 
