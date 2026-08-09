@@ -1,0 +1,132 @@
+/* ===========================
+   BALAJI CONSTRUCTION
+   Premium Theme header
+=========================== */
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    /* padding:18px 8%; */
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    /*background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);*/
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.logo img{
+    height:100px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#222;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+.quote-btn{
+    background:#D5B368;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:40px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.quote-btn:hover{
+    background:#b9983d;
+}
+
+@media(max-width:768px){
+
+.header{
+  /*  flex-direction:column;*/
+    gap:15px;
+   /* padding:10px 0px; */
+    padding:12px 20px;
+}
+
+nav ul{
+    gap:15px;
+}
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.logo img{
+    height:70px;
+    width:auto;
+}
+
+.menu-btn{
+   /* display:block;*/
+	display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    color:#D4AF37;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+.menu-btn hover{
+	 background:#D4AF37;
+    color:#fff;
+    transform:scale(1.05);
+}
+.quote-btn{
+    display:none;
+}
+
+.nav-links{
+    position:absolute;
+    top:95px;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:none;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+.nav-links.active{
+    display:block;
+}
+
+.nav-links ul{
+    flex-direction:column;
+    padding:20px;
+    gap:20px;
+    text-align:center;
+}
+
+}
