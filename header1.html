@@ -1,0 +1,40 @@
+<style>
+.header-contact{display:flex;align-items:center;gap:18px;margin-left:auto;margin-right:20px}.header-contact a{color:inherit;text-decoration:none;font-size:14px;white-space:nowrap}.header-contact i{margin-right:6px}@media(max-width:900px){.header-contact{display:none}}
+</style>
+
+<header class="header">
+
+    <div class="logo">
+        <img src="images/bclogos.png" alt="Balaji Construction">
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="header-contact">
+        <a href="tel:+919843755955"><i class="fas fa-phone"></i> +91 98437 55955</a>
+        <a href="mailto:info@balajiconstructioncbe.com"><i class="fas fa-envelope"></i> info@balajiconstructioncbe.com</a>
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <a href="contact.html" class="quote-btn">
+        Get Quote
+    </a>
+
+</header>
+
+<script>
+function toggleMenu(){
+    document.getElementById("nav-links").classList.toggle("active");
+}
+</script>
