@@ -1545,10 +1545,10 @@ transparent
 }
 
 .footer-box i{
-
-    color:var(--primary);
- /*   margin-right:10px;*/
-
+    color:var(--secondary);
+    margin-right:10px;
+    width:18px;
+    text-align:center;
 }
 
 .social-links{
@@ -1608,7 +1608,7 @@ grid-template-columns:1fr 1fr;
 
 .footer-container{
     grid-template-columns:1fr;
-    gap:30px;
+    gap:28px;
     margin-left:20px;
     margin-right:20px;
     text-align:center;
@@ -4198,4 +4198,53 @@ padding:10px 18px;
 font-size:14px;
 }
 
+}
+/* Formal Working Hours */
+.working-hours{
+    margin-top:22px;
+}
+
+.working-hours h4{
+    color:var(--text);
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.working-hours p{
+    margin-bottom:6px;
+}
+
+.working-hours .hours-time{
+    margin-left:28px;
+    font-weight:500;
+    color:var(--text);
+}
+
+@media(max-width:600px){
+    .working-hours{
+        margin-top:18px;
+    }
+
+    .working-hours h4{
+        font-size:17px;
+    }
+
+    .working-hours .hours-time{
+        margin-left:0;
+    }
+}
+
+.working-hours i{
+    color:var(--secondary);
+    margin-right:10px;
+}
+
+.footer-box p a{
+    color:var(--text);
+    text-decoration:none;
+}
+
+.footer-box p a:hover{
+    color:var(--secondary);
 }
