@@ -120,6 +120,7 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,.08);
     z-index:999;
     min-height:84px;
+	margin-top:40px;
 }
 
 .logo img{
