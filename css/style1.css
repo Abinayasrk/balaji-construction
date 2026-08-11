@@ -119,10 +119,13 @@ body{
     backdrop-filter: blur(10px);
     box-shadow:0 5px 20px rgba(0,0,0,.08);
     z-index:999;
+    min-height:84px;
 }
 
 .logo img{
-    height:100px;
+    height:74px;
+    width:auto;
+    display:block;
 }
 
 nav ul{
@@ -1741,12 +1744,14 @@ justify-content:center;
 @media (max-width:768px){
 
 .header{
-    padding:12px 20px;
+    padding:8px 20px;
+    min-height:78px;
 }
 
 .logo img{
     height:70px;
     width:auto;
+    display:block;
 }
 
 .menu-btn{
