@@ -5706,3 +5706,146 @@ font-size:14px;
         max-width:280px;
     }
 }
+
+
+/* =========================================================
+   ABOUT PAGE HERO — PREMIUM BACKGROUND
+========================================================= */
+
+.about-hero{
+    position:relative;
+    min-height:520px;
+    height:65vh;
+    background:url("../images/about-hero.png") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.about-hero-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(
+        90deg,
+        rgba(25,37,35,.78) 0%,
+        rgba(25,37,35,.48) 48%,
+        rgba(25,37,35,.18) 100%
+    );
+}
+
+.about-hero-content{
+    width:1200px;
+    max-width:90%;
+    margin:0 auto;
+    padding-top:70px;
+    color:var(--white);
+    animation:aboutHeroFade 1s ease both;
+}
+
+.about-hero-content > span{
+    display:inline-block;
+    color:var(--primary);
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:14px;
+}
+
+.about-hero-content h1{
+    max-width:760px;
+    margin:0 0 22px;
+    color:var(--white);
+    font-size:56px;
+    line-height:1.15;
+    font-weight:700;
+}
+
+.about-breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--white);
+    font-size:15px;
+}
+
+.about-breadcrumb a{
+    color:var(--primary);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.about-breadcrumb a:hover{
+    color:var(--white);
+}
+
+@keyframes aboutHeroFade{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:992px){
+    .about-hero{
+        min-height:460px;
+        height:58vh;
+    }
+
+    .about-hero-content h1{
+        font-size:46px;
+    }
+}
+
+@media(max-width:768px){
+    .about-hero{
+        min-height:390px;
+        height:52vh;
+    }
+
+    .about-hero-overlay{
+        background:linear-gradient(
+            180deg,
+            rgba(25,37,35,.62),
+            rgba(25,37,35,.50)
+        );
+    }
+
+    .about-hero-content{
+        max-width:92%;
+        padding-top:75px;
+        text-align:center;
+    }
+
+    .about-hero-content > span{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    .about-hero-content h1{
+        font-size:34px;
+        line-height:1.2;
+        margin-bottom:18px;
+    }
+
+    .about-breadcrumb{
+        justify-content:center;
+        font-size:14px;
+    }
+}
+
+@media(max-width:480px){
+    .about-hero{
+        min-height:350px;
+        height:48vh;
+    }
+
+    .about-hero-content h1{
+        font-size:29px;
+    }
+}
