@@ -5239,3 +5239,470 @@ font-size:14px;
         z-index:1005 !important;
     }
 }
+
+
+/* =========================================================
+   ABOUT PAGE — PREMIUM ADDITIONS
+========================================================= */
+
+.about-story-section{
+    padding:100px 20px;
+    background:var(--white);
+}
+
+.about-story-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-story-content h2{
+    font-size:44px;
+    line-height:1.2;
+    color:var(--text);
+    margin:16px 0 22px;
+}
+
+.about-story-content p{
+    color:#52635F;
+    font-size:17px;
+    line-height:1.9;
+    margin-bottom:18px;
+    text-align:justify;
+}
+
+.about-story-highlight{
+    background:linear-gradient(145deg,var(--secondary),#263B37);
+    border-radius:28px;
+    padding:42px;
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+}
+
+.experience-badge{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:var(--primary);
+    color:var(--white);
+    margin:0 auto 35px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.experience-badge strong{
+    font-size:52px;
+    line-height:1;
+}
+
+.experience-badge span{
+    font-size:14px;
+    line-height:1.4;
+    margin-top:7px;
+    font-weight:600;
+}
+
+.story-highlight-card{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    padding:20px 0;
+    border-top:1px solid rgba(255,255,255,.16);
+}
+
+.story-highlight-card i{
+    color:var(--primary);
+    font-size:28px;
+    min-width:32px;
+    margin-top:3px;
+}
+
+.story-highlight-card h3{
+    color:var(--white);
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.story-highlight-card p{
+    color:rgba(255,255,255,.78);
+    font-size:14px;
+    line-height:1.7;
+    margin:0;
+}
+
+/* Vision & Mission */
+.vision-mission{
+    padding:100px 20px;
+    background:var(--background);
+}
+
+.vision-mission-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.purpose-card{
+    background:var(--white);
+    border-radius:22px;
+    padding:38px;
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+    border:1px solid #D7E7E3;
+    box-shadow:0 12px 35px rgba(0,0,0,.07);
+    transition:.4s ease;
+}
+
+.purpose-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 22px 45px rgba(0,0,0,.12);
+}
+
+.purpose-icon{
+    width:70px;
+    height:70px;
+    min-width:70px;
+    border-radius:18px;
+    background:var(--background);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.purpose-icon i{
+    color:var(--primary);
+    font-size:30px;
+}
+
+.purpose-card h3{
+    color:var(--text);
+    font-size:26px;
+    margin-bottom:12px;
+}
+
+.purpose-card p{
+    color:#52635F;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* Core Values */
+.core-values{
+    padding:100px 20px;
+    background:var(--white);
+}
+
+.values-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.value-card{
+    background:var(--background);
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    border:1px solid #D7E7E3;
+    transition:.4s ease;
+}
+
+.value-card:hover{
+    transform:translateY(-8px);
+    background:var(--white);
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+}
+
+.value-card i{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    background:var(--white);
+    color:var(--primary);
+    font-size:28px;
+}
+
+.value-card h3{
+    color:var(--text);
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.value-card p{
+    color:#52635F;
+    line-height:1.7;
+    font-size:15px;
+}
+
+/* Process additions */
+.process-section{
+    background:var(--background);
+}
+
+.process-icon{
+    display:block;
+    color:var(--primary);
+    font-size:28px;
+    margin:0 auto 15px;
+}
+
+/* Quality */
+.about-quality-section{
+    padding:100px 20px;
+    background:var(--white);
+}
+
+.about-quality-grid{
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.about-quality-grid .quality-card{
+    border:1px solid #D7E7E3;
+}
+
+/* Experience / stats */
+.about-stats-section{
+    padding:75px 20px;
+    background:var(--background);
+}
+
+.about-stats-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.about-stat-card{
+    background:var(--white);
+    min-height:190px;
+    padding:30px 20px;
+    border-radius:20px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.07);
+    border:1px solid #D7E7E3;
+    transition:.35s ease;
+}
+
+.about-stat-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.about-stat-card i{
+    color:var(--primary);
+    font-size:32px;
+    margin-bottom:14px;
+}
+
+.about-stat-card strong{
+    color:var(--text);
+    font-size:30px;
+    line-height:1.2;
+    margin-bottom:8px;
+}
+
+.about-stat-card span{
+    color:#52635F;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* CTA */
+.about-cta{
+    margin-top:0;
+}
+
+.cta-eyebrow{
+    display:block;
+    color:var(--primary);
+    letter-spacing:3px;
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.about-cta .btn-primary,
+.about-cta .btn-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+}
+
+.about-cta .btn-primary:hover{
+    background:var(--white);
+    color:var(--text);
+}
+
+.about-cta .btn-whatsapp{
+    background:var(--white);
+    color:var(--text);
+}
+
+.about-cta .btn-whatsapp:hover{
+    background:var(--primary);
+    color:var(--white);
+}
+
+/* Responsive */
+@media(max-width:992px){
+    .about-story-container{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .about-story-content{
+        max-width:850px;
+        margin:auto;
+    }
+
+    .about-story-highlight{
+        max-width:700px;
+        width:100%;
+        margin:auto;
+    }
+
+    .values-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:768px){
+    .about-story-section,
+    .vision-mission,
+    .core-values,
+    .about-quality-section{
+        padding:70px 20px;
+    }
+
+    .about-story-content h2{
+        font-size:32px;
+    }
+
+    .about-story-content p{
+        font-size:15px;
+        text-align:justify;
+    }
+
+    .about-story-highlight{
+        padding:30px 24px;
+        border-radius:22px;
+    }
+
+    .experience-badge{
+        width:145px;
+        height:145px;
+    }
+
+    .experience-badge strong{
+        font-size:44px;
+    }
+
+    .vision-mission-grid{
+        grid-template-columns:1fr;
+    }
+
+    .purpose-card{
+        padding:28px 22px;
+        gap:18px;
+    }
+
+    .purpose-icon{
+        width:58px;
+        height:58px;
+        min-width:58px;
+    }
+
+    .purpose-icon i{
+        font-size:24px;
+    }
+
+    .purpose-card h3{
+        font-size:22px;
+    }
+
+    .purpose-card p{
+        font-size:15px;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .value-card{
+        padding:30px 22px;
+    }
+
+    .about-stats-section{
+        padding:60px 20px;
+    }
+
+    .about-stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .about-stat-card{
+        min-height:160px;
+        padding:22px 12px;
+    }
+
+    .about-stat-card strong{
+        font-size:23px;
+    }
+
+    .about-stat-card span{
+        font-size:13px;
+    }
+
+    .about-cta{
+        padding:65px 20px;
+    }
+}
+
+@media(max-width:480px){
+    .about-stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-stat-card{
+        min-height:145px;
+    }
+
+    .cta-buttons{
+        width:100%;
+    }
+
+    .about-cta .btn-primary,
+    .about-cta .btn-whatsapp{
+        width:100%;
+        max-width:280px;
+    }
+}
