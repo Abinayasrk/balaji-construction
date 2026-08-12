@@ -5197,3 +5197,45 @@ font-size:14px;
         white-space:nowrap !important;
     }
 }
+
+
+/* ===== FINAL HEADER NAV CLICK FIX ===== */
+.header{
+    position:relative !important;
+    z-index:1000 !important;
+}
+
+.nav-links{
+    position:relative;
+    z-index:1002;
+    pointer-events:auto !important;
+}
+
+.nav-links ul,
+.nav-links li,
+.nav-links a{
+    pointer-events:auto !important;
+}
+
+.nav-links a{
+    position:relative;
+    z-index:1003;
+    cursor:pointer;
+}
+
+.menu-btn{
+    position:relative;
+    z-index:1004;
+}
+
+@media(max-width:768px){
+    .header{
+        position:relative !important;
+        z-index:1000 !important;
+    }
+
+    .nav-links{
+        position:absolute !important;
+        z-index:1005 !important;
+    }
+}
