@@ -4402,3 +4402,62 @@ font-size:14px;
         overflow-wrap:anywhere;
     }
 }
+
+
+/* ===== BALAJI FOOTER CONTACT ICON FINAL ===== */
+.footer .footer-info-row .footer-icon{
+    background:rgba(255,255,255,.55);
+    position:relative;
+    animation:footerContactFloat 2.8s ease-in-out infinite;
+}
+
+.footer .footer-info-row .footer-icon i{
+    color:#192523 !important;
+    font-size:21px;
+    animation:footerContactBounce 2.8s ease-in-out infinite;
+}
+
+.footer .footer-info-row .footer-icon::after{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border-radius:50%;
+    border:1px solid rgba(25,37,35,.25);
+    animation:footerContactPulse 2.2s ease-out infinite;
+    pointer-events:none;
+}
+
+@keyframes footerContactFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-4px)}
+}
+
+@keyframes footerContactBounce{
+    0%,100%{transform:scale(1) rotate(0)}
+    50%{transform:scale(1.08) rotate(-4deg)}
+}
+
+@keyframes footerContactPulse{
+    0%{transform:scale(.92);opacity:.65}
+    70%{transform:scale(1.18);opacity:0}
+    100%{transform:scale(1.18);opacity:0}
+}
+
+@media(max-width:768px){
+    .footer .footer-info-row .footer-icon{
+        flex:0 0 42px;
+        width:42px;
+        height:42px;
+    }
+    .footer .footer-info-row .footer-icon i{
+        font-size:18px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .footer .footer-info-row .footer-icon,
+    .footer .footer-info-row .footer-icon i,
+    .footer .footer-info-row .footer-icon::after{
+        animation:none;
+    }
+}
