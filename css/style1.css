@@ -5019,3 +5019,181 @@ font-size:14px;
         min-height:0 !important;
     }
 }
+
+
+/* =========================================================
+   FINAL FOOTER — WORKING HOURS LEFT SPACING FIX
+   Layout: Company | Quick Links | Working Hours | Contact Info
+========================================================= */
+
+@media (min-width: 769px) {
+
+    .footer-container{
+        display:grid !important;
+        grid-template-columns: 1.38fr 0.82fr 1.02fr 1.30fr !important;
+        column-gap: 34px !important;
+        row-gap: 0 !important;
+        align-items:start !important;
+        padding-left:40px !important;
+        padding-right:42px !important;
+    }
+
+    .footer-container > .footer-box,
+    .footer-container > .footer-company{
+        min-width:0 !important;
+        padding:0 !important;
+        border-left:none !important;
+        min-height:0 !important;
+    }
+
+    /* Quick Links */
+    .footer-container > .footer-box:nth-child(2){
+        padding-left:4px !important;
+    }
+
+    /* Working Hours — give it its own clean left edge */
+    .footer-container > .footer-box:nth-child(3){
+        padding-left:4px !important;
+        padding-right:8px !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) h3{
+        margin-left:0 !important;
+        margin-top:4px !important;
+        margin-bottom:24px !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .footer-info-row{
+        margin-left:0 !important;
+        padding-left:0 !important;
+        gap:14px !important;
+        width:100% !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .footer-icon{
+        flex:0 0 38px !important;
+        width:38px !important;
+        height:38px !important;
+        margin:0 !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .footer-label,
+    .footer-container > .footer-box:nth-child(3) .footer-value{
+        margin-left:0 !important;
+        padding-left:0 !important;
+        white-space:nowrap !important;
+    }
+
+    /* Social icons remain under Working Hours and align to its column */
+    .footer-container > .footer-box:nth-child(3) .social-links{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:flex-start !important;
+        gap:14px !important;
+        margin:24px 0 0 0 !important;
+        padding:0 !important;
+        width:max-content !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .social-links a{
+        width:50px !important;
+        height:50px !important;
+        flex:0 0 50px !important;
+        margin:0 !important;
+        padding:0 !important;
+        background:#192523 !important;
+        color:#7CBBAE !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        border-radius:50% !important;
+        transform:none !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .social-links a i{
+        color:#7CBBAE !important;
+        font-size:20px !important;
+        line-height:1 !important;
+        margin:0 !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .social-links a:hover{
+        background:#fff !important;
+        transform:translateY(-3px) !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .social-links a:hover i{
+        color:#192523 !important;
+    }
+
+    /* Contact Info — starts after Working Hours with balanced gap */
+    .footer-container > .footer-box:nth-child(4){
+        padding-left:2px !important;
+        padding-right:0 !important;
+        overflow:visible !important;
+    }
+
+    .footer-container > .footer-box:nth-child(4) h3{
+        margin-top:4px !important;
+        margin-bottom:24px !important;
+    }
+
+    .footer-container > .footer-box:nth-child(4) .footer-info-row{
+        width:100% !important;
+        max-width:100% !important;
+        gap:14px !important;
+        margin-bottom:22px !important;
+    }
+
+    .footer-container > .footer-box:nth-child(4) .footer-info-row p,
+    .footer-container > .footer-box:nth-child(4) .footer-info-row a{
+        max-width:100% !important;
+    }
+
+    /* Do not let desktop contact email create horizontal overflow */
+    .footer-container > .footer-box:nth-child(4) .footer-info-row a{
+        white-space:nowrap !important;
+        overflow-wrap:normal !important;
+    }
+}
+
+@media (max-width: 768px){
+
+    .footer-container{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:32px !important;
+        padding-left:22px !important;
+        padding-right:22px !important;
+    }
+
+    .footer-container > .footer-box,
+    .footer-container > .footer-company{
+        padding:0 !important;
+        border-left:none !important;
+        min-height:auto !important;
+    }
+
+    .footer-container > .footer-box:nth-child(3) .social-links{
+        display:flex !important;
+        justify-content:flex-start !important;
+        gap:12px !important;
+        margin-top:20px !important;
+    }
+}
+
+/* ===== CONTACT EMAIL SINGLE LINE ===== */
+@media (min-width:769px){
+    .footer-container > .footer-box:nth-child(4) .footer-info-row:nth-of-type(2) p,
+    .footer-container > .footer-box:nth-child(4) .footer-info-row:nth-of-type(2) a{
+        white-space:nowrap !important;
+        overflow:visible !important;
+        overflow-wrap:normal !important;
+        word-break:normal !important;
+        font-size:16px !important;
+    }
+
+    .footer-container > .footer-box:nth-child(4) .footer-info-row:nth-of-type(2){
+        white-space:nowrap !important;
+    }
+}
