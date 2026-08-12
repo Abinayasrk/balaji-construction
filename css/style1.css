@@ -4404,60 +4404,371 @@ font-size:14px;
 }
 
 
-/* ===== BALAJI FOOTER CONTACT ICON FINAL ===== */
-.footer .footer-info-row .footer-icon{
-    background:rgba(255,255,255,.55);
+/* =========================================================
+   BALAJI CONSTRUCTION — FINAL FOOTER DESIGN
+   Reference: supplied footer screenshot
+========================================================= */
+
+.footer{
+    width:100%;
+    background:#7CBBAE;
+    padding:72px 0 0;
     position:relative;
-    animation:footerContactFloat 2.8s ease-in-out infinite;
+    overflow:hidden;
 }
 
-.footer .footer-info-row .footer-icon i{
+.footer::before{
+    display:none;
+}
+
+.footer-container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 32px 70px;
+    display:grid;
+    grid-template-columns:1.55fr 1fr 1fr 1.35fr;
+    gap:55px;
+    align-items:start;
+}
+
+.footer-box,
+.footer-company{
+    min-width:0;
+    padding:0;
+    border:0;
+    min-height:0;
+}
+
+.footer-company{
+    padding-right:15px;
+}
+
+.footer-logo{
+    display:block;
+    width:100%;
+    max-width:375px;
+    height:auto;
+    margin:0 0 24px;
+}
+
+.footer-company > p{
+    max-width:430px;
+    margin:0 0 28px;
+    color:#192523;
+    font-size:17px;
+    line-height:1.75;
+}
+
+.footer-box h3{
+    margin:4px 0 30px;
+    color:#FFFFFF;
+    font-size:27px;
+    line-height:1.2;
+    font-weight:700;
+}
+
+.footer-box > a{
+    display:block;
+    margin:0 0 20px;
+    color:#192523;
+    text-decoration:none;
+    font-size:17px;
+    line-height:1.55;
+    transition:.25s ease;
+}
+
+.footer-box > a:hover{
+    color:#FFFFFF;
+    padding-left:4px;
+}
+
+/* Services / links text */
+.footer-box ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.footer-box ul li{
+    margin:0 0 20px;
+}
+
+.footer-box ul li a{
+    color:#192523;
+    text-decoration:none;
+    font-size:17px;
+    line-height:1.5;
+    transition:.25s ease;
+}
+
+.footer-box ul li a:hover{
+    color:#FFFFFF;
+    padding-left:4px;
+}
+
+/* Social media */
+.social-links{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-top:18px;
+}
+
+.social-links a{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#192523;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#7CBBAE;
+    text-decoration:none;
+    transition:.3s ease;
+}
+
+.social-links a i{
+    color:#7CBBAE !important;
+    font-size:20px;
+    margin:0;
+}
+
+.social-links a:hover{
+    background:#FFFFFF;
+    transform:translateY(-4px);
+}
+
+.social-links a:hover i{
+    color:#192523 !important;
+}
+
+/* Contact information */
+.footer-info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    margin:0 0 25px;
+}
+
+.footer-icon{
+    flex:0 0 38px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:transparent;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    position:relative;
+}
+
+.footer-icon i{
     color:#192523 !important;
     font-size:21px;
-    animation:footerContactBounce 2.8s ease-in-out infinite;
+    margin:0;
 }
 
-.footer .footer-info-row .footer-icon::after{
-    content:"";
-    position:absolute;
-    inset:-5px;
-    border-radius:50%;
-    border:1px solid rgba(25,37,35,.25);
-    animation:footerContactPulse 2.2s ease-out infinite;
-    pointer-events:none;
+.footer-info-row p{
+    margin:0;
+    color:#192523;
+    font-size:17px;
+    line-height:1.7;
+    overflow-wrap:anywhere;
 }
 
-@keyframes footerContactFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-4px)}
+.footer-info-row a{
+    color:#192523;
+    font-size:17px;
+    text-decoration:none;
+    margin:0;
 }
 
-@keyframes footerContactBounce{
-    0%,100%{transform:scale(1) rotate(0)}
-    50%{transform:scale(1.08) rotate(-4deg)}
+.footer-info-row a:hover{
+    color:#FFFFFF;
 }
 
-@keyframes footerContactPulse{
-    0%{transform:scale(.92);opacity:.65}
-    70%{transform:scale(1.18);opacity:0}
-    100%{transform:scale(1.18);opacity:0}
+.footer-label{
+    margin:0;
+    font-weight:500;
 }
 
+.footer-value{
+    margin:6px 0 0 !important;
+    font-weight:500;
+}
+
+/* Working hours */
+.working-hours{
+    margin-top:0;
+}
+
+.working-hours h4{
+    color:#FFFFFF;
+    font-size:27px;
+    line-height:1.2;
+    font-weight:700;
+    margin:4px 0 25px;
+}
+
+.working-hours p{
+    color:#192523;
+    font-size:17px;
+    line-height:1.7;
+    margin:0 0 8px;
+}
+
+.working-hours .hours-time{
+    margin-left:52px;
+    font-weight:500;
+}
+
+/* Copyright — same colour as top contact bar */
+.footer-bottom{
+    width:100%;
+    min-height:86px;
+    padding:18px 20px;
+    background:#192523;
+    border-top:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#FFFFFF !important;
+    font-size:16px;
+}
+
+/* Tablet */
+@media(max-width:1100px){
+    .footer-container{
+        grid-template-columns:1.35fr 1fr 1fr 1.2fr;
+        gap:32px;
+        padding-left:25px;
+        padding-right:25px;
+    }
+
+    .footer-box h3,
+    .working-hours h4{
+        font-size:23px;
+    }
+
+    .footer-company > p,
+    .footer-box > a,
+    .footer-box ul li a,
+    .footer-info-row p,
+    .footer-info-row a,
+    .working-hours p{
+        font-size:15px;
+    }
+}
+
+/* Mobile */
 @media(max-width:768px){
-    .footer .footer-info-row .footer-icon{
-        flex:0 0 42px;
-        width:42px;
-        height:42px;
+    .footer{
+        padding-top:50px;
     }
-    .footer .footer-info-row .footer-icon i{
-        font-size:18px;
+
+    .footer-container{
+        grid-template-columns:1fr;
+        gap:38px;
+        padding:0 22px 45px;
+    }
+
+    .footer-company{
+        padding:0;
+    }
+
+    .footer-logo{
+        max-width:360px;
+        margin-bottom:20px;
+    }
+
+    .footer-company > p{
+        max-width:100%;
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .footer-box h3,
+    .working-hours h4{
+        font-size:22px;
+        margin-bottom:20px;
+    }
+
+    .footer-box > a,
+    .footer-box ul li a,
+    .footer-info-row p,
+    .footer-info-row a,
+    .working-hours p{
+        font-size:15px;
+    }
+
+    .footer-box > a,
+    .footer-box ul li{
+        margin-bottom:14px;
+    }
+
+    .social-links{
+        gap:12px;
+    }
+
+    .social-links a{
+        width:46px;
+        height:46px;
+    }
+
+    .social-links a i{
+        font-size:19px;
+    }
+
+    .footer-info-row{
+        gap:11px;
+        margin-bottom:18px;
+    }
+
+    .footer-icon{
+        flex:0 0 36px;
+        width:36px;
+        height:36px;
+    }
+
+    .footer-icon i{
+        font-size:19px;
+    }
+
+    .working-hours .hours-time{
+        margin-left:47px;
+    }
+
+    .footer-bottom{
+        min-height:76px;
+        font-size:13px;
+        padding:17px 12px;
     }
 }
 
-@media(prefers-reduced-motion:reduce){
-    .footer .footer-info-row .footer-icon,
-    .footer .footer-info-row .footer-icon i,
-    .footer .footer-info-row .footer-icon::after{
-        animation:none;
+/* Small mobile */
+@media(max-width:480px){
+    .footer-container{
+        padding-left:18px;
+        padding-right:18px;
+    }
+
+    .footer-logo{
+        max-width:100%;
+    }
+
+    .footer-company > p{
+        font-size:14px;
+    }
+
+    .footer-info-row p,
+    .footer-info-row a{
+        font-size:14px;
+    }
+
+    .working-hours .hours-time{
+        margin-left:47px;
     }
 }
