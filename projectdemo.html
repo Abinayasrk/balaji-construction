@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="4AcIggaIne83JP9UD6veHvZdPdudxGQqv5-wup6x0js">
+
+    <title>Balaji Construction | Residential, Commercial & Renovation Projects</title>
+    <meta name="description" content="Explore Balaji Construction residential, commercial, interior and renovation projects built with quality, innovation and trust.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <link rel="stylesheet" href="css/style1.css">
+
+    <style>
+        /* =====================================================
+           PROJECT PAGE — FINAL PREMIUM CSS
+           Everything project-specific is kept inside this page.
+        ===================================================== */
+
+        .projects-page{
+            --project-primary:#7CBBAE;
+            --project-dark:#192523;
+            --project-bg:#F4FBF9;
+            overflow-x:hidden;
+        }
+
+        .projects-page *{
+            box-sizing:border-box;
+        }
+
+        /* Remove the old manual gap after header */
+        .projects-page .project-old-gap{
+            display:none;
+        }
+
+        /* HERO */
+        .projects-page .projects-hero-section{
+            position:relative;
+            min-height:520px;
+            height:68vh;
+            background:url("images/project-banner.jpeg") center/cover no-repeat;
+            display:flex;
+            align-items:center;
+            overflow:hidden;
+        }
+
+        .projects-page .projects-hero-section::after{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:
+                linear-gradient(90deg,
+                    rgba(25,37,35,.78),
+                    rgba(25,37,35,.40),
+                    rgba(25,37,35,.18));
+            pointer-events:none;
+        }
+
+        .projects-page .projects-hero-container{
+            position:relative;
+            z-index:2;
+            width:1200px;
+            max-width:90%;
+            margin:auto;
+            color:#fff;
+        }
+
+        .projects-page .projects-hero-title{
+            font-size:clamp(38px,6vw,66px);
+            line-height:1.08;
+            margin:0 0 18px;
+            animation:projectHeroIn .9s cubic-bezier(.2,.7,.2,1) both;
+        }
+
+        .projects-page .projects-hero-text{
+            max-width:700px;
+            font-size:18px;
+            line-height:1.8;
+            color:rgba(255,255,255,.90);
+            margin:0 0 22px;
+            animation:projectHeroIn .9s .12s cubic-bezier(.2,.7,.2,1) both;
+        }
+
+        .projects-page .projects-hero-breadcrumb{
+            display:flex;
+            gap:10px;
+            align-items:center;
+            font-size:14px;
+            animation:projectHeroIn .9s .24s cubic-bezier(.2,.7,.2,1) both;
+        }
+
+        .projects-page .projects-hero-breadcrumb a{
+            color:var(--project-primary);
+            text-decoration:none;
+        }
+
+        @keyframes projectHeroIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        /* INTRO */
+        .projects-page .projects-intro-section{
+            position:relative;
+            padding:105px 20px 90px;
+            text-align:center;
+            background:
+                radial-gradient(circle at 15% 20%,rgba(124,187,174,.14),transparent 32%),
+                linear-gradient(180deg,#fff,#f4fbf9);
+            overflow:hidden;
+        }
+
+        .projects-page .projects-intro-section::before{
+            content:"";
+            position:absolute;
+            width:250px;
+            height:250px;
+            right:-90px;
+            top:-90px;
+            border:1px solid rgba(124,187,174,.25);
+            border-radius:50%;
+            animation:projectOrbit 12s linear infinite;
+        }
+
+        .projects-page .projects-intro-container{
+            position:relative;
+            z-index:1;
+            max-width:850px;
+            margin:auto;
+        }
+
+        .projects-page .projects-intro-subtitle{
+            display:inline-block;
+            color:var(--project-primary);
+            font-size:13px;
+            font-weight:800;
+            letter-spacing:3px;
+            margin-bottom:14px;
+        }
+
+        .projects-page .projects-intro-title{
+            font-size:clamp(34px,5vw,56px);
+            line-height:1.12;
+            margin:0 0 22px;
+            color:var(--project-dark);
+        }
+
+        .projects-page .projects-intro-description{
+            max-width:760px;
+            margin:auto;
+            color:#52635F;
+            line-height:1.85;
+            font-size:17px;
+        }
+
+        /* FILTER */
+        .projects-page .projects-filter-section{
+            position:sticky;
+            top:0;
+            z-index:50;
+            padding:18px 20px;
+            background:rgba(255,255,255,.92);
+            backdrop-filter:blur(14px);
+            border-bottom:1px solid rgba(25,37,35,.08);
+        }
+
+        .projects-page .projects-filter-container{
+            max-width:1200px;
+            margin:auto;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        .projects-page .projects-filter-btn{
+            position:relative;
+            overflow:hidden;
+            border:1px solid rgba(124,187,174,.45);
+            background:#fff;
+            color:var(--project-dark);
+            padding:11px 22px;
+            border-radius:30px;
+            cursor:pointer;
+            font-weight:600;
+            transition:.3s ease;
+            z-index:1;
+        }
+
+        .projects-page .projects-filter-btn::before{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:var(--project-primary);
+            transform:translateY(105%);
+            transition:transform .35s cubic-bezier(.2,.7,.2,1);
+            z-index:-1;
+        }
+
+        .projects-page .projects-filter-btn:hover::before,
+        .projects-page .projects-filter-btn.active::before{
+            transform:translateY(0);
+        }
+
+        .projects-page .projects-filter-btn:hover,
+        .projects-page .projects-filter-btn.active{
+            color:#fff;
+            transform:translateY(-2px);
+            box-shadow:0 8px 20px rgba(25,37,35,.12);
+        }
+
+        /* PROJECT GRID */
+        .projects-page .featured-projects-section{
+            padding:85px 20px 110px;
+            background:var(--project-bg);
+        }
+
+        .projects-page .featured-projects-container{
+            max-width:1280px;
+            margin:auto;
+        }
+
+        .projects-page .featured-projects-grid{
+            display:grid;
+            grid-template-columns:repeat(3,minmax(0,1fr));
+            gap:28px;
+        }
+
+        .projects-page .featured-project-card{
+            position:relative;
+            overflow:hidden;
+            background:#fff;
+            border-radius:20px;
+            border:1px solid rgba(25,37,35,.07);
+            box-shadow:0 12px 35px rgba(25,37,35,.08);
+            transition:
+                transform .45s cubic-bezier(.2,.7,.2,1),
+                box-shadow .45s ease;
+        }
+
+        .projects-page .featured-project-card:hover{
+            transform:translateY(-12px);
+            box-shadow:0 25px 55px rgba(25,37,35,.16);
+        }
+
+        .projects-page .featured-project-card.project-hidden{
+            display:none;
+        }
+
+        .projects-page .featured-project-card.project-filter-in{
+            animation:projectCardIn .55s cubic-bezier(.2,.7,.2,1) both;
+        }
+
+        @keyframes projectCardIn{
+            from{
+                opacity:0;
+                transform:translateY(25px) scale(.97);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0) scale(1);
+            }
+        }
+
+        .projects-page .featured-project-image{
+            position:relative;
+            height:300px;
+            overflow:hidden;
+        }
+
+        .projects-page .featured-project-image img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:transform .8s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .projects-page .featured-project-card:hover
+        .featured-project-image img{
+            transform:scale(1.08);
+        }
+
+        .projects-page .featured-project-image::after{
+            content:"";
+            position:absolute;
+            inset:0;
+            background:linear-gradient(180deg,transparent 45%,rgba(25,37,35,.58));
+            opacity:.45;
+            transition:.4s ease;
+        }
+
+        .projects-page .featured-project-card:hover
+        .featured-project-image::after{
+            opacity:.8;
+        }
+
+        .projects-page .project-status{
+            position:absolute;
+            top:18px;
+            right:18px;
+            z-index:2;
+            padding:8px 15px;
+            border-radius:30px;
+            background:rgba(25,37,35,.88);
+            color:#fff;
+            font-size:12px;
+            font-weight:700;
+            backdrop-filter:blur(8px);
+        }
+
+        .projects-page .featured-project-content{
+            padding:25px;
+        }
+
+        .projects-page .featured-project-content h3{
+            font-size:24px;
+            margin:0 0 8px;
+            transition:.3s ease;
+        }
+
+        .projects-page .featured-project-card:hover h3{
+            color:var(--project-primary);
+        }
+
+        .projects-page .featured-project-content p{
+            margin:0 0 18px;
+            color:#52635F;
+        }
+
+        .projects-page .project-info{
+            display:flex;
+            justify-content:space-between;
+            gap:12px;
+            color:#667873;
+            font-size:14px;
+        }
+
+        /* VIDEOS */
+        .projects-page .projects-video-section{
+            padding:110px 20px;
+            background:#fff;
+        }
+
+        .projects-page .projects-video-container{
+            max-width:1250px;
+            margin:auto;
+        }
+
+        .projects-page .projects-video-header{
+            max-width:760px;
+            margin:0 auto 50px;
+            text-align:center;
+        }
+
+        .projects-page .projects-video-header span{
+            display:inline-block;
+            color:var(--project-primary);
+            font-size:13px;
+            font-weight:800;
+            letter-spacing:3px;
+            margin-bottom:10px;
+        }
+
+        .projects-page .projects-video-header h2{
+            font-size:clamp(30px,4vw,44px);
+            margin:0 0 15px;
+        }
+
+        .projects-page .projects-video-header p{
+            color:#52635F;
+        }
+
+        .projects-page .projects-video-grid{
+            display:grid;
+            grid-template-columns:repeat(2,minmax(0,1fr));
+            gap:28px;
+        }
+
+        .projects-page .projects-video-card{
+            overflow:hidden;
+            border-radius:20px;
+            background:#fff;
+            border:1px solid rgba(25,37,35,.07);
+            box-shadow:0 14px 40px rgba(25,37,35,.08);
+            transition:.45s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .projects-page .projects-video-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 25px 55px rgba(25,37,35,.14);
+        }
+
+        .projects-page .projects-video-card video{
+            display:block;
+            width:100%;
+            height:340px;
+            object-fit:cover;
+            background:#192523;
+        }
+
+        .projects-page .projects-video-content{
+            padding:22px 24px;
+        }
+
+        .projects-page .projects-video-content h3{
+            margin:0 0 6px;
+        }
+
+        .projects-page .projects-video-content p{
+            margin:0;
+            color:#667873;
+        }
+
+        /* GALLERY */
+        .projects-page .project-gallery-section{
+            padding:110px 20px;
+            background:linear-gradient(180deg,#f4fbf9,#fff);
+        }
+
+        .projects-page .gallerySwiper{
+            padding:10px 5px 65px;
+        }
+
+        .projects-page .gallery-card{
+            position:relative;
+            height:440px;
+            overflow:hidden;
+            border-radius:24px;
+            cursor:pointer;
+            box-shadow:0 15px 40px rgba(25,37,35,.12);
+            transition:.45s ease;
+        }
+
+        .projects-page .gallery-card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 25px 55px rgba(25,37,35,.18);
+        }
+
+        .projects-page .gallery-card img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:transform 1s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .projects-page .gallery-card:hover img{
+            transform:scale(1.07);
+        }
+
+        .projects-page .gallery-overlay{
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:0;
+            padding:30px;
+            color:#fff;
+            background:linear-gradient(to top,rgba(25,37,35,.94),rgba(25,37,35,.30),transparent);
+        }
+
+        .projects-page .gallery-overlay h3{
+            font-size:28px;
+            margin:0 0 12px;
+            transform:translateY(8px);
+            transition:.4s ease;
+        }
+
+        .projects-page .gallery-card:hover .gallery-overlay h3{
+            transform:translateY(0);
+        }
+
+        .projects-page .gallery-btn{
+            border:0;
+            padding:10px 18px;
+            border-radius:30px;
+            background:var(--project-primary);
+            color:#fff;
+            cursor:pointer;
+            opacity:.9;
+            transform:translateY(10px);
+            transition:.4s ease;
+        }
+
+        .projects-page .gallery-card:hover .gallery-btn{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        .projects-page .gallerySwiper .swiper-button-next,
+        .projects-page .gallerySwiper .swiper-button-prev{
+            width:46px;
+            height:46px;
+            border-radius:50%;
+            background:rgba(255,255,255,.95);
+            box-shadow:0 8px 25px rgba(25,37,35,.14);
+        }
+
+        .projects-page .gallerySwiper .swiper-button-next::after,
+        .projects-page .gallerySwiper .swiper-button-prev::after{
+            font-size:17px;
+            font-weight:700;
+        }
+
+        /* MODAL */
+        .projects-page .gallery-modal{
+            opacity:0;
+            visibility:hidden;
+            transition:opacity .35s ease,visibility .35s ease;
+            backdrop-filter:blur(10px);
+        }
+
+        .projects-page .gallery-modal.active{
+            opacity:1;
+            visibility:visible;
+        }
+
+        .projects-page .gallery-modal-content{
+            opacity:0;
+            transform:translateY(35px) scale(.96);
+            transition:
+                transform .45s cubic-bezier(.2,.7,.2,1),
+                opacity .35s ease;
+            box-shadow:0 30px 90px rgba(0,0,0,.30);
+        }
+
+        .projects-page .gallery-modal.active
+        .gallery-modal-content{
+            opacity:1;
+            transform:translateY(0) scale(1);
+        }
+
+        .projects-page .gallery-modal-content img{
+            max-height:500px;
+            object-fit:cover;
+        }
+
+        .projects-page .gallery-close{
+            transition:transform .3s ease,background .3s ease;
+        }
+
+        .projects-page .gallery-close:hover{
+            transform:rotate(90deg);
+            background:var(--project-primary);
+        }
+
+        .projects-page body.modal-open{
+            overflow:hidden;
+        }
+
+        /* PROCESS */
+        .projects-page .process-section{
+            padding:110px 20px;
+            background:#fff;
+        }
+
+        .projects-page .process-grid{
+            max-width:1200px;
+            margin:50px auto 0;
+            display:grid;
+            grid-template-columns:repeat(5,minmax(0,1fr));
+            gap:18px;
+        }
+
+        .projects-page .process-card{
+            position:relative;
+            overflow:hidden;
+            padding:30px 22px;
+            background:#fff;
+            border:1px solid rgba(124,187,174,.16);
+            border-radius:18px;
+            box-shadow:0 10px 30px rgba(25,37,35,.06);
+            transition:.45s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .projects-page .process-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 22px 45px rgba(25,37,35,.12);
+        }
+
+        .projects-page .process-card::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:100%;
+            height:3px;
+            background:var(--project-primary);
+            transform:scaleX(0);
+            transform-origin:left;
+            transition:.45s ease;
+        }
+
+        .projects-page .process-card:hover::after{
+            transform:scaleX(1);
+        }
+
+        .projects-page .process-number{
+            width:60px;
+            height:60px;
+            margin:0 0 18px;
+            border-radius:50%;
+            background:var(--project-primary);
+            color:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:24px;
+            font-weight:800;
+            transition:.4s ease;
+        }
+
+        .projects-page .process-card:hover .process-number{
+            transform:scale(1.08) rotate(5deg);
+        }
+
+        .projects-page .process-card h3{
+            margin:0 0 12px;
+        }
+
+        .projects-page .process-card p{
+            margin:0;
+            color:#52635F;
+            line-height:1.7;
+            font-size:14px;
+        }
+
+        /* Reveal */
+        .projects-page .project-reveal{
+            opacity:0;
+            transform:translateY(35px);
+            transition:
+                opacity .8s ease,
+                transform .8s cubic-bezier(.2,.7,.2,1);
+        }
+
+        .projects-page .project-reveal.is-visible{
+            opacity:1;
+            transform:translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:992px){
+
+            .projects-page .featured-projects-grid{
+                grid-template-columns:repeat(2,minmax(0,1fr));
+            }
+
+            .projects-page .process-grid{
+                grid-template-columns:repeat(2,minmax(0,1fr));
+            }
+
+            .projects-page .gallery-card{
+                height:400px;
+            }
+        }
+
+        @media(max-width:768px){
+
+            .projects-page .projects-hero-section{
+                height:55vh;
+                min-height:400px;
+                text-align:center;
+            }
+
+            .projects-page .projects-hero-container{
+                max-width:92%;
+            }
+
+            .projects-page .projects-hero-text{
+                font-size:16px;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            .projects-page .projects-hero-breadcrumb{
+                justify-content:center;
+            }
+
+            .projects-page .projects-intro-section{
+                padding:75px 20px 65px;
+            }
+
+            .projects-page .projects-filter-section{
+                position:relative;
+                padding:18px 15px;
+            }
+
+            .projects-page .projects-filter-container{
+                justify-content:flex-start;
+                flex-wrap:nowrap;
+                overflow-x:auto;
+                scrollbar-width:none;
+            }
+
+            .projects-page .projects-filter-container::-webkit-scrollbar{
+                display:none;
+            }
+
+            .projects-page .projects-filter-btn{
+                flex:0 0 auto;
+                white-space:nowrap;
+            }
+
+            .projects-page .featured-projects-section,
+            .projects-page .projects-video-section,
+            .projects-page .project-gallery-section,
+            .projects-page .process-section{
+                padding-top:75px;
+                padding-bottom:75px;
+            }
+
+            .projects-page .featured-projects-grid{
+                grid-template-columns:1fr;
+                gap:22px;
+            }
+
+            .projects-page .featured-project-image{
+                height:260px;
+            }
+
+            .projects-page .featured-project-content{
+                padding:21px;
+            }
+
+            .projects-page .featured-project-content h3{
+                font-size:21px;
+            }
+
+            .projects-page .project-info{
+                flex-direction:column;
+                align-items:flex-start;
+                gap:8px;
+            }
+
+            .projects-page .projects-video-grid{
+                grid-template-columns:1fr;
+            }
+
+            .projects-page .projects-video-card video{
+                height:250px;
+            }
+
+            .projects-page .gallery-card{
+                height:360px;
+            }
+
+            .projects-page .gallery-overlay h3{
+                font-size:23px;
+            }
+
+            .projects-page .process-grid{
+                grid-template-columns:1fr;
+                gap:18px;
+            }
+
+            .projects-page .gallery-modal-content{
+                width:94%;
+                max-height:88vh;
+            }
+
+            .projects-page .gallery-modal-content img{
+                height:260px;
+            }
+        }
+
+        @media(max-width:480px){
+
+            .projects-page .projects-hero-section{
+                height:50vh;
+                min-height:330px;
+            }
+
+            .projects-page .projects-hero-title{
+                font-size:31px;
+            }
+
+            .projects-page .projects-intro-title{
+                font-size:30px;
+            }
+
+            .projects-page .featured-project-image{
+                height:230px;
+            }
+
+            .projects-page .gallery-card{
+                height:310px;
+            }
+
+            .projects-page .gallerySwiper .swiper-button-next,
+            .projects-page .gallerySwiper .swiper-button-prev{
+                display:none;
+            }
+
+            .projects-page .gallery-modal-content img{
+                height:220px;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce){
+
+            .projects-page *,
+            .projects-page *::before,
+            .projects-page *::after{
+                animation:none !important;
+                transition:none !important;
+                scroll-behavior:auto !important;
+            }
+
+            .projects-page .project-reveal{
+                opacity:1 !important;
+                transform:none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<main class="projects-page">
+
+    <!-- HERO -->
+    <section class="projects-hero-section">
+        <div class="projects-hero-container">
+
+            <h1 class="projects-hero-title">
+                Our Projects
+            </h1>
+
+            <p class="projects-hero-text">
+                Explore our portfolio of residential, commercial and renovation
+                projects built with quality, innovation and trust.
+            </p>
+
+            <div class="projects-hero-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Projects</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="projects-intro-section">
+
+        <div class="projects-intro-container">
+
+            <span class="projects-intro-subtitle">
+                OUR PORTFOLIO
+            </span>
+
+            <h2 class="projects-intro-title">
+                Crafted with Excellence,<br>
+                Built to Inspire
+            </h2>
+
+            <p class="projects-intro-description">
+                Every project reflects our commitment to quality, innovation,
+                and customer satisfaction. From luxurious homes to commercial
+                spaces, we deliver structures that stand the test of time.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FILTER -->
+    <section class="projects-filter-section">
+
+        <div class="projects-filter-container">
+
+            <button class="projects-filter-btn active"
+                    data-filter="*"
+                    aria-pressed="true">
+                All Projects
+            </button>
+
+            <button class="projects-filter-btn"
+                    data-filter=".residential"
+                    aria-pressed="false">
+                Residential
+            </button>
+
+            <button class="projects-filter-btn"
+                    data-filter=".commercial"
+                    aria-pressed="false">
+                Commercial
+            </button>
+
+            <button class="projects-filter-btn"
+                    data-filter=".interior"
+                    aria-pressed="false">
+                Interior
+            </button>
+
+            <button class="projects-filter-btn"
+                    data-filter=".renovation"
+                    aria-pressed="false">
+                Renovation
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="featured-projects-section">
+
+        <div class="featured-projects-container">
+
+            <div class="featured-projects-grid">
+
+                <article class="featured-project-card residential">
+
+                    <div class="featured-project-image">
+
+                        <img src="images/project1.jpeg"
+                             alt="Luxury villa residential construction project"
+                             loading="lazy">
+
+                        <span class="project-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="featured-project-content">
+
+                        <h3>Luxury Villa</h3>
+
+                        <p>
+                            Premium Residential Construction
+                        </p>
+
+                        <div class="project-info">
+                            <span>📍 Chennai</span>
+                            <span>📐 3500 Sq.ft</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="featured-project-card commercial">
+
+                    <div class="featured-project-image">
+
+                        <img src="images/project2.jpeg"
+                             alt="Commercial building construction project"
+                             loading="lazy">
+
+                        <span class="project-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="featured-project-content">
+
+                        <h3>Commercial Building</h3>
+
+                        <p>
+                            Office Construction
+                        </p>
+
+                        <div class="project-info">
+                            <span>📍 Coimbatore</span>
+                            <span>📐 5000 Sq.ft</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="featured-project-card interior">
+
+                    <div class="featured-project-image">
+
+                        <img src="images/project3.jpeg"
+                             alt="Modern luxury interior project"
+                             loading="lazy">
+
+                        <span class="project-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="featured-project-content">
+
+                        <h3>Luxury Interior</h3>
+
+                        <p>
+                            Modern Interior Design
+                        </p>
+
+                        <div class="project-info">
+                            <span>📍 Salem</span>
+                            <span>📐 2200 Sq.ft</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="featured-project-card renovation">
+
+                    <div class="featured-project-image">
+
+                        <img src="images/project4.jpeg"
+                             alt="Home renovation construction project"
+                             loading="lazy">
+
+                        <span class="project-status">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <div class="featured-project-content">
+
+                        <h3>Home Renovation</h3>
+
+                        <p>
+                            Complete Home Makeover
+                        </p>
+
+                        <div class="project-info">
+                            <span>📍 Erode</span>
+                            <span>📐 1800 Sq.ft</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VIDEOS -->
+    <section class="projects-video-section">
+
+        <div class="projects-video-container">
+
+            <div class="projects-video-header">
+
+                <span>PROJECT VIDEOS</span>
+
+                <h2>
+                    Watch Our Construction Journey
+                </h2>
+
+                <p>
+                    Explore our completed construction projects
+                    through real site videos.
+                </p>
+
+            </div>
+
+
+            <div class="projects-video-grid">
+
+                <article class="projects-video-card">
+
+                    <video controls
+                           preload="metadata"
+                           poster="images/video-thumb2.jpg"
+                           playsinline>
+
+                        <source
+                            src="images/project.mp4"
+                            type="video/mp4">
+
+                    </video>
+
+                    <div class="projects-video-content">
+
+                        <h3>
+                            Commercial Building
+                        </h3>
+
+                        <p>
+                            Commercial Project
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="projects-video-card">
+
+                    <video controls
+                           preload="metadata"
+                           poster="images/video-thumb1.jpg"
+                           playsinline>
+
+                        <source
+                            src="images/projectone.mp4"
+                            type="video/mp4">
+
+                    </video>
+
+                    <div class="projects-video-content">
+
+                        <h3>
+                            Luxury Villa Construction
+                        </h3>
+
+                        <p>
+                            Residential Project
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="project-gallery-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    OUR GALLERY
+                </span>
+
+                <h2>
+                    Explore Our Completed Projects
+                </h2>
+
+                <p>
+                    Browse our project highlights and open
+                    any project to view its details.
+                </p>
+
+            </div>
+
+
+            <div class="swiper gallerySwiper">
+
+                <div class="swiper-wrapper">
+
+
+                    <div class="swiper-slide">
+
+                        <article class="gallery-card"
+                            data-title="Luxury Villa"
+                            data-location="Chennai"
+                            data-area="3500 Sq.ft"
+                            data-status="Completed"
+                            data-category="Residential"
+                            data-description="Premium luxury villa built with quality materials and modern architecture."
+                            data-materials="UltraTech Cement, Tata Steel, Kajaria Tiles, Asian Paints">
+
+                            <img src="images/project1.jpeg"
+                                 alt="Luxury Villa"
+                                 loading="lazy">
+
+                            <div class="gallery-overlay">
+
+                                <h3>
+                                    Luxury Villa
+                                </h3>
+
+                                <button
+                                    class="gallery-btn"
+                                    type="button">
+                                    View Details
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <article class="gallery-card"
+                            data-title="Commercial Building"
+                            data-location="Coimbatore"
+                            data-area="5000 Sq.ft"
+                            data-status="Completed"
+                            data-category="Commercial"
+                            data-description="Modern commercial building with premium office space."
+                            data-materials="Ramco Cement, Tata Steel, Kajaria Tiles">
+
+                            <img src="images/project2.jpeg"
+                                 alt="Commercial Building"
+                                 loading="lazy">
+
+                            <div class="gallery-overlay">
+
+                                <h3>
+                                    Commercial Building
+                                </h3>
+
+                                <button
+                                    class="gallery-btn"
+                                    type="button">
+                                    View Details
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <article class="gallery-card"
+                            data-title="Luxury Interior"
+                            data-location="Salem"
+                            data-area="2200 Sq.ft"
+                            data-status="Completed"
+                            data-category="Interior"
+                            data-description="Modern interior with elegant finishing."
+                            data-materials="Greenply, Kajaria, Asian Paints">
+
+                            <img src="images/project3.jpeg"
+                                 alt="Luxury Interior"
+                                 loading="lazy">
+
+                            <div class="gallery-overlay">
+
+                                <h3>
+                                    Luxury Interior
+                                </h3>
+
+                                <button
+                                    class="gallery-btn"
+                                    type="button">
+                                    View Details
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <div class="swiper-slide">
+
+                        <article class="gallery-card"
+                            data-title="Home Renovation"
+                            data-location="Erode"
+                            data-area="1800 Sq.ft"
+                            data-status="Completed"
+                            data-category="Renovation"
+                            data-description="Complete home renovation and makeover project."
+                            data-materials="Quality construction and finishing materials">
+
+                            <img src="images/project4.jpeg"
+                                 alt="Home Renovation"
+                                 loading="lazy">
+
+                            <div class="gallery-overlay">
+
+                                <h3>
+                                    Home Renovation
+                                </h3>
+
+                                <button
+                                    class="gallery-btn"
+                                    type="button">
+                                    View Details
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL -->
+    <div class="gallery-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modalTitle">
+
+        <div class="gallery-modal-content">
+
+            <button
+                class="gallery-close"
+                type="button"
+                aria-label="Close project details">
+                &times;
+            </button>
+
+            <img
+                id="modalImage"
+                alt="">
+
+            <h2 id="modalTitle"></h2>
+
+            <p>
+                <strong>Location:</strong>
+                <span id="modalLocation"></span>
+            </p>
+
+            <p>
+                <strong>Area:</strong>
+                <span id="modalArea"></span>
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                <span id="modalStatus"></span>
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                <span id="modalCategory"></span>
+            </p>
+
+            <p id="modalDescription"></p>
+
+            <h4>
+                Materials Used
+            </h4>
+
+            <p id="modalMaterials"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROCESS -->
+    <section class="process-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>
+                    OUR PROCESS
+                </span>
+
+                <h2>
+                    How We Work
+                </h2>
+
+                <p>
+                    Our proven process ensures quality,
+                    transparency, and timely project completion.
+                </p>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Consultation
+                    </h3>
+
+                    <p>
+                        Understanding your requirements
+                        and project goals.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Planning & Design
+                    </h3>
+
+                    <p>
+                        Preparing layouts, drawings
+                        and cost estimation.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Construction
+                    </h3>
+
+                    <p>
+                        Executing the project with quality
+                        materials and skilled professionals.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Quality Check
+                    </h3>
+
+                    <p>
+                        Ensuring every stage meets
+                        our quality standards.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <div class="process-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Project Handover
+                    </h3>
+
+                    <p>
+                        Delivering your project on time
+                        with complete satisfaction.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<div id="footer"></div>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/script1.js"></script>
+</body>
+</html>
