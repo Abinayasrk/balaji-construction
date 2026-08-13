@@ -1,24 +1,51 @@
+/* =========================================================
+   BALAJI CONSTRUCTION — SERVICES PAGE SCRIPT
+========================================================= */
+
+
+/* ===========================
+   SCROLL REVEAL ANIMATION
+=========================== */
+
 const reveals = document.querySelectorAll(
     '.reveal-left, .reveal-right, .reveal-up'
 );
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const observer = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries) => {
 
-        if (entry.isIntersecting) {
+        entries.forEach(entry => {
 
-            entry.target.classList.add('show');
+            if (entry.isIntersecting) {
 
-            // Stop observing after first reveal
-            observer.unobserve(entry.target);
-        }
+                entry.target.classList.add('show');
 
+                // Stop observing after first reveal
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.3
+    })
+    : null;
+
+
+if (observer) {
+
+    reveals.forEach(el => {
+        observer.observe(el);
     });
-}, {
-    threshold: 0.3
-});
 
-reveals.forEach(el => observer.observe(el));
+} else {
+
+    reveals.forEach(el => {
+        el.classList.add('show');
+    });
+
+}
 
 
 /* ===========================
@@ -26,11 +53,16 @@ reveals.forEach(el => observer.observe(el));
 =========================== */
 
 function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
+
+    const navLinks =
+        document.querySelector(".nav-links");
 
     if (navLinks) {
+
         navLinks.classList.toggle("active");
+
     }
+
 }
 
 
@@ -38,57 +70,87 @@ function toggleMenu() {
    COUNTER ANIMATION
 =========================== */
 
-const counters = document.querySelectorAll(".counter");
+const counters =
+    document.querySelectorAll(".counter");
 
-const statsObserver = new IntersectionObserver(entries => {
 
-    entries.forEach(entry => {
+if (counters.length && 'IntersectionObserver' in window) {
 
-        if (entry.isIntersecting) {
+    const statsObserver =
+        new IntersectionObserver(entries => {
 
-            const counter = entry.target;
-            const target = +counter.dataset.target;
+            entries.forEach(entry => {
 
-            let count = 0;
+                if (entry.isIntersecting) {
 
-            const update = () => {
+                    const counter =
+                        entry.target;
 
-                const increment = Math.ceil(target / 100);
+                    const target =
+                        +counter.dataset.target;
 
-                if (count < target) {
+                    let count = 0;
 
-                    count += increment;
 
-                    if (count > target) {
-                        count = target;
-                    }
+                    const update = () => {
 
-                    counter.innerText = count;
+                        const increment =
+                            Math.ceil(target / 100);
 
-                    setTimeout(update, 20);
 
-                } else {
+                        if (count < target) {
 
-                    counter.innerText = target + "+";
+                            count += increment;
+
+
+                            if (count > target) {
+                                count = target;
+                            }
+
+
+                            counter.innerText =
+                                count;
+
+
+                            setTimeout(
+                                update,
+                                20
+                            );
+
+
+                        } else {
+
+                            counter.innerText =
+                                target + "+";
+
+                        }
+
+                    };
+
+
+                    update();
+
+
+                    statsObserver.unobserve(
+                        counter
+                    );
 
                 }
 
-            };
+            });
 
-            update();
+        }, {
+            threshold: 0.5
+        });
 
-            statsObserver.unobserve(counter);
-        }
+
+    counters.forEach(counter => {
+
+        statsObserver.observe(counter);
 
     });
 
-}, {
-    threshold: 0.5
-});
-
-counters.forEach(counter => {
-    statsObserver.observe(counter);
-});
+}
 
 
 /* ===========================
@@ -100,225 +162,57 @@ if (
     typeof Swiper !== "undefined"
 ) {
 
-    const swiper = new Swiper(".projectSwiper", {
+    const swiper =
+        new Swiper(".projectSwiper", {
 
-        loop: true,
+            loop: true,
 
-        spaceBetween: 25,
-
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-
-        breakpoints: {
-
-            0: {
-                slidesPerView: 1,
-            },
-
-            768: {
-                slidesPerView: 2,
-            },
-
-            1024: {
-                slidesPerView: 3,
-            }
-
-        }
-
-    });
-
-}
-
-
-/* ===========================
-   SERVICE TABS
-=========================== */
-
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
-
-tabButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        tabButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        tabContents.forEach(content => {
-            content.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const target = document.getElementById(
-            button.dataset.tab
-        );
-
-        if (target) {
-            target.classList.add("active");
-        }
-
-    });
-
-});
-
-
-/* ===========================
-   FAQ ACCORDION
-=========================== */
-
-const faqs = document.querySelectorAll(".faq-item");
-
-faqs.forEach(faq => {
-
-    const question = faq.querySelector(".faq-question");
-
-    if (!question) return;
-
-    question.addEventListener("click", () => {
-
-        const isActive = faq.classList.contains("active");
-
-        faqs.forEach(item => {
-
-            item.classList.remove("active");
-
-            const icon = item.querySelector(".faq-icon");
-
-            if (icon) {
-
-                icon.classList.remove("fa-minus");
-
-                icon.classList.add("fa-plus");
-
-            }
-
-        });
-
-        if (!isActive) {
-
-            faq.classList.add("active");
-
-            const icon = faq.querySelector(".faq-icon");
-
-            if (icon) {
-
-                icon.classList.remove("fa-plus");
-
-                icon.classList.add("fa-minus");
-
-            }
-
-        }
-
-    });
-
-});
-
-
-/* ===========================
-   PROJECT FILTER
-=========================== */
-
-const filterButtons =
-    document.querySelectorAll(".projects-filter-btn");
-
-const projectCards =
-    document.querySelectorAll(".featured-project-card");
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        const filter =
-            button.getAttribute("data-filter");
-
-        projectCards.forEach(card => {
-
-            if (
-                filter === "*" ||
-                card.classList.contains(
-                    filter.replace(".", "")
-                )
-            ) {
-
-                card.style.display = "block";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-});
-
-
-/* ===========================
-   PROJECT GALLERY SWIPER
-=========================== */
-
-if (
-    document.querySelector(".gallerySwiper") &&
-    typeof Swiper !== "undefined"
-) {
-
-    const gallerySwiper =
-        new Swiper(".gallerySwiper", {
-
-            loop: false,
-
-            spaceBetween: 30,
+            spaceBetween: 25,
 
             autoplay: {
+
                 delay: 3000,
+
                 disableOnInteraction: false,
+
             },
 
             pagination: {
+
                 el: ".swiper-pagination",
+
                 clickable: true,
+
             },
 
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+
+                nextEl:
+                    ".swiper-button-next",
+
+                prevEl:
+                    ".swiper-button-prev",
+
             },
 
             breakpoints: {
 
                 0: {
+
                     slidesPerView: 1,
+
                 },
 
                 768: {
+
                     slidesPerView: 2,
+
                 },
 
                 1024: {
+
                     slidesPerView: 3,
+
                 }
 
             }
@@ -329,90 +223,462 @@ if (
 
 
 /* ===========================
+   SERVICE TABS
+=========================== */
+
+const tabButtons =
+    document.querySelectorAll(".tab-btn");
+
+const tabContents =
+    document.querySelectorAll(".tab-content");
+
+
+tabButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            tabButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            tabContents.forEach(content => {
+
+                content.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            const target =
+                document.getElementById(
+                    button.dataset.tab
+                );
+
+
+            if (target) {
+
+                target.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ===========================
+   FAQ ACCORDION
+=========================== */
+
+const faqs =
+    document.querySelectorAll(".faq-item");
+
+
+faqs.forEach(faq => {
+
+    const question =
+        faq.querySelector(
+            ".faq-question"
+        );
+
+
+    if (!question) return;
+
+
+    question.addEventListener(
+        "click",
+        () => {
+
+            const isActive =
+                faq.classList.contains(
+                    "active"
+                );
+
+
+            faqs.forEach(item => {
+
+                item.classList.remove(
+                    "active"
+                );
+
+
+                const icon =
+                    item.querySelector(
+                        ".faq-icon"
+                    );
+
+
+                if (icon) {
+
+                    icon.classList.remove(
+                        "fa-minus"
+                    );
+
+                    icon.classList.add(
+                        "fa-plus"
+                    );
+
+                }
+
+            });
+
+
+            if (!isActive) {
+
+                faq.classList.add(
+                    "active"
+                );
+
+
+                const icon =
+                    faq.querySelector(
+                        ".faq-icon"
+                    );
+
+
+                if (icon) {
+
+                    icon.classList.remove(
+                        "fa-plus"
+                    );
+
+                    icon.classList.add(
+                        "fa-minus"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ===========================
+   PROJECT FILTER
+=========================== */
+
+const filterButtons =
+    document.querySelectorAll(
+        ".projects-filter-btn"
+    );
+
+
+const projectCards =
+    document.querySelectorAll(
+        ".featured-project-card"
+    );
+
+
+filterButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            const filter =
+                button.getAttribute(
+                    "data-filter"
+                );
+
+
+            projectCards.forEach(card => {
+
+                if (
+                    filter === "*" ||
+                    card.classList.contains(
+                        filter.replace(
+                            ".",
+                            ""
+                        )
+                    )
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                } else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+            });
+
+        }
+    );
+
+});
+
+
+/* ===========================
+   PROJECT GALLERY SWIPER
+=========================== */
+
+if (
+    document.querySelector(
+        ".gallerySwiper"
+    ) &&
+    typeof Swiper !== "undefined"
+) {
+
+    const gallerySwiper =
+        new Swiper(
+            ".gallerySwiper",
+            {
+
+                loop: false,
+
+                spaceBetween: 30,
+
+                autoplay: {
+
+                    delay: 3000,
+
+                    disableOnInteraction:
+                        false,
+
+                },
+
+                pagination: {
+
+                    el:
+                        ".swiper-pagination",
+
+                    clickable: true,
+
+                },
+
+                navigation: {
+
+                    nextEl:
+                        ".swiper-button-next",
+
+                    prevEl:
+                        ".swiper-button-prev",
+
+                },
+
+                breakpoints: {
+
+                    0: {
+
+                        slidesPerView: 1,
+
+                    },
+
+                    768: {
+
+                        slidesPerView: 2,
+
+                    },
+
+                    1024: {
+
+                        slidesPerView: 3,
+
+                    }
+
+                }
+
+            }
+        );
+
+}
+
+
+/* ===========================
    PROJECT GALLERY POPUP
 =========================== */
 
 const modal =
-    document.querySelector(".gallery-modal");
+    document.querySelector(
+        ".gallery-modal"
+    );
+
 
 const modalImg =
-    document.getElementById("modalImage");
+    document.getElementById(
+        "modalImage"
+    );
+
 
 const modalTitle =
-    document.getElementById("modalTitle");
+    document.getElementById(
+        "modalTitle"
+    );
+
 
 const modalLocation =
-    document.getElementById("modalLocation");
+    document.getElementById(
+        "modalLocation"
+    );
+
 
 const modalArea =
-    document.getElementById("modalArea");
+    document.getElementById(
+        "modalArea"
+    );
+
 
 const modalStatus =
-    document.getElementById("modalStatus");
+    document.getElementById(
+        "modalStatus"
+    );
+
 
 const modalCategory =
-    document.getElementById("modalCategory");
+    document.getElementById(
+        "modalCategory"
+    );
+
 
 const modalDescription =
-    document.getElementById("modalDescription");
+    document.getElementById(
+        "modalDescription"
+    );
+
 
 const modalMaterials =
-    document.getElementById("modalMaterials");
+    document.getElementById(
+        "modalMaterials"
+    );
+
 
 const galleryCards =
-    document.querySelectorAll(".gallery-card");
+    document.querySelectorAll(
+        ".gallery-card"
+    );
 
 
 galleryCards.forEach(card => {
 
-    card.addEventListener("click", () => {
+    card.addEventListener(
+        "click",
+        () => {
 
-        if (!modal) return;
+            if (!modal) return;
 
-        modal.classList.add("active");
 
-        const image = card.querySelector("img");
+            modal.classList.add(
+                "active"
+            );
 
-        if (modalImg && image) {
-            modalImg.src = image.src;
+
+            const image =
+                card.querySelector(
+                    "img"
+                );
+
+
+            if (
+                modalImg &&
+                image
+            ) {
+
+                modalImg.src =
+                    image.src;
+
+            }
+
+
+            if (modalTitle) {
+
+                modalTitle.innerText =
+                    card.dataset.title ||
+                    "";
+
+            }
+
+
+            if (modalLocation) {
+
+                modalLocation.innerText =
+                    card.dataset.location ||
+                    "";
+
+            }
+
+
+            if (modalArea) {
+
+                modalArea.innerText =
+                    card.dataset.area ||
+                    "";
+
+            }
+
+
+            if (modalStatus) {
+
+                modalStatus.innerText =
+                    card.dataset.status ||
+                    "";
+
+            }
+
+
+            if (modalCategory) {
+
+                modalCategory.innerText =
+                    card.dataset.category ||
+                    "";
+
+            }
+
+
+            if (modalDescription) {
+
+                modalDescription.innerText =
+                    card.dataset.description ||
+                    "";
+
+            }
+
+
+            if (modalMaterials) {
+
+                modalMaterials.innerText =
+                    card.dataset.materials ||
+                    "";
+
+            }
+
         }
-
-        if (modalTitle) {
-            modalTitle.innerText =
-                card.dataset.title || "";
-        }
-
-        if (modalLocation) {
-            modalLocation.innerText =
-                card.dataset.location || "";
-        }
-
-        if (modalArea) {
-            modalArea.innerText =
-                card.dataset.area || "";
-        }
-
-        if (modalStatus) {
-            modalStatus.innerText =
-                card.dataset.status || "";
-        }
-
-        if (modalCategory) {
-            modalCategory.innerText =
-                card.dataset.category || "";
-        }
-
-        if (modalDescription) {
-            modalDescription.innerText =
-                card.dataset.description || "";
-        }
-
-        if (modalMaterials) {
-            modalMaterials.innerText =
-                card.dataset.materials || "";
-        }
-
-    });
+    );
 
 });
 
@@ -422,40 +688,96 @@ galleryCards.forEach(card => {
 =========================== */
 
 const galleryClose =
-    document.querySelector(".gallery-close");
+    document.querySelector(
+        ".gallery-close"
+    );
 
-if (galleryClose && modal) {
 
-    galleryClose.onclick = () => {
+if (
+    galleryClose &&
+    modal
+) {
 
-        modal.classList.remove("active");
+    galleryClose.onclick =
+        () => {
 
-    };
+            modal.classList.remove(
+                "active"
+            );
+
+        };
 
 }
 
 
-window.addEventListener("click", (e) => {
+window.addEventListener(
+    "click",
+    (e) => {
 
-    if (e.target === modal) {
+        if (
+            modal &&
+            e.target === modal
+        ) {
 
-        modal.classList.remove("active");
+            modal.classList.remove(
+                "active"
+            );
+
+        }
 
     }
-
-});
+);
 
 
 /* ===========================
    ESCAPE KEY
 =========================== */
 
-document.addEventListener("keydown", (e) => {
+document.addEventListener(
+    "keydown",
+    (e) => {
 
-    if (e.key === "Escape" && modal) {
+        if (
+            e.key === "Escape" &&
+            modal
+        ) {
 
-        modal.classList.remove("active");
+            modal.classList.remove(
+                "active"
+            );
+
+        }
 
     }
+);
 
-});
+
+/* =========================================================
+   AOS — PREMIUM SCROLL ANIMATION
+========================================================= */
+
+if (
+    typeof AOS !== "undefined"
+) {
+
+    AOS.init({
+
+        duration: 850,
+
+        easing:
+            "ease-out-cubic",
+
+        offset: 90,
+
+        once: true,
+
+        mirror: false,
+
+        disable:
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches
+
+    });
+
+}
