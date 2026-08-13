@@ -5709,187 +5709,493 @@ font-size:14px;
 
 
 /* =========================================================
-   CONTACT PAGE ENHANCEMENTS
-   Added to existing style1.css
+   ABOUT PAGE HERO — PREMIUM BACKGROUND
 ========================================================= */
 
-.contact{
+.about-hero{
     position:relative;
+    min-height:520px;
+    height:65vh;
+    background:url("../images/about-hero.png") center center/cover no-repeat;
+    display:flex;
+    align-items:center;
     overflow:hidden;
 }
 
-.contact::before{
-    content:"";
+.about-hero-overlay{
     position:absolute;
-    width:280px;
-    height:280px;
-    right:-150px;
-    top:-130px;
-    border:1px solid rgba(124,187,174,.22);
-    border-radius:50%;
-    animation:contactOrbit 16s linear infinite;
-    pointer-events:none;
+    inset:0;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(
+        90deg,
+        rgba(25,37,35,.78) 0%,
+        rgba(25,37,35,.48) 48%,
+        rgba(25,37,35,.18) 100%
+    );
 }
 
-.contact-wrapper{
+.about-hero-content{
+    width:1200px;
+    max-width:90%;
+    margin:0 auto;
+    padding-top:70px;
+    color:var(--white);
+    animation:aboutHeroFade 1s ease both;
+}
+
+.about-hero-content > span{
+    display:inline-block;
+    color:var(--primary);
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:14px;
+}
+
+.about-hero-content h1{
+    max-width:760px;
+    margin:0 0 22px;
+    color:var(--white);
+    font-size:56px;
+    line-height:1.15;
+    font-weight:700;
+}
+
+.about-breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--white);
+    font-size:15px;
+}
+
+.about-breadcrumb a{
+    color:var(--primary);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.about-breadcrumb a:hover{
+    color:var(--white);
+}
+
+@keyframes aboutHeroFade{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:992px){
+    .about-hero{
+        min-height:460px;
+        height:58vh;
+    }
+
+    .about-hero-content h1{
+        font-size:46px;
+    }
+}
+
+@media(max-width:768px){
+    .about-hero{
+        min-height:390px;
+        height:52vh;
+    }
+
+    .about-hero-overlay{
+        background:linear-gradient(
+            180deg,
+            rgba(25,37,35,.62),
+            rgba(25,37,35,.50)
+        );
+    }
+
+    .about-hero-content{
+        max-width:92%;
+        padding-top:75px;
+        text-align:center;
+    }
+
+    .about-hero-content > span{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    .about-hero-content h1{
+        font-size:34px;
+        line-height:1.2;
+        margin-bottom:18px;
+    }
+
+    .about-breadcrumb{
+        justify-content:center;
+        font-size:14px;
+    }
+}
+
+@media(max-width:480px){
+    .about-hero{
+        min-height:350px;
+        height:48vh;
+    }
+
+    .about-hero-content h1{
+        font-size:29px;
+    }
+}
+
+
+/* =========================================================
+   SERVICES PAGE — PREMIUM MOTION & HOVER POLISH
+   Subtle animation only: clean, professional, not distracting.
+========================================================= */
+
+.service-hero{
+    overflow:hidden;
+}
+
+.service-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,.08) 45%,
+        transparent 70%
+    );
+    transform:translateX(-120%);
+    animation:serviceHeroShine 8s ease-in-out infinite;
+}
+
+.service-overlay{
     position:relative;
     z-index:1;
 }
 
-.contact-info .info-box{
-    transition:
-        transform .4s cubic-bezier(.2,.7,.2,1),
-        box-shadow .4s ease,
-        border-color .4s ease;
+.service-hero-title{
+    animation:serviceHeroTitle 1s cubic-bezier(.2,.7,.2,1) both;
 }
 
-.contact-info .info-box:hover{
-    transform:translateY(-7px);
-    box-shadow:0 18px 40px rgba(25,37,35,.11);
+.service-hero p{
+    animation:serviceHeroText 1s .15s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.service-hero .breadcrumb{
+    animation:serviceHeroText 1s .3s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes serviceHeroTitle{
+    from{opacity:0; transform:translateY(25px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes serviceHeroText{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes serviceHeroShine{
+    0%,55%{transform:translateX(-120%);}
+    75%,100%{transform:translateX(120%);}
+}
+
+/* Service cards */
+.service-box{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(124,187,174,.12);
+}
+
+.service-box::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:0;
+    background:var(--primary);
+    transition:height .45s ease;
+}
+
+.service-box:hover::before{
+    height:100%;
+}
+
+.service-box i{
+    transition:transform .45s ease, color .3s ease;
+}
+
+.service-box:hover i{
+    transform:translateY(-4px) scale(1.08);
+}
+
+/* Tabs */
+.tab-image{
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.tab-image img{
+    transition:transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.tab-image:hover img{
+    transform:scale(1.045);
+    filter:saturate(1.05);
+}
+
+.tab-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.tab-btn::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:0;
+    height:3px;
+    background:var(--secondary);
+    transform:translateX(-50%);
+    transition:width .3s ease;
+}
+
+.tab-btn:hover::after,
+.tab-btn.active::after{
+    width:45%;
+}
+
+/* Quality cards */
+.quality-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.quality-card i{
+    transition:transform .45s ease;
+}
+
+.quality-card:hover i{
+    transform:translateY(-5px) rotate(-5deg) scale(1.08);
+}
+
+/* Brand cards */
+.brand-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.brand-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:18px;
+    border:1px solid transparent;
+    transition:border-color .35s ease, box-shadow .35s ease;
+    pointer-events:none;
+}
+
+.brand-card:hover::after{
     border-color:rgba(124,187,174,.45);
+    box-shadow:inset 0 0 0 1px rgba(124,187,174,.12);
 }
 
-.contact-info .info-box i{
+/* FAQ */
+.faq-item{
+    transition:transform .35s ease, box-shadow .35s ease;
+}
+
+.faq-item:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 32px rgba(0,0,0,.10);
+}
+
+.faq-icon{
+    transition:transform .35s ease;
+}
+
+.faq-item.active .faq-icon{
+    transform:rotate(180deg);
+}
+
+/* Respect reduced-motion accessibility preference */
+@media (prefers-reduced-motion: reduce){
+    .service-hero::after,
+    .service-hero-title,
+    .service-hero p,
+    .service-hero .breadcrumb{
+        animation:none !important;
+    }
+
+    .service-box,
+    .quality-card,
+    .brand-card,
+    .faq-item,
+    .tab-image img,
+    .service-box i,
+    .quality-card i,
+    .faq-icon{
+        transition:none !important;
+        transform:none !important;
+    }
+}
+
+
+/* =========================================================
+   BRANDS WE TRUST — PREMIUM INFINITE CAROUSEL
+   Added without changing the existing brand names/images.
+========================================================= */
+
+.brands-section{
+    overflow:hidden;
+}
+
+.brands-carousel{
+    position:relative;
+    width:100%;
+    margin-top:60px;
+    overflow:hidden;
+    padding:8px 0 18px;
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent 0,
+        #000 5%,
+        #000 95%,
+        transparent 100%
+    );
+    mask-image:linear-gradient(
+        to right,
+        transparent 0,
+        #000 5%,
+        #000 95%,
+        transparent 100%
+    );
+}
+
+.brands-track{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    width:max-content;
+    animation:brandsInfiniteScroll 28s linear infinite;
+    will-change:transform;
+}
+
+.brands-carousel:hover .brands-track{
+    animation-play-state:paused;
+}
+
+.brands-carousel .brand-card{
+    flex:0 0 210px;
+    width:210px;
+    height:145px;
+    margin:0;
+    background:var(--white);
+    border:1px solid #E6EEEC;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
     transition:
         transform .35s ease,
-        background .35s ease,
-        color .35s ease;
+        box-shadow .35s ease,
+        border-color .35s ease;
 }
 
-.contact-info .info-box:hover i{
-    transform:scale(1.08) rotate(-4deg);
+.brands-carousel .brand-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(124,187,174,.55);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
-.contact-form{
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease,
-        border-color .4s ease;
-}
-
-.contact-form:hover{
-    transform:translateY(-4px);
-    box-shadow:0 20px 48px rgba(25,37,35,.11);
-}
-
-.contact-form input,
-.contact-form textarea{
-    transition:
-        border-color .3s ease,
-        box-shadow .3s ease,
-        background .3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-    border-color:#7cbbae;
-    box-shadow:0 0 0 4px rgba(124,187,174,.12);
-    background:#fff;
-}
-
-.contact-form button,
-.whatsapp-btn{
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.contact-form button:hover,
-.whatsapp-btn:hover{
-    transform:translateY(-2px);
-}
-
-.map-container{
-    overflow:hidden;
-    border-radius:18px;
-    box-shadow:0 16px 45px rgba(25,37,35,.10);
-}
-
-.map-container iframe{
+.brands-carousel .brand-card img{
+    width:170px;
+    max-width:80%;
+    max-height:90px;
+    object-fit:contain;
     display:block;
-    width:100%;
-    min-height:450px;
-    border:0;
+    transition:transform .35s ease, filter .35s ease;
 }
 
-@keyframes contactOrbit{
+.brands-carousel .brand-card:hover img{
+    transform:scale(1.07);
+    filter:grayscale(0%);
+}
+
+@keyframes brandsInfiniteScroll{
+    from{
+        transform:translateX(0);
+    }
     to{
-        transform:rotate(360deg);
+        transform:translateX(calc(-50% - 12px));
+    }
+}
+
+@media(max-width:992px){
+
+    .brands-carousel .brand-card{
+        flex-basis:190px;
+        width:190px;
+        height:135px;
+    }
+
+    .brands-track{
+        gap:20px;
+        animation-duration:25s;
     }
 }
 
 @media(max-width:768px){
 
-    .contact{
-        padding-left:0;
-        padding-right:0;
+    .brands-section{
+        padding:75px 20px;
     }
 
-    .contact-wrapper{
-        gap:22px;
+    .brands-carousel{
+        margin-top:40px;
+        -webkit-mask-image:none;
+        mask-image:none;
     }
 
-    .info-box{
-        width:100%;
+    .brands-track{
+        gap:14px;
+        animation-duration:22s;
     }
 
-    .info-box p,
-    .info-box a{
-        word-break:break-word;
-        overflow-wrap:anywhere;
+    .brands-carousel .brand-card{
+        flex-basis:155px;
+        width:155px;
+        height:115px;
+        border-radius:15px;
     }
 
-    .contact-form{
-        width:100%;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button,
-    .whatsapp-btn{
-        width:100%;
-        box-sizing:border-box;
-    }
-
-    .map-container{
-        border-radius:14px;
-    }
-
-    .map-container iframe{
-        min-height:330px;
-        height:330px;
-    }
-}
-
-@media(max-width:480px){
-
-    .info-box{
-        padding:18px;
-        gap:13px;
-    }
-
-    .info-box i{
-        width:50px;
-        height:50px;
-        min-width:50px;
-    }
-
-    .map-container iframe{
-        min-height:290px;
-        height:290px;
+    .brands-carousel .brand-card img{
+        width:125px;
+        max-height:70px;
     }
 }
 
 @media(prefers-reduced-motion:reduce){
 
-    .contact::before{
-        animation:none;
+    .brands-track{
+        animation:none !important;
+        transform:none !important;
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
-    .contact-info .info-box,
-    .contact-form,
-    .contact-form button,
-    .whatsapp-btn{
-        transition:none;
+    .brands-track .brand-card:nth-child(n+7){
+        display:none;
     }
 }
