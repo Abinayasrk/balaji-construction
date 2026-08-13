@@ -1,16 +1,18 @@
 
 /* =========================================================
    BALAJI CONSTRUCTION — PROJECT PAGE ONLY JS
-   Dropdown filter + animations
+   Final dropdown + animations
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
-    const page = document.querySelector(".project-page");
-    if (!page) return;
+    const page=document.querySelector(".project-page");
+    if(!page) return;
 
-    /* Scroll reveal */
-    const revealItems = page.querySelectorAll(
+    /* -------------------------
+       Scroll reveal
+    ------------------------- */
+    const revealItems=page.querySelectorAll(
         ".featured-project-card, " +
         ".projects-video-header, " +
         ".projects-video-card, " +
@@ -19,100 +21,131 @@ document.addEventListener("DOMContentLoaded", function () {
         ".process-card"
     );
 
-    if ("IntersectionObserver" in window) {
+    if("IntersectionObserver" in window){
 
-        const revealObserver =
-            new IntersectionObserver(function (entries, observer) {
+        const observer=new IntersectionObserver(
+            function(entries,obs){
 
-                entries.forEach(function (entry) {
+                entries.forEach(function(entry){
 
-                    if (!entry.isIntersecting) return;
+                    if(!entry.isIntersecting) return;
 
                     entry.target.classList.add("project-visible");
-                    observer.unobserve(entry.target);
+                    obs.unobserve(entry.target);
 
                 });
 
-            }, {
-                threshold: 0.12,
-                rootMargin: "0px 0px -45px 0px"
-            });
+            },
+            {
+                threshold:.12,
+                rootMargin:"0px 0px -40px 0px"
+            }
+        );
 
-        revealItems.forEach(function (item, index) {
+        revealItems.forEach(function(item,index){
+
             item.classList.add("project-reveal");
-            item.style.transitionDelay =
-                Math.min(index * 55, 250) + "ms";
-            revealObserver.observe(item);
+
+            item.style.transitionDelay=
+                Math.min(index*55,250)+"ms";
+
+            observer.observe(item);
+
         });
 
-    } else {
-        revealItems.forEach(function (item) {
+    }else{
+
+        revealItems.forEach(function(item){
             item.classList.add("project-visible");
         });
+
     }
 
-    /* Dropdown project filter */
-    const select =
+    /* -------------------------
+       Dropdown filter
+    ------------------------- */
+    const select=
         page.querySelector("#projectCategory");
 
-    const cards =
+    const cards=
         page.querySelectorAll(".featured-project-card");
 
-    if (!select || !cards.length) return;
+    if(!select || !cards.length) return;
 
-    function filterProjects(value) {
+    let filterTimer=[];
 
-        cards.forEach(function (card, index) {
+    function filterProjects(value){
 
-            const show =
-                value === "*" ||
-                card.classList.contains(
-                    value.replace(".", "")
-                );
+        filterTimer.forEach(clearTimeout);
+        filterTimer=[];
+
+        cards.forEach(function(card,index){
+
+            const category=value.replace(".","");
+
+            const show=
+                value==="*" ||
+                card.classList.contains(category);
 
             card.classList.remove(
                 "project-filter-show",
                 "project-filter-hide"
             );
 
-            if (show) {
+            if(show){
 
-                card.style.display = "";
+                card.style.display="";
 
-                /* Re-trigger animation */
+                /* force animation restart */
                 void card.offsetWidth;
 
-                card.style.animationDelay =
-                    Math.min(index * 70, 280) + "ms";
+                card.style.animationDelay=
+                    Math.min(index*75,300)+"ms";
 
-                card.classList.add(
-                    "project-filter-show"
-                );
+                card.classList.add("project-filter-show");
 
-            } else {
+            }else{
 
-                card.classList.add(
-                    "project-filter-hide"
-                );
+                card.classList.add("project-filter-hide");
 
-                setTimeout(function () {
+                const timer=setTimeout(function(){
 
-                    if (
+                    if(
                         card.classList.contains(
                             "project-filter-hide"
                         )
-                    ) {
-                        card.style.display = "none";
+                    ){
+                        card.style.display="none";
                     }
 
-                }, 430);
+                },430);
+
+                filterTimer.push(timer);
 
             }
 
         });
+
+        /* Smoothly bring the filtered grid into view */
+        const grid=
+            page.querySelector(".featured-projects-grid");
+
+        if(grid){
+
+            setTimeout(function(){
+
+                grid.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            },80);
+
+        }
+
     }
 
-    select.addEventListener("change", function () {
+    select.addEventListener("change",function(){
         filterProjects(this.value);
     });
 
