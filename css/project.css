@@ -325,125 +325,57 @@
 }
 
 /* =========================================================
-   PROJECT GALLERY — FINAL BALANCED NO-GAP LAYOUT
+   PROJECT GALLERY — TRUE MASONRY / NO-GAP LAYOUT
    Project page only
 ========================================================= */
 
 .project-page .project-gallery-grid{
     max-width:1240px;
     margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    grid-template-rows:repeat(4,260px);
-    gap:18px;
+    column-count:3;
+    column-gap:18px;
 }
 
-/* Card 01 — large feature */
-.project-page .project-gallery-card:nth-child(1){
-    grid-column:1 / span 2;
-    grid-row:1 / span 2;
+.project-page .project-gallery-card{
+    position:relative;
+    min-width:0;
+    width:100%;
+    overflow:hidden;
+    border-radius:20px;
+    background:#192523;
+    cursor:pointer;
+    box-shadow:0 12px 35px rgba(25,37,35,.08);
+
+    /* masonry cards must stay together */
+    display:inline-block;
+    vertical-align:top;
+    margin:0 0 18px;
+
+    opacity:0;
+    transform:translateY(28px);
+    animation:galleryCardReveal .75s cubic-bezier(.2,.7,.2,1) forwards;
 }
 
-/* Card 02 */
-.project-page .project-gallery-card:nth-child(2){
-    grid-column:3;
-    grid-row:1;
-}
-
-/* Card 03 */
-.project-page .project-gallery-card:nth-child(3){
-    grid-column:4;
-    grid-row:1;
-}
-
-/* Card 04 — tall */
-.project-page .project-gallery-card:nth-child(4){
-    grid-column:3;
-    grid-row:2 / span 2;
-}
-
-/* Card 05 */
-.project-page .project-gallery-card:nth-child(5){
-    grid-column:4;
-    grid-row:2 / span 2;
-}
-
-/* Card 06 */
-.project-page .project-gallery-card:nth-child(6){
-    grid-column:1;
-    grid-row:3;
-}
-
-/* Card 07 — wide */
-.project-page .project-gallery-card:nth-child(7){
-    grid-column:1 / span 2;
-    grid-row:4;
-}
-
-/* Card 08 */
-.project-page .project-gallery-card:nth-child(8){
-    grid-column:3 / span 2;
-    grid-row:4;
-}
-
-/* Keep the original semantic size classes harmless */
+/* Remove old grid spanning rules */
 .project-page .project-gallery-card-large,
 .project-page .project-gallery-card-tall,
 .project-page .project-gallery-card-wide{
-    min-width:0;
+    grid-column:auto;
+    grid-row:auto;
 }
 
-/* Never let an image create unexpected card height */
-.project-page .project-gallery-card img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
+/* Natural masonry image heights */
+.project-page .project-gallery-card-large img,
+.project-page .project-gallery-card-wide img{
+    aspect-ratio:16 / 10;
 }
 
-/* Responsive tablet */
-@media(max-width:900px){
-    .project-page .project-gallery-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        grid-template-rows:none;
-        grid-auto-rows:240px;
-        grid-auto-flow:dense;
-    }
-
-    .project-page .project-gallery-card:nth-child(1){
-        grid-column:span 2;
-        grid-row:span 2;
-    }
-
-    .project-page .project-gallery-card:nth-child(2),
-    .project-page .project-gallery-card:nth-child(3),
-    .project-page .project-gallery-card:nth-child(4),
-    .project-page .project-gallery-card:nth-child(5),
-    .project-page .project-gallery-card:nth-child(6),
-    .project-page .project-gallery-card:nth-child(8){
-        grid-column:span 1;
-        grid-row:span 1;
-    }
-
-    .project-page .project-gallery-card:nth-child(7){
-        grid-column:span 2;
-        grid-row:span 1;
-    }
+.project-page .project-gallery-card-tall img{
+    aspect-ratio:4 / 5;
 }
 
-/* Mobile */
-@media(max-width:600px){
-    .project-page .project-gallery-grid{
-        grid-template-columns:1fr;
-        grid-template-rows:none;
-        grid-auto-rows:300px;
-        gap:14px;
-    }
-
-    .project-page .project-gallery-card:nth-child(n){
-        grid-column:span 1;
-        grid-row:span 1;
-    }
+.project-page .project-gallery-card:not(.project-gallery-card-large):not(.project-gallery-card-tall):not(.project-gallery-card-wide) img{
+    aspect-ratio:4 / 3;
 }
 
 .project-page .project-gallery-card img{
@@ -628,17 +560,8 @@
 
 @media(max-width:900px){
     .project-page .project-gallery-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        grid-auto-rows:240px;
-    }
-
-    .project-page .project-gallery-card-large,
-    .project-page .project-gallery-card-wide{
-        grid-column:span 2;
-    }
-
-    .project-page .project-gallery-card-tall{
-        grid-row:span 1;
+        column-count:2;
+        column-gap:16px;
     }
 }
 
@@ -652,15 +575,12 @@
     }
 
     .project-page .project-gallery-grid{
-        grid-template-columns:1fr;
-        grid-auto-rows:300px;
-        gap:14px;
+        column-count:1;
+        column-gap:0;
     }
 
-    .project-page .project-gallery-card-large,
-    .project-page .project-gallery-card-wide{
-        grid-column:span 1;
-        grid-row:span 1;
+    .project-page .project-gallery-card{
+        margin-bottom:14px;
     }
 
     .project-page .project-gallery-overlay{
