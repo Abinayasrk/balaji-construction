@@ -598,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (header) {
 
-        fetch("header.html")
+        fetch("header1.html")
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error(
@@ -625,7 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (footer) {
 
-        fetch("footer.html")
+        fetch("footer1.html")
             .then(function (response) {
                 if (!response.ok) {
                     throw new Error(
