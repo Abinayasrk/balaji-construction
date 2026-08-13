@@ -330,320 +330,93 @@ document.addEventListener("keydown",(e)=>{
 
 });
 
-
 /* =========================================================
-   BALAJI CONSTRUCTION — PROJECT PAGE ENHANCEMENTS
-   Unified into the site's script.js
+   CONTACT PAGE ENHANCEMENTS
+   Added to existing script1.js
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ---------------------------
-       AOS
-    --------------------------- */
-    if (typeof AOS !== "undefined") {
-        AOS.init({
-            duration: 850,
-            easing: "ease-out-cubic",
-            offset: 90,
-            once: true,
-            mirror: false,
-            disable:
-                window.matchMedia(
-                    "(prefers-reduced-motion: reduce)"
-                ).matches
-        });
-    }
-
-
-    /* ---------------------------
-       PREMIUM SCROLL REVEAL
-    --------------------------- */
-    const revealItems = document.querySelectorAll(
-        ".projects-intro-container, " +
-        ".featured-project-card, " +
-        ".projects-video-header, " +
-        ".projects-video-card, " +
-        ".project-gallery-section .section-title, " +
-        ".gallery-card, " +
-        ".process-card"
+    /* Contact-page-only reveal fallback */
+    const contactElements = document.querySelectorAll(
+        ".contact .info-box, " +
+        ".contact .contact-form, " +
+        ".map-section .map-container"
     );
+
+    if (!contactElements.length) {
+        return;
+    }
 
     if ("IntersectionObserver" in window) {
 
-        const revealObserver =
-            new IntersectionObserver(
-                function (entries, observer) {
+        const contactObserver =
+            new IntersectionObserver(function (entries, observer) {
 
-                    entries.forEach(function (entry) {
+                entries.forEach(function (entry) {
 
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
 
-                        entry.target.classList.add(
-                            "project-reveal"
-                        );
+                    entry.target.classList.add(
+                        "contact-visible"
+                    );
 
-                        requestAnimationFrame(function () {
+                    observer.unobserve(entry.target);
 
-                            entry.target.classList.add(
-                                "is-visible"
-                            );
+                });
 
-                        });
+            }, {
+                threshold: 0.12,
+                rootMargin: "0px 0px -35px 0px"
+            });
 
-                        observer.unobserve(
-                            entry.target
-                        );
+        contactElements.forEach(function (element, index) {
 
-                    });
+            element.style.opacity = "0";
+            element.style.transform = "translateY(24px)";
+            element.style.transition =
+                "opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)";
+            element.style.transitionDelay =
+                Math.min(index * 80, 240) + "ms";
 
-                },
-                {
-                    threshold: 0.12,
-                    rootMargin:
-                        "0px 0px -45px 0px"
-                }
-            );
-
-        revealItems.forEach(function (item, index) {
-
-            item.style.transitionDelay =
-                Math.min(index * 45, 260) + "ms";
-
-            revealObserver.observe(item);
+            contactObserver.observe(element);
 
         });
 
     } else {
 
-        revealItems.forEach(function (item) {
-
-            item.classList.add(
-                "project-reveal",
-                "is-visible"
-            );
-
+        contactElements.forEach(function (element) {
+            element.classList.add("contact-visible");
         });
 
     }
 
+});
 
-    /* ---------------------------
-       PREMIUM FILTER ANIMATION
-       Existing filter remains the
-       source of truth; this adds
-       animation without replacing it.
-    --------------------------- */
-    const projectFilterButtons =
-        document.querySelectorAll(
-            ".projects-filter-btn"
-        );
+/* Contact reveal final state */
+document.addEventListener("DOMContentLoaded", function () {
 
-    const projectCards =
-        document.querySelectorAll(
-            ".featured-project-card"
-        );
+    const style = document.createElement("style");
 
-    projectFilterButtons.forEach(function (button) {
+    style.textContent = `
+        .contact-visible{
+            opacity:1 !important;
+            transform:translateY(0) !important;
+        }
 
-        button.addEventListener(
-            "click",
-            function () {
-
-                projectFilterButtons.forEach(
-                    function (btn) {
-                        btn.setAttribute(
-                            "aria-pressed",
-                            btn === button
-                                ? "true"
-                                : "false"
-                        );
-                    }
-                );
-
-                const filter =
-                    button.getAttribute(
-                        "data-filter"
-                    );
-
-                projectCards.forEach(
-                    function (card, index) {
-
-                        const show =
-                            filter === "*" ||
-                            card.classList.contains(
-                                filter.replace(
-                                    ".",
-                                    ""
-                                )
-                            );
-
-                        if (show) {
-
-                            card.classList.remove(
-                                "project-hidden"
-                            );
-
-                            card.classList.remove(
-                                "project-filter-in"
-                            );
-
-                            void card.offsetWidth;
-
-                            card.style.animationDelay =
-                                Math.min(
-                                    index * 70,
-                                    350
-                                ) + "ms";
-
-                            card.classList.add(
-                                "project-filter-in"
-                            );
-
-                        } else {
-
-                            card.classList.add(
-                                "project-hidden"
-                            );
-
-                        }
-
-                    }
-                );
-
+        @media (prefers-reduced-motion: reduce){
+            .contact .info-box,
+            .contact .contact-form,
+            .map-section .map-container{
+                opacity:1 !important;
+                transform:none !important;
+                transition:none !important;
             }
-        );
+        }
+    `;
 
-    });
-
-
-    /* ---------------------------
-       VIDEO CONTROL
-       Only one project video plays
-       at a time.
-    --------------------------- */
-    const projectVideos =
-        document.querySelectorAll(
-            ".projects-video-card video"
-        );
-
-    projectVideos.forEach(function (video) {
-
-        video.addEventListener(
-            "play",
-            function () {
-
-                projectVideos.forEach(
-                    function (otherVideo) {
-
-                        if (
-                            otherVideo !== video
-                        ) {
-                            otherVideo.pause();
-                        }
-
-                    }
-                );
-
-            }
-        );
-
-    });
-
-
-    /* ---------------------------
-       MODAL BODY LOCK
-       Existing gallery modal logic
-       remains in the shared script.
-    --------------------------- */
-    const projectModal =
-        document.querySelector(
-            ".gallery-modal"
-        );
-
-    if (projectModal) {
-
-        const modalObserver =
-            new MutationObserver(
-                function () {
-
-                    document.body.classList.toggle(
-                        "modal-open",
-                        projectModal.classList.contains(
-                            "active"
-                        )
-                    );
-
-                }
-            );
-
-        modalObserver.observe(
-            projectModal,
-            {
-                attributes: true,
-                attributeFilter: ["class"]
-            }
-        );
-
-    }
-
-
-    /* ---------------------------
-       HEADER + FOOTER
-    --------------------------- */
-    const header =
-        document.getElementById("header");
-
-    if (header) {
-
-        fetch("header1.html")
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error(
-                        "Header request failed"
-                    );
-                }
-                return response.text();
-            })
-            .then(function (data) {
-                header.innerHTML = data;
-            })
-            .catch(function (error) {
-                console.error(
-                    "Header load error:",
-                    error
-                );
-            });
-
-    }
-
-
-    const footer =
-        document.getElementById("footer");
-
-    if (footer) {
-
-        fetch("footer1.html")
-            .then(function (response) {
-                if (!response.ok) {
-                    throw new Error(
-                        "Footer request failed"
-                    );
-                }
-                return response.text();
-            })
-            .then(function (data) {
-                footer.innerHTML = data;
-            })
-            .catch(function (error) {
-                console.error(
-                    "Footer load error:",
-                    error
-                );
-            });
-
-    }
+    document.head.appendChild(style);
 
 });
