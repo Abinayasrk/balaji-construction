@@ -6048,3 +6048,154 @@ font-size:14px;
         transform:none !important;
     }
 }
+
+
+/* =========================================================
+   BRANDS WE TRUST — PREMIUM INFINITE CAROUSEL
+   Added without changing the existing brand names/images.
+========================================================= */
+
+.brands-section{
+    overflow:hidden;
+}
+
+.brands-carousel{
+    position:relative;
+    width:100%;
+    margin-top:60px;
+    overflow:hidden;
+    padding:8px 0 18px;
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent 0,
+        #000 5%,
+        #000 95%,
+        transparent 100%
+    );
+    mask-image:linear-gradient(
+        to right,
+        transparent 0,
+        #000 5%,
+        #000 95%,
+        transparent 100%
+    );
+}
+
+.brands-track{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    width:max-content;
+    animation:brandsInfiniteScroll 28s linear infinite;
+    will-change:transform;
+}
+
+.brands-carousel:hover .brands-track{
+    animation-play-state:paused;
+}
+
+.brands-carousel .brand-card{
+    flex:0 0 210px;
+    width:210px;
+    height:145px;
+    margin:0;
+    background:var(--white);
+    border:1px solid #E6EEEC;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.brands-carousel .brand-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(124,187,174,.55);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.brands-carousel .brand-card img{
+    width:170px;
+    max-width:80%;
+    max-height:90px;
+    object-fit:contain;
+    display:block;
+    transition:transform .35s ease, filter .35s ease;
+}
+
+.brands-carousel .brand-card:hover img{
+    transform:scale(1.07);
+    filter:grayscale(0%);
+}
+
+@keyframes brandsInfiniteScroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(calc(-50% - 12px));
+    }
+}
+
+@media(max-width:992px){
+
+    .brands-carousel .brand-card{
+        flex-basis:190px;
+        width:190px;
+        height:135px;
+    }
+
+    .brands-track{
+        gap:20px;
+        animation-duration:25s;
+    }
+}
+
+@media(max-width:768px){
+
+    .brands-section{
+        padding:75px 20px;
+    }
+
+    .brands-carousel{
+        margin-top:40px;
+        -webkit-mask-image:none;
+        mask-image:none;
+    }
+
+    .brands-track{
+        gap:14px;
+        animation-duration:22s;
+    }
+
+    .brands-carousel .brand-card{
+        flex-basis:155px;
+        width:155px;
+        height:115px;
+        border-radius:15px;
+    }
+
+    .brands-carousel .brand-card img{
+        width:125px;
+        max-height:70px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .brands-track{
+        animation:none !important;
+        transform:none !important;
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .brands-track .brand-card:nth-child(n+7){
+        display:none;
+    }
+}
