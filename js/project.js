@@ -150,3 +150,122 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 });
+
+
+/* =========================================================
+   UNIQUE PROJECT GALLERY — PROJECT PAGE ONLY
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const page = document.querySelector(".project-page");
+    if (!page) return;
+
+    const galleryCards =
+        page.querySelectorAll(".project-gallery-card");
+
+    const modal =
+        page.querySelector(".project-gallery-modal");
+
+    const modalImage =
+        page.querySelector("#modalImage");
+
+    const modalTitle =
+        page.querySelector("#modalTitle");
+
+    const modalCategory =
+        page.querySelector("#modalCategory");
+
+    const modalDescription =
+        page.querySelector("#modalDescription");
+
+    const closeButton =
+        page.querySelector(".project-gallery-modal-close");
+
+    if (!galleryCards.length || !modal) return;
+
+    function openGallery(card) {
+
+        const image = card.querySelector("img");
+
+        if (image && modalImage) {
+            modalImage.src = image.src;
+            modalImage.alt = image.alt || "Project gallery image";
+        }
+
+        if (modalTitle) {
+            modalTitle.textContent =
+                card.dataset.title || "Project Gallery";
+        }
+
+        if (modalCategory) {
+            modalCategory.textContent =
+                card.dataset.category || "Portfolio";
+        }
+
+        if (modalDescription) {
+            modalDescription.textContent =
+                card.dataset.description || "";
+        }
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("gallery-modal-open");
+
+    }
+
+    function closeGallery() {
+
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("gallery-modal-open");
+
+    }
+
+    galleryCards.forEach(function (card) {
+
+        card.addEventListener("click", function () {
+            openGallery(card);
+        });
+
+        const viewButton =
+            card.querySelector(".project-gallery-view");
+
+        if (viewButton) {
+            viewButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                openGallery(card);
+            });
+        }
+
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener("click", closeGallery);
+    }
+
+    modal.addEventListener("click", function (event) {
+
+        if (
+            event.target === modal ||
+            event.target.classList.contains(
+                "project-gallery-modal-backdrop"
+            )
+        ) {
+            closeGallery();
+        }
+
+    });
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("active")
+        ) {
+            closeGallery();
+        }
+
+    });
+
+});
