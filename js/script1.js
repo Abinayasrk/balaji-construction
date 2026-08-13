@@ -1,71 +1,113 @@
 const reveals = document.querySelectorAll(
-  '.reveal-left, .reveal-right, .reveal-up'
+    '.reveal-left, .reveal-right, .reveal-up'
 );
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      /*  if(entry.isIntersecting){
+const observer = ('IntersectionObserver' in window)
+    ? new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
             entry.target.classList.add('show');
-        }else{
-            entry.target.classList.remove('show');
-        }*/
-       if (entry.isIntersecting) {
-      entry.target.classList.add('show');
 
-      // Stop observing after the first reveal
-      observer.unobserve(entry.target);
-    }
+            // Stop observing after first reveal
+            observer.unobserve(entry.target);
+        }
+
     });
-},{
-    threshold:0.3
-});
+        }, {
+            threshold: 0.3
+        })
+    : null;
 
-reveals.forEach(el=>observer.observe(el));
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
+if (observer) {
+    reveals.forEach(el => observer.observe(el));
+} else {
+    reveals.forEach(el => el.classList.add('show'));
 }
 
 
+/* ===========================
+   MOBILE MENU
+=========================== */
 
-reveals.forEach((el)=>{
-    observer.observe(el);
-});
+function toggleMenu() {
+    const navLinks = document.querySelector(".nav-links");
+
+    if (navLinks) {
+        navLinks.classList.toggle("active");
+    }
+}
+
+
+/* ===========================
+   COUNTER ANIMATION
+=========================== */
 
 const counters = document.querySelectorAll(".counter");
 
 const statsObserver = new IntersectionObserver(entries => {
+
     entries.forEach(entry => {
+
         if (entry.isIntersecting) {
+
             const counter = entry.target;
             const target = +counter.dataset.target;
 
             let count = 0;
 
             const update = () => {
+
                 const increment = Math.ceil(target / 100);
 
                 if (count < target) {
+
                     count += increment;
+
+                    if (count > target) {
+                        count = target;
+                    }
+
                     counter.innerText = count;
+
                     setTimeout(update, 20);
+
                 } else {
+
                     counter.innerText = target + "+";
+
                 }
+
             };
 
             update();
+
             statsObserver.unobserve(counter);
         }
+
     });
-}, { threshold: 0.5 });
 
-counters.forEach(counter => statsObserver.observe(counter));
+}, {
+    threshold: 0.5
+});
 
-// project carosal
-// Project Carousel
-if (document.querySelector(".projectSwiper") && typeof Swiper !== "undefined") {
+counters.forEach(counter => {
+    statsObserver.observe(counter);
+});
+
+
+/* ===========================
+   PROJECT CAROUSEL
+=========================== */
+
+if (
+    document.querySelector(".projectSwiper") &&
+    typeof Swiper !== "undefined"
+) {
 
     const swiper = new Swiper(".projectSwiper", {
+
         loop: true,
 
         spaceBetween: 25,
@@ -86,45 +128,73 @@ if (document.querySelector(".projectSwiper") && typeof Swiper !== "undefined") {
         },
 
         breakpoints: {
+
             0: {
                 slidesPerView: 1,
             },
+
             768: {
                 slidesPerView: 2,
             },
+
             1024: {
                 slidesPerView: 3,
-            },
-        },
+            }
+
+        }
+
     });
 
 }
+
+
+/* ===========================
+   SERVICE TABS
+=========================== */
+
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabContents = document.querySelectorAll(".tab-content");
 
-tabButtons.forEach(button=>{
+tabButtons.forEach(button => {
 
-button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
-tabButtons.forEach(btn=>btn.classList.remove("active"));
-tabContents.forEach(content=>content.classList.remove("active"));
+        tabButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-button.classList.add("active");
+        tabContents.forEach(content => {
+            content.classList.remove("active");
+        });
 
-document
-.getElementById(button.dataset.tab)
-.classList.add("active");
+        button.classList.add("active");
+
+        const target = document.getElementById(
+            button.dataset.tab
+        );
+
+        if (target) {
+            target.classList.add("active");
+        }
+
+    });
 
 });
 
-});
-// FAQ Accordion
+
+/* ===========================
+   FAQ ACCORDION
+=========================== */
 
 const faqs = document.querySelectorAll(".faq-item");
 
 faqs.forEach(faq => {
 
-    faq.querySelector(".faq-question").addEventListener("click", () => {
+    const question = faq.querySelector(".faq-question");
+
+    if (!question) return;
+
+    question.addEventListener("click", () => {
 
         const isActive = faq.classList.contains("active");
 
@@ -132,76 +202,77 @@ faqs.forEach(faq => {
 
             item.classList.remove("active");
 
-            item.querySelector(".faq-icon")
-                .classList.replace("fa-minus","fa-plus");
+            const icon = item.querySelector(".faq-icon");
+
+            if (icon) {
+
+                icon.classList.remove("fa-minus");
+
+                icon.classList.add("fa-plus");
+
+            }
 
         });
 
-        if(!isActive){
+        if (!isActive) {
 
             faq.classList.add("active");
 
-            faq.querySelector(".faq-icon")
-                .classList.replace("fa-plus","fa-minus");
+            const icon = faq.querySelector(".faq-icon");
+
+            if (icon) {
+
+                icon.classList.remove("fa-plus");
+
+                icon.classList.add("fa-minus");
+
+            }
 
         }
 
     });
 
 });
-// ===========================
-// PROJECT FILTER (Isotope)
-// ===========================
-/*
-window.addEventListener("load", () => {
 
-    const grid = document.querySelector(".featured-projects-grid");
 
-    const iso = new Isotope(grid,{
-        itemSelector:".featured-project-card",
-        layoutMode:"fitRows",
-        transitionDuration:"0.5s"
-    });
+/* ===========================
+   PROJECT FILTER
+=========================== */
 
-    const buttons = document.querySelectorAll(".projects-filter-btn");
+const filterButtons =
+    document.querySelectorAll(".projects-filter-btn");
 
-    buttons.forEach(button=>{
-
-        button.addEventListener("click",()=>{
-
-            buttons.forEach(btn=>btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            const filterValue = button.getAttribute("data-filter");
-
-            iso.arrange({
-                filter:filterValue
-            });
-
-        });
-
-    });
-
-});*/
-const filterButtons = document.querySelectorAll(".projects-filter-btn");
-const projectCards = document.querySelectorAll(".featured-project-card");
+const projectCards =
+    document.querySelectorAll(".featured-project-card");
 
 filterButtons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        filterButtons.forEach(btn => btn.classList.remove("active"));
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
         button.classList.add("active");
 
-        const filter = button.getAttribute("data-filter");
+        const filter =
+            button.getAttribute("data-filter");
 
         projectCards.forEach(card => {
 
-            if (filter === "*" || card.classList.contains(filter.replace(".", ""))) {
+            if (
+                filter === "*" ||
+                card.classList.contains(
+                    filter.replace(".", "")
+                )
+            ) {
+
                 card.style.display = "block";
+
             } else {
+
                 card.style.display = "none";
+
             }
 
         });
@@ -209,88 +280,143 @@ filterButtons.forEach(button => {
     });
 
 });
+
+
 /* ===========================
    PROJECT GALLERY SWIPER
 =========================== */
 
-const gallerySwiper = new Swiper(".gallerySwiper", {
+if (
+    document.querySelector(".gallerySwiper") &&
+    typeof Swiper !== "undefined"
+) {
 
-    loop:false,
+    const gallerySwiper =
+        new Swiper(".gallerySwiper", {
 
-    spaceBetween:30,
+            loop: false,
 
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false,
-    },
+            spaceBetween: 30,
 
-    pagination:{
-        el:".swiper-pagination",
-        clickable:true,
-    },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
 
-    navigation:{
-        nextEl:".swiper-button-next",
-        prevEl:".swiper-button-prev",
-    },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
 
-    breakpoints:{
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-        0:{
-            slidesPerView:1,
-        },
+            breakpoints: {
 
-        768:{
-            slidesPerView:2,
-        },
+                0: {
+                    slidesPerView: 1,
+                },
 
-        1024:{
-            slidesPerView:3,
-        }
+                768: {
+                    slidesPerView: 2,
+                },
 
-    }
+                1024: {
+                    slidesPerView: 3,
+                }
 
-});
+            }
+
+        });
+
+}
 
 
 /* ===========================
-   PROJECT POPUP
+   PROJECT GALLERY POPUP
 =========================== */
 
-const modal = document.querySelector(".gallery-modal");
-console.log(modal);
-const modalImg = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalLocation = document.getElementById("modalLocation");
-const modalArea = document.getElementById("modalArea");
-const modalStatus = document.getElementById("modalStatus");
-const modalCategory = document.getElementById("modalCategory");
-const modalDescription = document.getElementById("modalDescription");
-const modalMaterials = document.getElementById("modalMaterials");
+const modal =
+    document.querySelector(".gallery-modal");
 
-const gallerycards = document.querySelectorAll(".gallery-card");
+const modalImg =
+    document.getElementById("modalImage");
 
-gallerycards.forEach(card=>{
+const modalTitle =
+    document.getElementById("modalTitle");
 
-    card.addEventListener("click",()=>{
+const modalLocation =
+    document.getElementById("modalLocation");
+
+const modalArea =
+    document.getElementById("modalArea");
+
+const modalStatus =
+    document.getElementById("modalStatus");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalMaterials =
+    document.getElementById("modalMaterials");
+
+const galleryCards =
+    document.querySelectorAll(".gallery-card");
+
+
+galleryCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        if (!modal) return;
 
         modal.classList.add("active");
 
-        modalImg.src = card.querySelector("img").src;
+        const image = card.querySelector("img");
 
-        modalTitle.innerText = card.dataset.title;
+        if (modalImg && image) {
+            modalImg.src = image.src;
+        }
 
-        modalLocation.innerText = card.dataset.location;
+        if (modalTitle) {
+            modalTitle.innerText =
+                card.dataset.title || "";
+        }
 
-        modalArea.innerText = card.dataset.area;
+        if (modalLocation) {
+            modalLocation.innerText =
+                card.dataset.location || "";
+        }
 
-        modalStatus.innerText = card.dataset.status;
+        if (modalArea) {
+            modalArea.innerText =
+                card.dataset.area || "";
+        }
 
-        modalCategory.innerText = card.dataset.category;
+        if (modalStatus) {
+            modalStatus.innerText =
+                card.dataset.status || "";
+        }
 
-        modalDescription.innerText = card.dataset.description;
+        if (modalCategory) {
+            modalCategory.innerText =
+                card.dataset.category || "";
+        }
 
-        modalMaterials.innerText = card.dataset.materials;
+        if (modalDescription) {
+            modalDescription.innerText =
+                card.dataset.description || "";
+        }
+
+        if (modalMaterials) {
+            modalMaterials.innerText =
+                card.dataset.materials || "";
+        }
 
     });
 
@@ -298,31 +424,41 @@ gallerycards.forEach(card=>{
 
 
 /* ===========================
-   CLOSE POPUP
+   CLOSE GALLERY POPUP
 =========================== */
 
-const galleryClose = document.querySelector(".gallery-close");
+const galleryClose =
+    document.querySelector(".gallery-close");
 
 if (galleryClose && modal) {
+
     galleryClose.onclick = () => {
+
         modal.classList.remove("active");
+
     };
+
 }
 
-window.onclick = function(e){
 
-    if(e.target == modal){
+window.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
 
         modal.classList.remove("active");
 
     }
 
-};
+});
 
 
-document.addEventListener("keydown",(e)=>{
+/* ===========================
+   ESCAPE KEY
+=========================== */
 
-    if(e.key==="Escape"){
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape" && modal) {
 
         modal.classList.remove("active");
 
@@ -331,92 +467,66 @@ document.addEventListener("keydown",(e)=>{
 });
 
 /* =========================================================
-   CONTACT PAGE ENHANCEMENTS
-   Added to existing script1.js
+   BRANDS WE TRUST — CAROUSEL ENHANCEMENT
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    /* Contact-page-only reveal fallback */
-    const contactElements = document.querySelectorAll(
-        ".contact .info-box, " +
-        ".contact .contact-form, " +
-        ".map-section .map-container"
-    );
+    const brandsCarousel =
+        document.querySelector(".brands-carousel");
 
-    if (!contactElements.length) {
+    const brandsTrack =
+        document.querySelector(".brands-track");
+
+    if (!brandsCarousel || !brandsTrack) {
         return;
     }
 
-    if ("IntersectionObserver" in window) {
+    /* Pause animation when touch starts; resume after touch ends. */
+    brandsCarousel.addEventListener(
+        "touchstart",
+        () => {
+            brandsTrack.style.animationPlayState = "paused";
+        },
+        { passive: true }
+    );
 
-        const contactObserver =
-            new IntersectionObserver(function (entries, observer) {
+    brandsCarousel.addEventListener(
+        "touchend",
+        () => {
+            brandsTrack.style.animationPlayState = "";
+        },
+        { passive: true }
+    );
 
-                entries.forEach(function (entry) {
+    /* Respect reduced-motion preference. */
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
 
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+    const updateMotion = () => {
 
-                    entry.target.classList.add(
-                        "contact-visible"
-                    );
+        if (reducedMotion.matches) {
 
-                    observer.unobserve(entry.target);
+            brandsTrack.style.animation =
+                "none";
 
-                });
+        } else {
 
-            }, {
-                threshold: 0.12,
-                rootMargin: "0px 0px -35px 0px"
-            });
+            brandsTrack.style.animation = "";
 
-        contactElements.forEach(function (element, index) {
+        }
 
-            element.style.opacity = "0";
-            element.style.transform = "translateY(24px)";
-            element.style.transition =
-                "opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)";
-            element.style.transitionDelay =
-                Math.min(index * 80, 240) + "ms";
+    };
 
-            contactObserver.observe(element);
+    updateMotion();
 
-        });
-
-    } else {
-
-        contactElements.forEach(function (element) {
-            element.classList.add("contact-visible");
-        });
-
+    if (reducedMotion.addEventListener) {
+        reducedMotion.addEventListener(
+            "change",
+            updateMotion
+        );
     }
-
-});
-
-/* Contact reveal final state */
-document.addEventListener("DOMContentLoaded", function () {
-
-    const style = document.createElement("style");
-
-    style.textContent = `
-        .contact-visible{
-            opacity:1 !important;
-            transform:translateY(0) !important;
-        }
-
-        @media (prefers-reduced-motion: reduce){
-            .contact .info-box,
-            .contact .contact-form,
-            .map-section .map-container{
-                opacity:1 !important;
-                transform:none !important;
-                transition:none !important;
-            }
-        }
-    `;
-
-    document.head.appendChild(style);
 
 });
