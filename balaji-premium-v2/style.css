@@ -1,7 +1,6 @@
 /* =========================================================
-   BALAJI CONSTRUCTION
-   PREMIUM V2 — HERO V1
-   Brand Colors
+   BALAJI CONSTRUCTION — PREMIUM V2
+   COMPLETE HERO CSS
 ========================================================= */
 
 :root {
@@ -12,9 +11,6 @@
     --white: #FFFFFF;
 
     --container: 1440px;
-    --header-height: 88px;
-
-    --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
@@ -33,26 +29,15 @@ html {
 }
 
 body {
-    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
     background: var(--background);
     color: var(--text);
-
-    font-family:
-        "Inter",
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
     overflow-x: hidden;
 }
 
-body.menu-open {
-    overflow: hidden;
-}
-
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 button {
@@ -70,29 +55,29 @@ button {
     left: 0;
 
     width: 100%;
-    height: var(--header-height);
-
-    z-index: 1000;
+    height: 88px;
 
     padding: 0 5%;
+
+    z-index: 1000;
 
     color: var(--white);
 
     background: transparent;
 
     transition:
-        background 0.45s ease,
-        height 0.45s ease,
-        backdrop-filter 0.45s ease;
+        background 0.4s ease,
+        height 0.4s ease,
+        backdrop-filter 0.4s ease;
 }
 
 .site-header.scrolled {
-    height: 72px;
+    height: 70px;
 
-    background: rgba(25, 37, 35, 0.90);
+    background: rgba(25, 37, 35, 0.92);
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 
@@ -106,12 +91,12 @@ button {
 
     height: 100%;
 
-    margin: 0 auto;
+    margin: auto;
 
     display: flex;
     align-items: center;
 
-    gap: 35px;
+    gap: 30px;
 }
 
 
@@ -123,9 +108,9 @@ button {
     display: flex;
     flex-direction: column;
 
-    flex-shrink: 0;
-
     line-height: 1;
+
+    flex-shrink: 0;
 }
 
 .brand-name {
@@ -148,20 +133,22 @@ button {
 
 
 /* =========================================================
-   MAIN NAVIGATION
+   NAVIGATION
 ========================================================= */
 
 .main-nav {
+    margin-left: auto;
+
     display: flex;
     align-items: center;
 
-    gap: 34px;
-
-    margin-left: auto;
+    gap: 32px;
 }
 
 .main-nav a {
     position: relative;
+
+    color: var(--white);
 
     font-size: 11px;
     font-weight: 500;
@@ -170,13 +157,9 @@ button {
 
     text-transform: uppercase;
 
-    color: var(--white);
+    opacity: 0.9;
 
-    opacity: 0.88;
-
-    transition:
-        color 0.3s ease,
-        opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .main-nav a::after {
@@ -192,7 +175,7 @@ button {
 
     background: var(--primary);
 
-    transition: width 0.35s var(--ease);
+    transition: width 0.3s ease;
 }
 
 .main-nav a:hover {
@@ -209,7 +192,7 @@ button {
 ========================================================= */
 
 .nav-cta {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -217,7 +200,7 @@ button {
 
     padding: 0 20px;
 
-    border: 1px solid rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.6);
 
     color: var(--white);
 
@@ -228,11 +211,7 @@ button {
 
     text-transform: uppercase;
 
-    transition:
-        background 0.35s var(--ease),
-        color 0.35s var(--ease),
-        border-color 0.35s var(--ease),
-        transform 0.35s var(--ease);
+    transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
@@ -247,7 +226,7 @@ button {
 
 
 /* =========================================================
-   MOBILE MENU BUTTON
+   MOBILE MENU
 ========================================================= */
 
 .menu-toggle {
@@ -256,15 +235,11 @@ button {
     width: 44px;
     height: 44px;
 
-    padding: 0;
-
     border: 0;
 
     background: transparent;
 
     cursor: pointer;
-
-    position: relative;
 
     z-index: 1100;
 }
@@ -279,17 +254,7 @@ button {
 
     background: var(--white);
 
-    transition:
-        transform 0.35s var(--ease),
-        opacity 0.25s ease;
-}
-
-.menu-toggle.active span:first-child {
-    transform: translateY(4px) rotate(45deg);
-}
-
-.menu-toggle.active span:last-child {
-    transform: translateY(-4px) rotate(-45deg);
+    transition: transform 0.3s ease;
 }
 
 
@@ -301,8 +266,8 @@ button {
     position: relative;
 
     width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 100vh;
+    min-height: 650px;
 
     display: flex;
     align-items: center;
@@ -330,27 +295,24 @@ button {
 }
 
 
-/*
-   Current fallback image.
-
-   Later we will replace this with the
-   cinematic background video.
-*/
-/* =========================================
-   HERO VIDEO BACKGROUND
-========================================= */
+/* =========================================================
+   HERO VIDEO
+========================================================= */
 
 .hero-video {
     position: absolute;
-    inset: 0;
+
+    top: 0;
+    left: 0;
 
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
+
     object-position: center center;
+
+    display: block;
 
     z-index: 0;
 
@@ -358,55 +320,27 @@ button {
 }
 
 
-/* Fallback image */
-
-.hero-image {
-    position: absolute;
-    inset: 0;
-
-    background-image: url("assets/images/hero.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    z-index: -1;
-}
-.hero-image {
-    position: absolute;
-
-    inset: -3%;
-
-    background-image: url("assets/images/hero.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    transform: scale(1.04);
-
-    animation: heroZoom 16s ease-out forwards;
-}
-
-
 /* =========================================================
-   HERO IMAGE ANIMATION
+   FALLBACK IMAGE
 ========================================================= */
 
-@keyframes heroZoom {
+.hero-image {
+    position: absolute;
 
-    0% {
-        transform: scale(1.08);
-    }
+    inset: 0;
 
-    100% {
-        transform: scale(1);
-    }
+    z-index: -1;
 
+    background-image: url("assets/images/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
 }
 
 
 /* =========================================================
-   HERO OVERLAY
+   VIDEO OVERLAY
 ========================================================= */
 
 .hero-overlay {
@@ -416,18 +350,17 @@ button {
 
     z-index: 1;
 
+    pointer-events: none;
+
     background:
         linear-gradient(
             90deg,
-            rgba(25, 37, 35, 0.92) 0%,
-            rgba(25, 37, 35, 0.74) 30%,
-            rgba(25, 37, 35, 0.38) 60%,
-            rgba(25, 37, 35, 0.18) 100%
+            rgba(25, 37, 35, 0.88) 0%,
+            rgba(25, 37, 35, 0.62) 38%,
+            rgba(25, 37, 35, 0.28) 70%,
+            rgba(25, 37, 35, 0.38) 100%
         );
 }
-
-
-/* subtle bottom depth */
 
 .hero-overlay::after {
     content: "";
@@ -440,13 +373,13 @@ button {
         linear-gradient(
             0deg,
             rgba(25, 37, 35, 0.65) 0%,
-            transparent 35%
+            transparent 40%
         );
 }
 
 
 /* =========================================================
-   HERO CONTAINER
+   HERO CONTENT CONTAINER
 ========================================================= */
 
 .hero-container {
@@ -459,11 +392,9 @@ button {
 
     min-height: 100vh;
 
-    margin: 0 auto;
+    margin: auto;
 
-    padding:
-        130px 5%
-        90px;
+    padding: 120px 5% 80px;
 
     display: flex;
     align-items: center;
@@ -499,8 +430,7 @@ button {
 
     opacity: 0;
 
-    animation:
-        heroReveal 1s 0.25s var(--ease) forwards;
+    animation: revealUp 1s 0.2s ease forwards;
 }
 
 
@@ -509,16 +439,11 @@ button {
 ========================================================= */
 
 .hero-title {
-    max-width: 850px;
+    max-width: 900px;
 
     color: var(--white);
 
-    font-size:
-        clamp(
-            52px,
-            7.2vw,
-            108px
-        );
+    font-size: clamp(52px, 7vw, 105px);
 
     line-height: 0.94;
 
@@ -528,42 +453,36 @@ button {
 
     opacity: 0;
 
-    animation:
-        heroReveal 1s 0.4s var(--ease) forwards;
+    animation: revealUp 1s 0.4s ease forwards;
 }
 
 .hero-title span {
     display: block;
 
-    margin-top: 5px;
+    margin-top: 6px;
 
     color: var(--primary);
-
-    font-weight: 500;
 }
 
 
 /* =========================================================
-   HERO DESCRIPTION
+   DESCRIPTION
 ========================================================= */
 
 .hero-description {
-    max-width: 560px;
+    max-width: 550px;
 
     margin-top: 30px;
 
-    color: rgba(255, 255, 255, 0.80);
+    color: rgba(255, 255, 255, 0.82);
 
     font-size: 14px;
 
     line-height: 1.8;
 
-    font-weight: 400;
-
     opacity: 0;
 
-    animation:
-        heroReveal 1s 0.6s var(--ease) forwards;
+    animation: revealUp 1s 0.6s ease forwards;
 }
 
 
@@ -581,14 +500,8 @@ button {
 
     opacity: 0;
 
-    animation:
-        heroReveal 1s 0.8s var(--ease) forwards;
+    animation: revealUp 1s 0.8s ease forwards;
 }
-
-
-/* =========================================================
-   BUTTON BASE
-========================================================= */
 
 .btn {
     min-height: 52px;
@@ -610,17 +523,11 @@ button {
 
     text-transform: uppercase;
 
-    transition:
-        background 0.35s var(--ease),
-        color 0.35s var(--ease),
-        border-color 0.35s var(--ease),
-        transform 0.35s var(--ease);
+    transition: all 0.35s ease;
 }
 
 
-/* =========================================================
-   PRIMARY BUTTON
-========================================================= */
+/* PRIMARY BUTTON */
 
 .btn-primary {
     background: var(--primary);
@@ -631,24 +538,18 @@ button {
 .btn-primary:hover {
     background: var(--white);
 
-    color: var(--secondary);
-
     transform: translateY(-3px);
 }
 
 .btn-arrow {
     font-size: 17px;
-
-    line-height: 1;
 }
 
 
-/* =========================================================
-   OUTLINE BUTTON
-========================================================= */
+/* OUTLINE BUTTON */
 
 .btn-outline {
-    border-color: rgba(255, 255, 255, 0.45);
+    border-color: rgba(255, 255, 255, 0.5);
 
     color: var(--white);
 
@@ -656,40 +557,35 @@ button {
 }
 
 .btn-outline:hover {
+    background: rgba(124, 187, 174, 0.15);
+
     border-color: var(--primary);
-
-    background: rgba(124, 187, 174, 0.12);
-
-    color: var(--white);
 
     transform: translateY(-3px);
 }
 
 
 /* =========================================================
-   EXPERIENCE BADGE
+   EXPERIENCE
 ========================================================= */
 
 .hero-experience {
     display: flex;
     align-items: flex-end;
 
-    gap: 13px;
+    gap: 14px;
 
-    margin-top: 260px;
-
-    padding-right: 2%;
+    margin-top: 250px;
 
     opacity: 0;
 
-    animation:
-        heroFade 1.2s 1s ease forwards;
+    animation: fadeIn 1s 1s ease forwards;
 }
 
 .hero-experience strong {
     color: var(--primary);
 
-    font-size: 64px;
+    font-size: 62px;
 
     line-height: 0.8;
 
@@ -703,7 +599,7 @@ button {
 
     font-size: 9px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 
     letter-spacing: 1.5px;
 
@@ -719,7 +615,7 @@ button {
     position: absolute;
 
     left: 5%;
-    bottom: 32px;
+    bottom: 30px;
 
     z-index: 5;
 
@@ -732,8 +628,7 @@ button {
 
     opacity: 0;
 
-    animation:
-        heroFade 1s 1.3s ease forwards;
+    animation: fadeIn 1s 1.3s ease forwards;
 }
 
 .scroll-text {
@@ -768,8 +663,7 @@ button {
 
     background: var(--primary);
 
-    animation:
-        scrollLine 2.2s ease-in-out infinite;
+    animation: scrollLine 2s infinite;
 }
 
 @keyframes scrollLine {
@@ -785,7 +679,6 @@ button {
     100% {
         left: 100%;
     }
-
 }
 
 
@@ -797,7 +690,7 @@ button {
     position: absolute;
 
     right: 5%;
-    bottom: 32px;
+    bottom: 30px;
 
     z-index: 5;
 
@@ -812,37 +705,33 @@ button {
 
 
 /* =========================================================
-   HERO ANIMATIONS
+   ANIMATIONS
 ========================================================= */
 
-@keyframes heroReveal {
+@keyframes revealUp {
 
-    0% {
+    from {
         opacity: 0;
 
-        transform:
-            translateY(35px);
+        transform: translateY(35px);
     }
 
-    100% {
+    to {
         opacity: 1;
 
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
-
 }
 
-@keyframes heroFade {
+@keyframes fadeIn {
 
-    0% {
+    from {
         opacity: 0;
     }
 
-    100% {
+    to {
         opacity: 1;
     }
-
 }
 
 
@@ -878,7 +767,7 @@ button {
 @media (max-width: 1100px) {
 
     .main-nav {
-        gap: 22px;
+        gap: 20px;
     }
 
     .main-nav a {
@@ -890,18 +779,12 @@ button {
     }
 
     .hero-title {
-        font-size:
-            clamp(
-                52px,
-                8vw,
-                82px
-            );
+        font-size: clamp(50px, 8vw, 82px);
     }
 
     .hero-experience {
-        margin-top: 190px;
+        margin-top: 180px;
     }
-
 }
 
 
@@ -911,11 +794,9 @@ button {
 
 @media (max-width: 768px) {
 
-    :root {
-        --header-height: 76px;
-    }
-
     .site-header {
+        height: 76px;
+
         padding: 0 6%;
     }
 
@@ -924,7 +805,7 @@ button {
     }
 
 
-    /* Mobile Navigation */
+    /* MOBILE NAV */
 
     .main-nav {
         position: fixed;
@@ -932,12 +813,10 @@ button {
         top: 0;
         right: -100%;
 
-        width: min(84%, 360px);
+        width: min(85%, 360px);
         height: 100vh;
 
-        padding:
-            110px 40px
-            40px;
+        padding: 110px 40px 40px;
 
         display: flex;
         flex-direction: column;
@@ -945,14 +824,11 @@ button {
 
         gap: 26px;
 
-        background:
-            rgba(25, 37, 35, 0.98);
+        background: rgba(25, 37, 35, 0.98);
 
         backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
 
-        transition:
-            right 0.45s var(--ease);
+        transition: right 0.4s ease;
     }
 
     .main-nav.active {
@@ -961,8 +837,6 @@ button {
 
     .main-nav a {
         font-size: 14px;
-
-        letter-spacing: 1.5px;
     }
 
     .menu-toggle {
@@ -970,7 +844,7 @@ button {
     }
 
 
-    /* Hero */
+    /* MOBILE HERO */
 
     .hero {
         min-height: 100svh;
@@ -986,19 +860,10 @@ button {
         align-items: flex-end;
     }
 
-    .hero-content {
-        max-width: 100%;
-    }
-
     .hero-title {
-        font-size:
-            clamp(
-                46px,
-                13vw,
-                70px
-            );
+        font-size: clamp(44px, 13vw, 70px);
 
-        line-height: 0.95;
+        line-height: 0.96;
 
         letter-spacing: -3px;
     }
@@ -1006,7 +871,7 @@ button {
     .hero-description {
         max-width: 450px;
 
-        margin-top: 25px;
+        margin-top: 24px;
 
         font-size: 12px;
 
@@ -1014,15 +879,15 @@ button {
     }
 
     .hero-actions {
-        flex-wrap: wrap;
+        margin-top: 28px;
 
-        margin-top: 30px;
+        flex-wrap: wrap;
     }
 
     .btn {
         min-height: 48px;
 
-        padding: 0 19px;
+        padding: 0 18px;
 
         font-size: 9px;
     }
@@ -1032,11 +897,30 @@ button {
     }
 
 
-    /* Mobile bottom elements */
+    /* MOBILE VIDEO */
+
+    .hero-video {
+        object-position: center center;
+    }
+
+
+    /* MOBILE OVERLAY */
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(25, 37, 35, 0.88) 0%,
+                rgba(25, 37, 35, 0.58) 60%,
+                rgba(25, 37, 35, 0.35) 100%
+            );
+    }
+
+
+    /* MOBILE BOTTOM */
 
     .scroll-indicator {
         left: 6%;
-
         bottom: 24px;
     }
 
@@ -1046,32 +930,10 @@ button {
 
     .hero-location {
         right: 6%;
-
         bottom: 24px;
 
         font-size: 7px;
     }
-
-
-    /* Mobile image */
-
-    .hero-image {
-        background-position: 58% center;
-    }
-
-
-    /* Mobile overlay */
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(25, 37, 35, 0.88) 0%,
-                rgba(25, 37, 35, 0.60) 60%,
-                rgba(25, 37, 35, 0.35) 100%
-            );
-    }
-
 }
 
 
@@ -1094,7 +956,7 @@ button {
     }
 
     .hero-title {
-        font-size: 45px;
+        font-size: 44px;
 
         letter-spacing: -2.5px;
     }
@@ -1116,12 +978,11 @@ button {
     .hero-location {
         display: none;
     }
-
 }
 
 
 /* =========================================================
-   ACCESSIBILITY
+   REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1130,9 +991,9 @@ button {
     *::before,
     *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
 
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
 }
