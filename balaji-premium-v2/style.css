@@ -336,7 +336,41 @@ button {
    Later we will replace this with the
    cinematic background video.
 */
+/* =========================================
+   HERO VIDEO BACKGROUND
+========================================= */
 
+.hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center center;
+
+    z-index: 0;
+
+    background: var(--secondary);
+}
+
+
+/* Fallback image */
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("assets/images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    z-index: -1;
+}
 .hero-image {
     position: absolute;
 
