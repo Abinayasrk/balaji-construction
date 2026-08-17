@@ -13,7 +13,7 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
 <style>
 .container{
     width:90%;
@@ -69,8 +69,7 @@
 <!-- ================= HEADER ================= -->
 
 <div id="header"></div>
-<div class="cdiv" style="height:110px;"></div>
-  <section class="contact" id="contact">
+<section class="contact" id="contact" data-aos="fade-up">
 
     <div class="container">
 
@@ -80,17 +79,17 @@
             <p>Have a construction project in mind? Contact us today for a free consultation and quotation.</p>
         </div>
 
-        <div class="contact-wrapper">
+        <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="contact-info">
+            <div class="contact-info" data-aos="fade-right" data-aos-delay="150">
 
                 <div class="info-box">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
                         <h3>Office Address</h3>
                         <p>
-#67, Dr. Radhakrishna Road, </br>Gandhipuram,
-Coimbatore,</br> Tamil Nadu 641012.
+#67, Dr. Radhakrishna Road, <br>Gandhipuram,
+Coimbatore,<br> Tamil Nadu 641012.
 </p>
                     </div>
                 </div>
@@ -109,23 +108,23 @@ Coimbatore,</br> Tamil Nadu 641012.
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h3>Email</h3>
-                        <a  href="mailto:balajiconstructioncbe@gmail.com" style="color:#111;">
-    balajiconstructioncbe@gmail.com
+                        <a  href="mailto:info@balajiconstructioncbe.com" style="color:#111;">
+    info@balajiconstructioncbe.com
 </a>
                     </div>
                 </div>
 
             </div>
 
-           <form class="contact-form"
+           <form class="contact-form" data-aos="fade-left" data-aos-delay="200"
       id="contactForm"
-      action="https://formsubmit.co/balajiconstructioncbe@gmail.com"
+      action="https://formsubmit.co/info@balajiconstructioncbe.com"
       method="POST">
 
     <input type="hidden" name="_subject" value="New Enquiry from Website">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
-	<input type="hidden" name="_next" value="https://abinayasrk.github.io/balaji-construction/contact.html?success=true">
+	<input type="hidden" name="_next" value="https://balajiconstructioncbe.com/contact.html?success=true">
 
     <input type="text" name="name" placeholder="Your Name" required>
 
@@ -148,8 +147,8 @@ Coimbatore,</br> Tamil Nadu 641012.
 
 </section>
     <!-- end-->
-<!-- map --></br></br>
-	<section class="map-section" id="location">
+<!-- map --><br><br>
+	<section class="map-section" id="location" data-aos="fade-up">
 
     <div class="container">
 
@@ -159,7 +158,7 @@ Coimbatore,</br> Tamil Nadu 641012.
             <p>Find us easily and visit our office for project discussions and consultations.</p>
         </div>
 
-        <div class="map-container">
+        <div class="map-container" data-aos="zoom-in" data-aos-delay="100">
            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.218047784233!2d76.9632073!3d11.0222605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859cdf753a7a1%3A0x50959fc20bff2533!2sBalaji%20Construction!5e0!3m2!1sen!2sin!4v1785311707766!5m2!1sen!2sin" width="600" height="450" 
 style="border:0;" allowfullscreen="" loading="lazy" 
 referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -170,30 +169,21 @@ referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </section>
 	<!-- map end -->
 
-</br></br></br><div id="footer"></div>
+<br><br><br><div id="footer"></div>
     
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script1.js"></script>
 <script>
 AOS.init({
-    duration: 1000,
-    offset:120,
+    duration: 850,
+    easing: "ease-out-cubic",
+    offset: 90,
     once: true,
-    mirror:false
+    mirror: false,
+    disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches
 });
 </script>
-<script>
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-  });
-fetch("footer.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
-</script>
+
 <!-- contact form script -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -240,6 +230,19 @@ window.onload = function () {
 
 };
 
+</script>
+
+<script>
+fetch("header1.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+fetch("footer1.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
 </script>
 </body>
 </html>
