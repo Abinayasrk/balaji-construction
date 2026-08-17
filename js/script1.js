@@ -31,13 +31,130 @@ if (observer) {
    MOBILE MENU
 =========================== */
 
-function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
+/* ===========================
+   MOBILE MENU — FINAL FIX
+   Header is loaded dynamically, so bind after header appears.
+=========================== */
 
-    if (navLinks) {
-        navLinks.classList.toggle("active");
+function getMobileNavElements() {
+    const header = document.querySelector("#header") || document;
+    const navLinks = header.querySelector(".nav-links");
+    const menuBtn = header.querySelector(".menu-btn, .hamburger");
+
+    return {
+        navLinks: navLinks,
+        menuBtn: menuBtn
+    };
+}
+
+function closeMobileMenu() {
+    const elements = getMobileNavElements();
+
+    if (!elements.navLinks) return;
+
+    elements.navLinks.classList.remove("active");
+
+    if (elements.menuBtn) {
+        elements.menuBtn.setAttribute("aria-expanded", "false");
     }
 }
+
+function toggleMenu() {
+    const elements = getMobileNavElements();
+    const navLinks = elements.navLinks;
+
+    if (!navLinks) return;
+
+    const willOpen = !navLinks.classList.contains("active");
+
+    navLinks.classList.toggle("active", willOpen);
+
+    if (elements.menuBtn) {
+        elements.menuBtn.setAttribute(
+            "aria-expanded",
+            willOpen ? "true" : "false"
+        );
+    }
+}
+
+/* Make the function available to header onclick handlers. */
+window.toggleMenu = toggleMenu;
+
+/* Header is inserted with fetch(), so watch for it and bind safely. */
+function bindMobileMenu() {
+
+    const elements = getMobileNavElements();
+
+    if (!elements.navLinks || !elements.menuBtn) return;
+
+    if (elements.menuBtn.dataset.mobileMenuBound === "true") return;
+
+    elements.menuBtn.dataset.mobileMenuBound = "true";
+    elements.menuBtn.setAttribute("aria-expanded", "false");
+
+    elements.menuBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    elements.navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeMobileMenu();
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    bindMobileMenu();
+
+    const header = document.querySelector("#header");
+
+    if (header && "MutationObserver" in window) {
+
+        const headerObserver = new MutationObserver(function () {
+            bindMobileMenu();
+        });
+
+        headerObserver.observe(header, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    document.addEventListener("click", function (event) {
+
+        const headerElement = document.querySelector("#header");
+
+        if (!headerElement) return;
+
+        const navLinks =
+            headerElement.querySelector(".nav-links");
+
+        const menuBtn =
+            headerElement.querySelector(".menu-btn, .hamburger");
+
+        if (
+            navLinks &&
+            navLinks.classList.contains("active") &&
+            !navLinks.contains(event.target) &&
+            !menuBtn?.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+
+    });
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
+
+    });
+
+});
 
 
 /* ===========================
