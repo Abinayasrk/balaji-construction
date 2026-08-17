@@ -102,7 +102,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     <link rel="stylesheet" href="css/style1.css">
-<link rel="stylesheet" href="css/home-final.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 
@@ -113,7 +112,7 @@
 <div id="header"></div>
 <!-- ================= HERO ================= -->
 
-<section class="hero home-hero-image" id="home">
+<section class="hero">
 
     <div class="overlay"></div>
 
@@ -126,21 +125,33 @@
         </h1>
 
         <p>
-            20+ Years of Excellence in Residential, Commercial & Industrial Construction.
-            Building Premium Homes, Villas, Commercial Buildings and Structural Engineering
-            Solutions in Coimbatore and Across Tamil Nadu.
-        </p>
+    20+ Years of Excellence in Residential, Commercial & Industrial Construction. Building Premium Homes, Villas, Commercial Buildings and Structural Engineering Solutions in Coimbatore and Across Tamil Nadu.
+</p>
 
         <div class="hero-buttons">
-            <a href="#projects" class="gold-btn">View Projects</a>
-            <a href="contact.html" class="white-btn">Contact Us</a>
+
+            <a href="#projects" class="gold-btn">
+
+                View Projects
+
+            </a>
+
+            <a href="#contact" class="white-btn">
+
+                Contact Us
+
+            </a>
+
         </div>
 
     </div>
 
 </section>
-
 <!--<section class="hero">
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="images/banner.mp4" type="video/mp4">
+    </video>
 
     <div class="overlay"></div>
 
@@ -494,81 +505,26 @@
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="js/script1.js"></script>
+<script src="js/script.js"></script>
 <script>
-if (typeof AOS !== "undefined") {
-    AOS.init({
-        duration: 850,
-        easing: "ease-out-cubic",
-        offset: 90,
-        once: true,
-        mirror: false,
-        disable: window.matchMedia &&
-                 window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    });
-}
+AOS.init({
+    duration: 1000,
+    offset:120,
+    once: true,
+    mirror:false
+});
 </script>
 <script>
-(function () {
-    const header = document.getElementById("header");
-    const footer = document.getElementById("footer");
-
-    if (header) {
-        header.classList.add("header-loading");
-    }
-
-    Promise.all([
-        fetch("header1.html", {cache:"no-cache"}).then(r => {
-            if (!r.ok) throw new Error("Header load failed");
-            return r.text();
-        }),
-        fetch("footer1.html", {cache:"no-cache"}).then(r => {
-            if (!r.ok) throw new Error("Footer load failed");
-            return r.text();
-        })
-    ]).then(([headerHtml, footerHtml]) => {
-
-        if (header) {
-            header.innerHTML = headerHtml;
-            header.classList.remove("header-loading");
-            header.classList.add("header-ready");
-
-            const nav = header.querySelector(".nav-links");
-            const menu = header.querySelector(".menu-btn");
-
-            if (menu && nav) {
-                menu.setAttribute("aria-expanded","false");
-
-                menu.addEventListener("click", function(e){
-                    e.preventDefault();
-                    nav.classList.toggle("active");
-                    menu.setAttribute(
-                        "aria-expanded",
-                        nav.classList.contains("active") ? "true" : "false"
-                    );
-                });
-
-                nav.querySelectorAll("a").forEach(a => {
-                    a.addEventListener("click", () => {
-                        nav.classList.remove("active");
-                        menu.setAttribute("aria-expanded","false");
-                    });
-                });
-            }
-        }
-
-        if (footer) {
-            footer.innerHTML = footerHtml;
-        }
-
-    }).catch(error => {
-        console.error(error);
-        if (header) {
-            header.classList.remove("header-loading");
-            header.classList.add("header-ready");
-        }
-    });
-})();
+fetch("header1.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+  });
+fetch("footer1.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
 </script>
 </body>
 </html>
