@@ -14,7 +14,8 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
 <body>
@@ -22,7 +23,12 @@
 <!-- ================= HEADER ================= -->
 
 <div id="header"></div>
-</br></br></br></br></br></br>
+<main class="project-page">
+
+
+
+
+
 <section class="projects-hero-section">
 
     <div class="projects-hero-overlay">
@@ -75,29 +81,24 @@
      PROJECT FILTER SECTION
 =========================== -->
 
-<section class="projects-filter-section">
+<section class="projects-filter-section" aria-label="Project categories">
 
     <div class="projects-filter-container">
 
-        <button class="projects-filter-btn active" data-filter="*">
-            All
-        </button>
+        <label class="projects-filter-label" for="projectCategory">
+            Project Category
+        </label>
 
-        <button class="projects-filter-btn" data-filter=".residential">
-            Residential
-        </button>
-
-        <button class="projects-filter-btn" data-filter=".commercial">
-            Commercial
-        </button>
-
-        <button class="projects-filter-btn" data-filter=".interior">
-            Interior
-        </button>
-
-        <button class="projects-filter-btn" data-filter=".renovation">
-            Renovation
-        </button>
+        <div class="projects-filter-select-wrap">
+            <select id="projectCategory" class="projects-filter-select" aria-label="Filter projects by category">
+                <option value="*" selected>All Projects</option>
+                <option value=".residential">Residential</option>
+                <option value=".commercial">Commercial</option>
+                <option value=".interior">Interior</option>
+                <option value=".renovation">Renovation</option>
+            </select>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </div>
 
     </div>
 
@@ -278,198 +279,172 @@
      PROJECT GALLERY
 =========================== -->
 
-<section class="project-gallery-section">
+<section class="project-gallery-section project-gallery-new">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="section-title project-gallery-heading">
             <span>OUR GALLERY</span>
-            <h2>Explore Our Completed Projects</h2>
-            <p>Browse our premium residential and commercial construction projects.</p>
+            <h2>More of Our Work</h2>
+            <p>
+                A visual collection of residential design inspirations
+                and architectural work.
+            </p>
         </div>
 
-        <div class="swiper gallerySwiper">
+        <div class="project-gallery-grid">
 
-            <div class="swiper-wrapper">
+            <article class="project-gallery-card project-gallery-card-large"
+                     data-title="Residential Design Showcase 01"
+                     data-category="Residential"
+                     data-description="Contemporary residential architectural design showcase.">
 
-                <!-- Project 1 -->
-                <div class="swiper-slide">
+                <img src="images/project-gallery/gallery-01.jpg"
+                     alt="Residential architectural design showcase 01"
+                     loading="lazy">
 
-                    <div class="gallery-card"
-                        data-title="Luxury Villa"
-                        data-location="Chennai"
-                        data-area="3500 Sq.ft"
-                        data-status="Completed"
-                        data-category="Residential"
-                        data-description="Premium luxury villa built with quality materials and modern architecture."
-                        data-materials="UltraTech Cement, Tata Steel, Kajaria Tiles, Asian Paints">
-
-                        <img src="images/project1.jpeg" alt="Luxury Villa">
-
-                        <div class="gallery-overlay">
-
-                            <h3>Luxury Villa</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 01</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="swiper-slide">
+            </article>
 
-                    <div class="gallery-card"
-                        data-title="Commercial Building"
-                        data-location="Coimbatore"
-                        data-area="5000 Sq.ft"
-                        data-status="Completed"
-                        data-category="Commercial"
-                        data-description="Modern commercial building with premium office space."
-                        data-materials="Ramco Cement, Tata Steel, Kajaria Tiles">
+            <article class="project-gallery-card"
+                     data-title="Residential Design Showcase 02"
+                     data-category="Residential"
+                     data-description="Modern residential facade design showcase.">
 
-                        <img src="images/project2.jpeg">
+                <img src="images/project-gallery/gallery-02.jpg"
+                     alt="Residential architectural design showcase 02"
+                     loading="lazy">
 
-                        <div class="gallery-overlay">
-
-                            <h3>Commercial Building</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 02</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
 
-                <!-- Project 3 -->
+            </article>
 
-                <div class="swiper-slide">
+            <article class="project-gallery-card"
+                     data-title="Residential Design Showcase 03"
+                     data-category="Residential"
+                     data-description="Contemporary home exterior design showcase.">
 
-                    <div class="gallery-card"
-                        data-title="Luxury Interior"
-                        data-location="Salem"
-                        data-area="2200 Sq.ft"
-                        data-status="Completed"
-                        data-category="Interior"
-                        data-description="Modern interior with elegant finishing."
-                        data-materials="Greenply, Kajaria, Asian Paints">
+                <img src="images/project-gallery/gallery-03.jpg"
+                     alt="Residential architectural design showcase 03"
+                     loading="lazy">
 
-                        <img src="images/project3.jpeg">
-
-                        <div class="gallery-overlay">
-
-                            <h3>Luxury Interior</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-				
-                <!-- Project 1 -->
-                <div class="swiper-slide">
-
-                    <div class="gallery-card"
-                        data-title="Luxury Villa"
-                        data-location="Chennai"
-                        data-area="3500 Sq.ft"
-                        data-status="Completed"
-                        data-category="Residential"
-                        data-description="Premium luxury villa built with quality materials and modern architecture."
-                        data-materials="UltraTech Cement, Tata Steel, Kajaria Tiles, Asian Paints">
-
-                        <img src="images/project1.jpeg" alt="Luxury Villa">
-
-                        <div class="gallery-overlay">
-
-                            <h3>Luxury Villa</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 03</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="swiper-slide">
+            </article>
 
-                    <div class="gallery-card"
-                        data-title="Commercial Building"
-                        data-location="Coimbatore"
-                        data-area="5000 Sq.ft"
-                        data-status="Completed"
-                        data-category="Commercial"
-                        data-description="Modern commercial building with premium office space."
-                        data-materials="Ramco Cement, Tata Steel, Kajaria Tiles">
+            <article class="project-gallery-card project-gallery-card-tall"
+                     data-title="Residential Design Showcase 04"
+                     data-category="Residential"
+                     data-description="Modern multi-level residential facade showcase.">
 
-                        <img src="images/project2.jpeg">
+                <img src="images/project-gallery/gallery-04.jpg"
+                     alt="Residential architectural design showcase 04"
+                     loading="lazy">
 
-                        <div class="gallery-overlay">
-
-                            <h3>Commercial Building</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 04</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
 
-                <!-- Project 3 -->
+            </article>
 
-                <div class="swiper-slide">
+            <article class="project-gallery-card"
+                     data-title="Residential Design Showcase 05"
+                     data-category="Residential"
+                     data-description="Premium modern home exterior showcase.">
 
-                    <div class="gallery-card"
-                        data-title="Luxury Interior"
-                        data-location="Salem"
-                        data-area="2200 Sq.ft"
-                        data-status="Completed"
-                        data-category="Interior"
-                        data-description="Modern interior with elegant finishing."
-                        data-materials="Greenply, Kajaria, Asian Paints">
+                <img src="images/project-gallery/gallery-05.jpg"
+                     alt="Residential architectural design showcase 05"
+                     loading="lazy">
 
-                        <img src="images/project3.jpeg">
-
-                        <div class="gallery-overlay">
-
-                            <h3>Luxury Interior</h3>
-
-                            <button class="gallery-btn">
-                                View Details
-                            </button>
-
-                        </div>
-
-                    </div>
-
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 05</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
                 </div>
 
+            </article>
 
-            </div>
+            <article class="project-gallery-card"
+                     data-title="Residential Design Showcase 06"
+                     data-category="Residential"
+                     data-description="Contemporary villa exterior design showcase.">
 
-            <div class="swiper-button-next"></div>
+                <img src="images/project-gallery/gallery-06.jpg"
+                     alt="Residential architectural design showcase 06"
+                     loading="lazy">
 
-            <div class="swiper-button-prev"></div>
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 06</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                </div>
 
-            <div class="swiper-pagination"></div>
+            </article>
+
+            <article class="project-gallery-card project-gallery-card-wide"
+                     data-title="Residential Design Showcase 07"
+                     data-category="Residential"
+                     data-description="Modern architectural composition showcase.">
+
+                <img src="images/project-gallery/gallery-07.png"
+                     alt="Residential architectural design showcase 07"
+                     loading="lazy">
+
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 07</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                </div>
+
+            </article>
+
+            <article class="project-gallery-card"
+                     data-title="Residential Design Showcase 08"
+                     data-category="Residential"
+                     data-description="Premium contemporary residential facade showcase.">
+
+                <img src="images/project-gallery/gallery-08.png"
+                     alt="Residential architectural design showcase 08"
+                     loading="lazy">
+
+                <div class="project-gallery-overlay">
+                    <span>Residential</span>
+                    <h3>Design Showcase 08</h3>
+                    <button type="button" class="project-gallery-view">
+                        View Image <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                </div>
+
+            </article>
 
         </div>
 
@@ -478,37 +453,39 @@
 </section>
 
 <!-- ===========================
-     PROJECT MODAL
+     PROJECT GALLERY MODAL
 =========================== -->
 
-<div class="gallery-modal">
+<div class="gallery-modal project-gallery-modal" aria-hidden="true">
 
-    <div class="gallery-modal-content">
+    <div class="project-gallery-modal-backdrop"></div>
 
-        <span class="gallery-close">&times;</span>
+    <div class="gallery-modal-content project-gallery-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-label="Project image viewer">
 
-        <img id="modalImage">
+        <button type="button"
+                class="gallery-close project-gallery-modal-close"
+                aria-label="Close image viewer">
+            &times;
+        </button>
 
-        <h2 id="modalTitle"></h2>
+        <img id="modalImage"
+             class="project-gallery-modal-image"
+             alt="Project gallery image">
 
-        <p><strong>Location :</strong> <span id="modalLocation"></span></p>
-
-        <p><strong>Area :</strong> <span id="modalArea"></span></p>
-
-        <p><strong>Status :</strong> <span id="modalStatus"></span></p>
-
-        <p><strong>Category :</strong> <span id="modalCategory"></span></p>
-
-        <p id="modalDescription"></p>
-
-        <h4>Materials Used</h4>
-
-        <p id="modalMaterials"></p>
+        <div class="project-gallery-modal-info">
+            <span id="modalCategory"></span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+        </div>
 
     </div>
 
 </div>
- <!-- ================= Featured Project ================= 
+
+<!-- ================= Featured Project ================= 
 
 <section class="featured-project">
 
@@ -606,12 +583,15 @@
     </div>
 
 </section>
-</br></br></br><div id="footer"></div>
+
+
+</main>
+<div id="footer"></div>
     
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script1.js"></script>
 <script>
 AOS.init({
     duration: 1000,
@@ -621,16 +601,17 @@ AOS.init({
 });
 </script>
 <script>
-fetch("header.html")
+fetch("header1.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("header").innerHTML = data;
   });
-fetch("footer.html")
+fetch("footer1.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("footer").innerHTML = data;
   });
 </script>
+    <script src="js/project.js"></script>
 </body>
 </html>
