@@ -1,1 +1,7 @@
-
+(()=>{const header=document.getElementById("header"),nav=document.getElementById("nav"),menu=document.getElementById("menu"),slides=[...document.querySelectorAll(".slide")],dots=document.getElementById("dots"),count=document.getElementById("count");let i=0,t;
+slides.forEach((_,n)=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Slide "+(n+1));b.onclick=()=>go(n,true);dots.appendChild(b)});
+function go(n,user=false){i=(n+slides.length)%slides.length;slides.forEach((s,x)=>s.classList.toggle("active",x===i));[...dots.children].forEach((d,x)=>d.classList.toggle("active",x===i));count.textContent=String(i+1).padStart(2,"0");if(user)restart()}
+function restart(){clearInterval(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)t=setInterval(()=>go(i+1),6500)}
+document.getElementById("prev").onclick=()=>go(i-1,true);document.getElementById("next").onclick=()=>go(i+1,true);
+menu.onclick=()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",open)};nav.querySelectorAll("a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
+addEventListener("scroll",()=>header.classList.toggle("scrolled",scrollY>40),{passive:true});go(0);restart()})();
